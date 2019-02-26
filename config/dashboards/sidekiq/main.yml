@@ -1,0 +1,95 @@
+detected_metric:
+  - sidekiq_job_count
+dashboard:
+  title: Sidekiq
+  graphs:
+    -
+      title: 'Overall job status'
+      line_label: '%name% - %hostname% - %status%'
+      kind: gauge
+      format: number
+      fields:
+        - sidekiq_job_count
+      tags:
+        status: '*'
+        hostname: '*'
+    -
+      title: 'Job status per queue'
+      line_label: '%name% - %queue% - %status%'
+      kind: count
+      format: number
+      fields:
+        - sidekiq_queue_job_count
+      tags:
+        queue: '*'
+        status: '*'
+    -
+      title: 'Throughput per job'
+      line_label: '%name% - %namespace% - %action%'
+      kind: count
+      format: number
+      fields:
+        - transaction_duration
+      tags:
+        namespace: '*'
+        action: '*'
+    -
+      title: 'Duration per job'
+      line_label: '%name% - %namespace% - %action%'
+      kind: measurement
+      format: duration
+      fields:
+        - transaction_duration
+      tags:
+        namespace: '*'
+        action: '*'
+    -
+      title: 'Queue length'
+      line_label: '%name% - %hostname% - %queue%'
+      kind: gauge
+      format: number
+      fields:
+        - sidekiq_queue_length
+      tags:
+        queue: '*'
+        hostname: '*'
+    -
+      title: 'Queue latency'
+      line_label: '%name% - %hostname% - %queue%'
+      kind: gauge
+      format: duration
+      fields:
+        - sidekiq_queue_latency
+      tags:
+        queue: '*'
+        hostname: '*'
+    -
+      title: 'Worker / Processes count'
+      line_label: '%name% - %hostname%'
+      kind: gauge
+      format: number
+      fields:
+        - sidekiq_worker_count
+        - sidekiq_process_count
+      tags:
+        hostname: '*'
+    -
+      title: 'Connection count'
+      line_label: '%name% - %hostname%'
+      kind: gauge
+      format: number
+      fields:
+        - sidekiq_connection_count
+      tags:
+        hostname: '*'
+    -
+      title: 'Memory usage'
+      line_label: '%name% - %hostname%'
+      kind: gauge
+      format: size
+      format_input: byte
+      fields:
+        - sidekiq_memory_usage
+        - sidekiq_memory_usage_rss
+      tags:
+        hostname: '*'
