@@ -1,0 +1,12 @@
+metric_keys:
+  - unicorn_worker_count
+dashboard:
+  title: Unicorn
+  graphs:
+    -
+      title: 'Worker count'
+      line_label: Workers
+      kind: gauge
+      format: number
+      fields:
+        - unicorn_workers
