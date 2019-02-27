@@ -9,4 +9,4 @@ dashboard:
       kind: gauge
       format: number
       fields:
-        - unicorn_workers
+        - unicorn_worker_count
