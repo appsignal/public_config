@@ -1,0 +1,14 @@
+metric_keys:
+  - mongodb_query_duration
+dashboard:
+  title: MongoDB
+  graphs:
+    -
+      title: 'MongoDB Query Duration'
+      kind: measurement
+      format: duration
+      line_label: '%database%'
+      fields: 
+        - mongodb_query_duration
+      tags:
+        database: "*"
