@@ -1,4 +1,4 @@
-detected_metric:
+metric_keys:
   - sidekiq_job_count
 dashboard:
   title: Sidekiq
