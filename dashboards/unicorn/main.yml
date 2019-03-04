@@ -2,6 +2,8 @@ metric_keys:
   - unicorn_worker_count
 dashboard:
   title: Unicorn
+  description: |
+    Track Unicorn worker counts with this dashboard.
   graphs:
     -
       title: 'Worker count'

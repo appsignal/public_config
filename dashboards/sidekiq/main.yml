@@ -2,6 +2,10 @@ metric_keys:
   - sidekiq_job_count
 dashboard:
   title: Sidekiq
+  description: |
+    This dashboard gives an overview of the overall Sidekiq status.
+    Checkout queue lengths, througput/performance per job,
+    process/connection counts and memory used in Redis.
   graphs:
     -
       title: 'Overall job status'
