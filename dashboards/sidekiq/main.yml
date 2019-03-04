@@ -4,7 +4,7 @@ dashboard:
   title: Sidekiq
   description: |
     This dashboard gives an overview of the overall Sidekiq status.
-    Checkout queue lengths, througput/performance per job,
+    Checkout queue lengths, throughput/performance per job,
     process/connection counts and memory used in Redis.
   graphs:
     -
