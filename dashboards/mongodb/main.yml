@@ -2,6 +2,8 @@ metric_keys:
   - mongodb_query_duration
 dashboard:
   title: MongoDB
+  description: |
+    The MongoDB dashboard gives an overview of query duration per database.
   graphs:
     -
       title: 'MongoDB Query Duration'
