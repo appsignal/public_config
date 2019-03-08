@@ -1,0 +1,39 @@
+metric_keys:
+  - erlang_io
+dashboard:
+  title: Erlang
+  description: |
+    This dashboard gives an overview of the overall Erlang stats.
+  graphs:
+    -
+      title: IO
+      line_label: '%kind%'
+      kind: gauge
+      fields:
+        - erlang_io
+      tags:
+        kind: '*'
+    -
+      title: Schedulers
+      line_label: '%kind%'
+      kind: gauge
+      fields:
+        - erlang_schedulers
+      tags:
+        kind: '*'
+    -
+      title: Processes
+      line_label: '%kind%'
+      kind: gauge
+      fields:
+        - erlang_processes
+      tags:
+        kind: '*'
+    -
+      title: memory
+      line_label: '%kind%'
+      kind: gauge
+      fields:
+        - erlang_memory
+      tags:
+        kind: '*'
