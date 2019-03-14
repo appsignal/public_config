@@ -32,7 +32,6 @@ dashboard:
             - GAUGE
           tags:
             hostname: '*'
-
     - title: Puma worker info
       line_label: '%hostname% - %kind%'
       metrics:
