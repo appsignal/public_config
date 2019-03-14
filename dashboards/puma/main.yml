@@ -8,7 +8,7 @@ dashboard:
     and what the used/available concurrency is for those workers. 
   graphs:
     - title: Threads running/max/idle
-      line_label: '%hostname% - %type%'
+      line_label: '%type% - %hostname%'
       metrics:
         - name: puma_threads
           fields:
