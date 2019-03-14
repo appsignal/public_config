@@ -33,7 +33,7 @@ dashboard:
           tags:
             hostname: '*'
     - title: Puma worker info
-      line_label: '%hostname% - %kind%'
+      line_label: '%hostname% - %type%'
       metrics:
         - name: puma_workers
           fields:
