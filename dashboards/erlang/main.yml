@@ -8,32 +8,36 @@ dashboard:
     -
       title: IO
       line_label: '%kind%'
-      kind: gauge
-      fields:
-        - erlang_io
-      tags:
-        kind: '*'
+      metrics:
+        - name: erlang_io
+          fields:
+            - GAUGE
+          tags:
+            type: "*"
     -
       title: Schedulers
       line_label: '%kind%'
-      kind: gauge
-      fields:
-        - erlang_schedulers
-      tags:
-        kind: '*'
+      metrics:
+        - name: erlang_schedulers
+          fields:
+            - GAUGE
+          tags:
+            type: "*"
     -
       title: Processes
       line_label: '%kind%'
-      kind: gauge
-      fields:
-        - erlang_processes
-      tags:
-        kind: '*'
+      metrics:
+        - name: erlang_processes
+          fields:
+            - GAUGE
+          tags:
+            type: "*"
     -
       title: memory
       line_label: '%kind%'
-      kind: gauge
-      fields:
-        - erlang_memory
-      tags:
-        kind: '*'
+      metrics:
+        - name: erlang_memory
+          fields:
+            - GAUGE
+          tags:
+            type: "*"
