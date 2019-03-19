@@ -5,12 +5,30 @@ dashboard:
   description: |
     The MongoDB dashboard gives an overview of query duration per database.
   graphs:
-    -
-      title: 'MongoDB Query Duration'
-      kind: measurement
-      format: duration
+    - title: MongoDB Database Throughput
       line_label: '%database%'
-      fields: 
-        - mongodb_query_duration
-      tags:
-        database: "*"
+      format: number
+      metrics:
+        - name: mongodb_query_duration
+          fields:
+            - COUNT
+          tags:
+            database: '*'
+    - title: MongoDB Database Query Duration Mean
+      line_label: '%database%'
+      format: duration
+      metrics:
+        - name: mongodb_query_duration
+          fields:
+            - MEAN
+          tags:
+            database: '*'
+    - title: MongoDB Database Query Duration 95th Percentile
+      line_label: '%database%'
+      format: duration
+      metrics:
+        - name: mongodb_query_duration
+          fields:
+            - P95
+          tags:
+            database: '*'
