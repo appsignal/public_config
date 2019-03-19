@@ -3,9 +3,9 @@ metric_keys:
 dashboard:
   title: Puma metrics
   description: |
-    Track Puma workers on this dashboard, 
-    see how many worker processes are running 
-    and what the used/available concurrency is for those workers. 
+    Track Puma workers on this dashboard,
+    see how many worker processes are running
+    and what the used/available concurrency is for those workers.
   graphs:
     - title: Threads running/max/idle
       line_label: '%type% - %hostname%'
@@ -33,7 +33,7 @@ dashboard:
           tags:
             hostname: '*'
     - title: Puma worker info
-      line_label: '%hostname% - %type%'
+      line_label: '%type% - %hostname%'
       metrics:
         - name: puma_workers
           fields:
