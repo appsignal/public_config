@@ -1,0 +1,43 @@
+metric_keys:
+  - puma_threads
+dashboard:
+  title: Puma metrics
+  description: |
+    Track Puma workers on this dashboard,
+    see how many worker processes are running
+    and what the used/available concurrency is for those workers.
+  graphs:
+    - title: Threads running/max/idle
+      line_label: '%type% - %hostname%'
+      metrics:
+        - name: puma_threads
+          fields:
+            - GAUGE
+          tags:
+            hostname: '*'
+            type: "*"
+    - title: Connection backlog
+      line_label: '%hostname%'
+      metrics:
+        - name: puma_connection_backlog
+          fields:
+            - GAUGE
+          tags:
+            hostname: '*'
+    - title: Pool capacity
+      line_label: '%hostname%'
+      metrics:
+        - name: puma_pool_capacity
+          fields:
+            - GAUGE
+          tags:
+            hostname: '*'
+    - title: Puma worker info
+      line_label: '%type% - %hostname%'
+      metrics:
+        - name: puma_workers
+          fields:
+            - GAUGE
+          tags:
+            hostname: '*'
+            type: '*'
