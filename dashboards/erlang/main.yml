@@ -7,7 +7,7 @@ dashboard:
   graphs:
     -
       title: IO
-      line_label: '%kind% - %hostname%'
+      line_label: '%type% - %hostname%'
       metrics:
         - name: erlang_io
           fields:
@@ -17,7 +17,7 @@ dashboard:
             hostname: "*"
     -
       title: Schedulers
-      line_label: '%kind% - %hostname%'
+      line_label: '%type% - %hostname%'
       metrics:
         - name: erlang_schedulers
           fields:
@@ -27,7 +27,7 @@ dashboard:
             hostname: "*"
     -
       title: Processes
-      line_label: '%kind% - %hostname%'
+      line_label: '%type% - %hostname%'
       metrics:
         - name: erlang_processes
           fields:
@@ -37,7 +37,7 @@ dashboard:
             hostname: "*"
     -
       title: memory
-      line_label: '%kind% - %hostname%'
+      line_label: '%type% - %hostname%'
       metrics:
         - name: erlang_memory
           fields:
