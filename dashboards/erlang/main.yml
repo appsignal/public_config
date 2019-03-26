@@ -7,37 +7,41 @@ dashboard:
   graphs:
     -
       title: IO
-      line_label: '%kind%'
+      line_label: '%kind% - %hostname%'
       metrics:
         - name: erlang_io
           fields:
             - GAUGE
           tags:
             type: "*"
+            hostname: "*"
     -
       title: Schedulers
-      line_label: '%kind%'
+      line_label: '%kind% - %hostname%'
       metrics:
         - name: erlang_schedulers
           fields:
             - GAUGE
           tags:
             type: "*"
+            hostname: "*"
     -
       title: Processes
-      line_label: '%kind%'
+      line_label: '%kind% - %hostname%'
       metrics:
         - name: erlang_processes
           fields:
             - GAUGE
           tags:
             type: "*"
+            hostname: "*"
     -
       title: memory
-      line_label: '%kind%'
+      line_label: '%kind% - %hostname%'
       metrics:
         - name: erlang_memory
           fields:
             - GAUGE
           tags:
             type: "*"
+            hostname: "*"
