@@ -37,7 +37,7 @@ dashboard:
           fields:
             - COUNT
           tags:
-            namespace: '*'
+            namespace: 'background'
             action: '*'
     -
       title: 'Duration per job'
@@ -48,7 +48,7 @@ dashboard:
           fields:
             - MEAN
           tags:
-            namespace: '*'
+            namespace: 'background'
             action: '*'
     -
       title: 'Queue length'
