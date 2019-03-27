@@ -57,7 +57,7 @@ dashboard:
       metrics:
         - name: sidekiq_queue_length
           fields:
-            - COUNTER
+            - GAUGE
           tags:
             queue: '*'
             hostname: '*'
@@ -68,7 +68,7 @@ dashboard:
       metrics:
         - name: sidekiq_queue_latency
           fields:
-            - MEAN
+            - GAUGE
           tags:
             queue: '*'
             hostname: '*'
