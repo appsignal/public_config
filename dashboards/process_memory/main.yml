@@ -2,6 +2,7 @@ metric_keys:
   - process_rss
 dashboard:
   title: Process memory usage
+  description: RSS memory usage of your processes split out per host and process type.
   graphs:
     - title: Average memory usage
       description: >-
