@@ -8,6 +8,7 @@ dashboard:
     and what the used/available concurrency is for those workers.
   graphs:
     - title: Threads running/max/idle
+      description: Counted over all workers, if running multiple processes.
       line_label: '%type% - %hostname%'
       metrics:
         - name: puma_threads
@@ -35,6 +36,7 @@ dashboard:
           tags:
             hostname: '*'
     - title: Puma worker info
+      description: Number of workers, old workers are still running old code after a deploy and should eventually be replaced with fresh workers running new code.
       line_label: '%type% - %hostname%'
       metrics:
         - name: puma_workers
