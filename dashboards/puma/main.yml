@@ -17,6 +17,7 @@ dashboard:
             hostname: '*'
             type: "*"
     - title: Connection backlog
+      description: Number of established but unaccepted connections that are in the server backlog queue and still need to be processed.
       line_label: '%hostname%'
       metrics:
         - name: puma_connection_backlog
@@ -25,6 +26,7 @@ dashboard:
           tags:
             hostname: '*'
     - title: Pool capacity
+      description: Total thread pool capacity of the Puma server, including the number of threads that are waiting to be booted.
       line_label: '%hostname%'
       metrics:
         - name: puma_pool_capacity
