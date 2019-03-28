@@ -1,0 +1,33 @@
+metric_keys:
+  - process_rss
+dashboard:
+  title: Process memory usage
+  graphs:
+    - title: Average memory usage
+      description: >-
+        Average RSS memory usage of your processes split out per host and process
+        type.
+      line_label: '%process_name% - %hostname%'
+      format: size
+      format_input: kilobyte
+      metrics:
+        - name: process_rss
+          fields:
+            - MEAN
+          tags:
+            hostname: '*'
+            process_name: '*'
+    - title: 95th percentile memory usage
+      description: >-
+        95th percentile RSS memory usage of your processes split out per host and
+        process type.
+      line_label: '%process_name% - %hostname%'
+      format: size
+      format_input: kilobyte
+      metrics:
+        - name: process_rss
+          fields:
+            - P95
+          tags:
+            hostname: '*'
+            process_name: '*'
