@@ -8,7 +8,7 @@ dashboard:
     and what the used/available concurrency is for those workers.
   graphs:
     - title: Threads running/max/idle
-      description: Counted over all workers, if running multiple processes.
+      description: Number of threads per type counted over all workers, if running multiple processes.
       line_label: '%type% - %hostname%'
       metrics:
         - name: puma_threads
