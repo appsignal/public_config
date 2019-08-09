@@ -32,7 +32,7 @@ dashboard:
     - title: Index Cache Hit Rate
       description: Ratio of index lookups served from shared buffer cache, rounded to five decimal points. Heroku recommends a value of 0.98 or greater if possible. If your index hit rate is consistently less than 0.98, you should investigate your Expensive Queries or you may need to upgrade your database plan for more RAM.
       line_label: '%source%'
-      format: percent
+      format: number
       draw_null_as_zero: false
       metrics:
         - name: index_cache_hit_rate
@@ -44,7 +44,7 @@ dashboard:
     - title: Table Cache Hit Rate
       description: Ratio of table lookups served from shared buffer cache, rounded to five decimal points. Heroku recommends a value of 0.98 or greater if possible. If your table hit rate is consistently less than 0.98, you may need to upgrade your database plan for more RAM.
       line_label: '%source%'
-      format: percent
+      format: number
       draw_null_as_zero: false
       metrics:
         - name: table_cache_hit_rate
