@@ -4,7 +4,7 @@ dashboard:
   title: Sidekiq
   description: |
     This dashboard gives an overview of the overall Sidekiq status.
-    Checkout queue lengths, throughput/performance per job,
+    Checkout queue lengths, throughput/performance per worker,
     process/connection counts and memory used in Redis.
   graphs:
     -
@@ -29,7 +29,7 @@ dashboard:
             queue: '*'
             status: '*'
     -
-      title: 'Throughput per job'
+      title: 'Throughput per worker'
       line_label: '%name% - %namespace% - %action%'
       format: number
       metrics:
@@ -40,7 +40,7 @@ dashboard:
             namespace: 'background'
             action: '*'
     -
-      title: 'Duration per job'
+      title: 'Duration per worker'
       line_label: '%name% - %namespace% - %action%'
       format: duration
       metrics:
