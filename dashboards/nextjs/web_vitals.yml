@@ -1,0 +1,70 @@
+metric_keys:
+  - nextjs_webvital_ttfb
+  - nextjs_webvital_fcp
+  - nextjs_webvital_lcp
+  - nextjs_webvital_fid
+  - nextjs_webvital_cls
+dashboard:
+  title: Next.js Web Vitals (Experimental)
+  description: >
+    The Next.js Web Vitals dashboard gives an overview of Web Vitals metrics sent from the client side of a Next.js application.
+  graphs:
+    - title: Time to First Byte (TTFB)
+      description: >-
+        Time between the browser requesting a page and when it receives the first byte of information from the server.
+      line_label: '%name% %field%'
+      display: LINE
+      format: duration
+      metrics:
+        - name: nextjs_webvital_ttfb
+          fields:
+            - MEAN
+            - P90
+            - P95
+    - title: First Contentful Paint (FCP)
+      description: >-
+        Duration before the browser renders the first bit of content from the DOM.
+      line_label: '%name% %field%'
+      display: LINE
+      format: duration
+      metrics:
+        - name: nextjs_webvital_fcp
+          fields:
+            - MEAN
+            - P90
+            - P95
+    - title: Largest Contentful Paint (LCP)
+      description: >-
+        The point in time in the page load timeline when the page's main content has likely loaded.
+      line_label: '%name% %field%'
+      display: LINE
+      format: duration
+      metrics:
+        - name: nextjs_webvital_lcp
+          fields:
+            - MEAN
+            - P90
+            - P95
+    - title: First Input Delay (FID)
+      description: >-
+        Time from when a user first interacts with a page to the time when the browser is actually able to respond to that interaction.
+      line_label: '%name% %field%'
+      display: LINE
+      format: duration
+      metrics:
+        - name: nextjs_webvital_fid
+          fields:
+            - MEAN
+            - P90
+            - P95
+    - title: Cumulative Layout Shift (CLS)
+      description: Quantifies how often users experience unexpected layout shifts
+      line_label: '%name% %field%'
+      display: LINE
+      format: number
+      metrics:
+        - name: nextjs_webvital_cls
+          fields:
+            - MEAN
+            - P90
+            - P95
