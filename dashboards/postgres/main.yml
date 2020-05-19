@@ -1,0 +1,56 @@
+metric_keys:
+  - postgres_query_duration
+  - postgres_pool_total
+  - postgres_pool_idle
+  - postgres_pool_waiting
+dashboard:
+  title: PostgresDB
+  description: |
+    The PostgresDB dashboard gives an overview of query duration per database.
+  graphs:
+    - title: PostgresDB Database Throughput
+      line_label: '%database%'
+      format: number
+      metrics:
+        - name: postgres_query_duration
+          fields:
+            - COUNT
+          tags:
+            database: '*'
+    - title: PostgresDB Database Query Duration Mean
+      line_label: '%database%'
+      format: duration
+      metrics:
+        - name: postgres_query_duration
+          fields:
+            - MEAN
+          tags:
+            database: '*'
+    - title: PostgresDB Database Query Duration 95th Percentile
+      line_label: '%database%'
+      format: duration
+      metrics:
+        - name: postgres_query_duration
+          fields:
+            - P95
+          tags:
+            database: '*'
+    - title: PostgresDB Pool Count
+      line_label: '%database%'
+      format: number
+      metrics:
+        - name: postgres_pool_total
+          fields:
+            - GAUGE
+          tags:
+            database: '*'
+        - name: postgres_pool_idle
+          fields:
+            - GAUGE
+          tags:
+            database: '*'
+        - name: postgres_pool_waiting
+          fields:
+            - GAUGE
+          tags:
+            database: '*'
