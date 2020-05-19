@@ -1,7 +1,7 @@
 metric_keys:
   - nextjs_render_time
 dashboard:
-  title: Next.js (Experimental)
+  title: Next.js
   description: >
     The Next.js dashboard gives an overview of metrics sent from the client side of a Next.js application.
   graphs:
