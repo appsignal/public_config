@@ -1,9 +1,5 @@
 metric_keys:
-  - webvital_ttfb
   - webvital_fcp
-  - webvital_lcp
-  - webvital_fid
-  - webvital_cls
 dashboard:
   title: Web Vitals
   description: >
