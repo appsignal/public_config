@@ -9,7 +9,6 @@ dashboard:
       description: >-
         Time between the browser requesting a page and when it receives the first byte of information from the server.
       line_label: '%name% %field%'
-      display: LINE
       format: duration
       metrics:
         - name: webvital_ttfb
@@ -21,7 +20,6 @@ dashboard:
       description: >-
         Duration before the browser renders the first bit of content from the DOM.
       line_label: '%name% %field%'
-      display: LINE
       format: duration
       metrics:
         - name: webvital_fcp
@@ -33,7 +31,6 @@ dashboard:
       description: >-
         The point in time in the page load timeline when the page's main content has likely loaded.
       line_label: '%name% %field%'
-      display: LINE
       format: duration
       metrics:
         - name: webvital_lcp
@@ -45,7 +42,6 @@ dashboard:
       description: >-
         Time from when a user first interacts with a page to the time when the browser is actually able to respond to that interaction.
       line_label: '%name% %field%'
-      display: LINE
       format: duration
       metrics:
         - name: webvital_fid
@@ -56,7 +52,6 @@ dashboard:
     - title: Cumulative Layout Shift (CLS)
       description: Quantifies how often users experience unexpected layout shifts
       line_label: '%name% %field%'
-      display: LINE
       format: number
       metrics:
         - name: webvital_cls
