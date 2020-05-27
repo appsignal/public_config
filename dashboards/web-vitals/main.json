@@ -1,0 +1,126 @@
+{
+  "metric_keys": [
+    "webvital_fcp"
+  ],
+  "dashboard": {
+    "title": "Web Vitals",
+    "description": "The Web Vitals dashboard gives an overview of Web Vitals metrics sent from the client side of a JavaScript application.\n",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "title": "Time to First Byte (TTFB)",
+        "description": "Time between the browser requesting a page and when it receives the first byte of information from the server.",
+        "line_label": "%name% %field%",
+        "format": "duration",
+        "metrics": [
+          {
+            "name": "webvital_ttfb",
+            "fields": [
+              {
+                "field": "mean"
+              },
+              {
+                "field": "p90"
+              },
+              {
+                "field": "p95"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "title": "First Contentful Paint (FCP)",
+        "description": "Duration before the browser renders the first bit of content from the DOM.",
+        "line_label": "%name% %field%",
+        "format": "duration",
+        "metrics": [
+          {
+            "name": "webvital_fcp",
+            "fields": [
+              {
+                "field": "mean"
+              },
+              {
+                "field": "p90"
+              },
+              {
+                "field": "p95"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "title": "Largest Contentful Paint (LCP)",
+        "description": "The point in time in the page load timeline when the page's main content has likely loaded.",
+        "line_label": "%name% %field%",
+        "format": "duration",
+        "metrics": [
+          {
+            "name": "webvital_lcp",
+            "fields": [
+              {
+                "field": "mean"
+              },
+              {
+                "field": "p90"
+              },
+              {
+                "field": "p95"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "title": "First Input Delay (FID)",
+        "description": "Time from when a user first interacts with a page to the time when the browser is actually able to respond to that interaction.",
+        "line_label": "%name% %field%",
+        "format": "duration",
+        "metrics": [
+          {
+            "name": "webvital_fid",
+            "fields": [
+              {
+                "field": "mean"
+              },
+              {
+                "field": "p90"
+              },
+              {
+                "field": "p95"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "title": "Cumulative Layout Shift (CLS)",
+        "description": "Quantifies how often users experience unexpected layout shifts",
+        "line_label": "%name% %field%",
+        "format": "number",
+        "metrics": [
+          {
+            "name": "webvital_cls",
+            "fields": [
+              {
+                "field": "mean"
+              },
+              {
+                "field": "p90"
+              },
+              {
+                "field": "p95"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

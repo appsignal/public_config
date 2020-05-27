@@ -1,0 +1,55 @@
+{
+  "metric_keys": [
+    "process_rss"
+  ],
+  "dashboard": {
+    "title": "Process memory usage",
+    "description": "RSS memory usage of your processes split out per host and process type.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "title": "Average memory usage",
+        "description": "Average RSS memory usage of your processes split out per host and process type.",
+        "line_label": "%process_name% - %hostname%",
+        "format": "size",
+        "format_input": "kilobyte",
+        "metrics": [
+          {
+            "name": "process_rss",
+            "fields": [
+              {
+                "field": "mean"
+              }
+            ],
+            "tags": {
+              "hostname": "*",
+              "process_name": "*"
+            }
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "title": "95th percentile memory usage",
+        "description": "95th percentile RSS memory usage of your processes split out per host and process type.",
+        "line_label": "%process_name% - %hostname%",
+        "format": "size",
+        "format_input": "kilobyte",
+        "metrics": [
+          {
+            "name": "process_rss",
+            "fields": [
+              {
+                "field": "p95"
+              }
+            ],
+            "tags": {
+              "hostname": "*",
+              "process_name": "*"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
