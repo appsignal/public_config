@@ -8,6 +8,7 @@
     "visuals": [
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Average memory usage",
         "description": "Average RSS memory usage of your processes split out per host and process type.",
         "line_label": "%process_name% - %hostname%",
@@ -30,6 +31,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "95th percentile memory usage",
         "description": "95th percentile RSS memory usage of your processes split out per host and process type.",
         "line_label": "%process_name% - %hostname%",

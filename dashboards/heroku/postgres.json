@@ -8,6 +8,7 @@
     "visuals": [
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Database Size",
         "description": "The number of bytes contained in the database. This includes all table and index data on disk, including database bloat.",
         "line_label": "%source%",
@@ -31,6 +32,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Tables",
         "description": "The number of tables in the database.",
         "line_label": "%source%",
@@ -53,6 +55,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Index Cache Hit Rate",
         "description": "Ratio of index lookups served from shared buffer cache, rounded to five decimal points. Heroku recommends a value of 0.98 or greater if possible. If your index hit rate is consistently less than 0.98, you should investigate your Expensive Queries or you may need to upgrade your database plan for more RAM.",
         "line_label": "%source%",
@@ -75,6 +78,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Table Cache Hit Rate",
         "description": "Ratio of table lookups served from shared buffer cache, rounded to five decimal points. Heroku recommends a value of 0.98 or greater if possible. If your table hit rate is consistently less than 0.98, you may need to upgrade your database plan for more RAM.",
         "line_label": "%source%",
@@ -97,6 +101,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Active Connections",
         "description": "The number of connections established on the database.",
         "line_label": "%source%",
@@ -119,6 +124,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Waiting Connections",
         "description": "Number of connections waiting on a lock to be acquired. If many connections are waiting, this can be a sign of mishandled database concurrency.",
         "line_label": "%source%",
@@ -141,6 +147,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Memory",
         "description": "Approximate amount of memory used by your database’s Postgres processes in kB. This includes shared buffer cache as well as memory for each connection.",
         "line_label": "%source%",
@@ -165,6 +172,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Database server Load average",
         "description": "Average load on the system over a period of 1 minute",
         "line_label": "%source%",
@@ -187,6 +195,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Database server I/O",
         "description": "Number of read/write operations in I/O sizes of 16KB blocks",
         "line_label": "%source% - %name%",
@@ -221,6 +230,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Database server memory",
         "description": "Server memory in use/free/cached",
         "line_label": "%source% - %state%",

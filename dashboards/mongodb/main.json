@@ -8,6 +8,7 @@
     "visuals": [
       {
         "type": "timeseries",
+        "display": "line",
         "title": "MongoDB Database Throughput",
         "line_label": "%database%",
         "format": "number",
@@ -27,6 +28,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "MongoDB Database Query Duration Mean",
         "line_label": "%database%",
         "format": "duration",
@@ -46,6 +48,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "MongoDB Database Query Duration 95th Percentile",
         "line_label": "%database%",
         "format": "duration",

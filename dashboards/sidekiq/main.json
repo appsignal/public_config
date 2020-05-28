@@ -8,6 +8,7 @@
     "visuals": [
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Overall job status",
         "line_label": "%name% - %hostname% - %status%",
         "metrics": [
@@ -27,6 +28,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Job status per queue",
         "line_label": "%name% - %queue% - %status%",
         "format": "number",
@@ -47,6 +49,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Throughput per worker",
         "line_label": "%name% - %namespace% - %action%",
         "format": "number",
@@ -67,6 +70,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Duration per worker",
         "line_label": "%name% - %namespace% - %action%",
         "format": "duration",
@@ -87,6 +91,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Queue length",
         "line_label": "%name% - %hostname% - %queue%",
         "format": "number",
@@ -107,6 +112,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Queue latency",
         "line_label": "%name% - %hostname% - %queue%",
         "format": "duration",
@@ -127,6 +133,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Worker / Processes count",
         "line_label": "%name% - %hostname%",
         "format": "number",
@@ -157,6 +164,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Connection count",
         "line_label": "%name% - %hostname%",
         "format": "number",
@@ -176,6 +184,7 @@
       },
       {
         "type": "timeseries",
+        "display": "line",
         "title": "Memory usage",
         "line_label": "%name% - %hostname%",
         "format": "size",
