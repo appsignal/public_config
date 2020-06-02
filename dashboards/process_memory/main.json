@@ -22,10 +22,16 @@
                 "field": "mean"
               }
             ],
-            "tags": {
-              "hostname": "*",
-              "process_name": "*"
-            }
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              },
+              {
+                "key": "process_name",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -45,10 +51,16 @@
                 "field": "p95"
               }
             ],
-            "tags": {
-              "hostname": "*",
-              "process_name": "*"
-            }
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              },
+              {
+                "key": "process_name",
+                "value": "*"
+              }
+            ]
           }
         ]
       }

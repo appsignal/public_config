@@ -19,10 +19,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "type": "*",
-              "hostname": "*"
-            }
+            "tags": [
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -39,10 +45,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "type": "*",
-              "hostname": "*"
-            }
+            "tags": [
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -59,10 +71,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "type": "*",
-              "hostname": "*"
-            }
+            "tags": [
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -81,10 +99,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "type": "*",
-              "hostname": "*"
-            }
+            "tags": [
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ]
       }

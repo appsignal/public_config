@@ -20,9 +20,12 @@
                 "field": "count"
               }
             ],
-            "tags": {
-              "database": "*"
-            }
+            "tags": [
+              {
+                "key": "database",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -40,9 +43,12 @@
                 "field": "mean"
               }
             ],
-            "tags": {
-              "database": "*"
-            }
+            "tags": [
+              {
+                "key": "database",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -60,9 +66,12 @@
                 "field": "p95"
               }
             ],
-            "tags": {
-              "database": "*"
-            }
+            "tags": [
+              {
+                "key": "database",
+                "value": "*"
+              }
+            ]
           }
         ]
       }

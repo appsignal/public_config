@@ -19,10 +19,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "status": "*",
-              "hostname": "*"
-            }
+            "tags": [
+              {
+                "key": "status",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -40,10 +46,16 @@
                 "field": "counter"
               }
             ],
-            "tags": {
-              "queue": "*",
-              "status": "*"
-            }
+            "tags": [
+              {
+                "key": "queue",
+                "value": "*"
+              },
+              {
+                "key": "status",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -61,10 +73,16 @@
                 "field": "count"
               }
             ],
-            "tags": {
-              "namespace": "background",
-              "action": "*"
-            }
+            "tags": [
+              {
+                "key": "namespace",
+                "value": "background"
+              },
+              {
+                "key": "action",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -82,10 +100,16 @@
                 "field": "mean"
               }
             ],
-            "tags": {
-              "namespace": "background",
-              "action": "*"
-            }
+            "tags": [
+              {
+                "key": "namespace",
+                "value": "background"
+              },
+              {
+                "key": "action",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -103,10 +127,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "queue": "*",
-              "hostname": "*"
-            }
+            "tags": [
+              {
+                "key": "queue",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -124,10 +154,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "queue": "*",
-              "hostname": "*"
-            }
+            "tags": [
+              {
+                "key": "queue",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -145,9 +181,12 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "hostname": "*"
-            }
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           },
           {
             "name": "sidekiq_process_count",
@@ -156,9 +195,12 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "hostname": "*"
-            }
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -176,9 +218,12 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "hostname": "*"
-            }
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -197,9 +242,12 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "hostname": "*"
-            }
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           },
           {
             "name": "sidekiq_memory_usage_rss",
@@ -208,9 +256,12 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "hostname": "*"
-            }
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ]
       }

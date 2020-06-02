@@ -23,10 +23,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "addon": "*",
-              "source": "*"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -46,10 +52,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "addon": "*",
-              "source": "*"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -69,10 +81,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "addon": "*",
-              "source": "*"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -92,10 +110,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "addon": "*",
-              "source": "*"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -115,10 +139,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "addon": "*",
-              "source": "*"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -138,10 +168,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "addon": "*",
-              "source": "*"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -162,11 +198,20 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "addon": "*",
-              "source": "*",
-              "state": "postgres"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              },
+              {
+                "key": "state",
+                "value": "postgres"
+              }
+            ]
           }
         ]
       },
@@ -186,10 +231,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "source": "*",
-              "addon": "*"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -209,10 +260,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "source": "*",
-              "addon": "*"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
           },
           {
             "name": "write_iops",
@@ -221,10 +278,16 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "source": "*",
-              "addon": "*"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -244,11 +307,20 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "addon": "*",
-              "source": "*",
-              "state": "total"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              },
+              {
+                "key": "state",
+                "value": "total"
+              }
+            ]
           },
           {
             "name": "memory",
@@ -257,11 +329,20 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "addon": "*",
-              "source": "*",
-              "state": "free"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              },
+              {
+                "key": "state",
+                "value": "free"
+              }
+            ]
           },
           {
             "name": "memory",
@@ -270,11 +351,20 @@
                 "field": "gauge"
               }
             ],
-            "tags": {
-              "addon": "*",
-              "source": "*",
-              "state": "cached"
-            }
+            "tags": [
+              {
+                "key": "addon",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              },
+              {
+                "key": "state",
+                "value": "cached"
+              }
+            ]
           }
         ]
       }
