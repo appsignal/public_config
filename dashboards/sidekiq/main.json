@@ -1,0 +1,270 @@
+{
+  "metric_keys": [
+    "sidekiq_job_count"
+  ],
+  "dashboard": {
+    "title": "Sidekiq",
+    "description": "This dashboard gives an overview of the overall Sidekiq status.\nCheckout queue lengths, throughput/performance per worker,\nprocess/connection counts and memory used in Redis.\n",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Overall job status",
+        "line_label": "%name% - %hostname% - %status%",
+        "metrics": [
+          {
+            "name": "sidekiq_job_count",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "status",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Job status per queue",
+        "line_label": "%name% - %queue% - %status%",
+        "format": "number",
+        "metrics": [
+          {
+            "name": "sidekiq_queue_job_count",
+            "fields": [
+              {
+                "field": "counter"
+              }
+            ],
+            "tags": [
+              {
+                "key": "queue",
+                "value": "*"
+              },
+              {
+                "key": "status",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Throughput per worker",
+        "line_label": "%name% - %namespace% - %action%",
+        "format": "number",
+        "metrics": [
+          {
+            "name": "transaction_duration",
+            "fields": [
+              {
+                "field": "count"
+              }
+            ],
+            "tags": [
+              {
+                "key": "namespace",
+                "value": "background"
+              },
+              {
+                "key": "action",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Duration per worker",
+        "line_label": "%name% - %namespace% - %action%",
+        "format": "duration",
+        "metrics": [
+          {
+            "name": "transaction_duration",
+            "fields": [
+              {
+                "field": "mean"
+              }
+            ],
+            "tags": [
+              {
+                "key": "namespace",
+                "value": "background"
+              },
+              {
+                "key": "action",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Queue length",
+        "line_label": "%name% - %hostname% - %queue%",
+        "format": "number",
+        "metrics": [
+          {
+            "name": "sidekiq_queue_length",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "queue",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Queue latency",
+        "line_label": "%name% - %hostname% - %queue%",
+        "format": "duration",
+        "metrics": [
+          {
+            "name": "sidekiq_queue_latency",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "queue",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Worker / Processes count",
+        "line_label": "%name% - %hostname%",
+        "format": "number",
+        "metrics": [
+          {
+            "name": "sidekiq_worker_count",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "sidekiq_process_count",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Connection count",
+        "line_label": "%name% - %hostname%",
+        "format": "number",
+        "metrics": [
+          {
+            "name": "sidekiq_connection_count",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Memory usage",
+        "line_label": "%name% - %hostname%",
+        "format": "size",
+        "format_input": "byte",
+        "metrics": [
+          {
+            "name": "sidekiq_memory_usage",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "sidekiq_memory_usage_rss",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

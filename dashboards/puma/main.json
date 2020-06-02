@@ -1,0 +1,111 @@
+{
+  "metric_keys": [
+    "puma_threads"
+  ],
+  "dashboard": {
+    "title": "Puma metrics",
+    "description": "Track Puma workers on this dashboard,\nsee how many worker processes are running\nand what the used/available concurrency is for those workers.\n",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Threads running/max/idle",
+        "description": "Number of threads per type counted over all workers, if running multiple processes.",
+        "line_label": "%type% - %hostname%",
+        "metrics": [
+          {
+            "name": "puma_threads",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              },
+              {
+                "key": "type",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Connection backlog",
+        "description": "Number of established but unaccepted connections that are in the server backlog queue and still need to be processed.",
+        "line_label": "%hostname%",
+        "metrics": [
+          {
+            "name": "puma_connection_backlog",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Pool capacity",
+        "description": "Total thread pool capacity of the Puma server, including the number of threads that are waiting to be booted.",
+        "line_label": "%hostname%",
+        "metrics": [
+          {
+            "name": "puma_pool_capacity",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Puma worker info",
+        "description": "Number of workers per type. Old workers are still running old code after a deploy and should eventually be replaced with fresh workers running new code.",
+        "line_label": "%type% - %hostname%",
+        "metrics": [
+          {
+            "name": "puma_workers",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              },
+              {
+                "key": "type",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "metric_keys": [
+    "erlang_io"
+  ],
+  "dashboard": {
+    "title": "Erlang",
+    "description": "This dashboard gives an overview of the overall Erlang stats.\n",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "IO",
+        "line_label": "%type% - %hostname%",
+        "metrics": [
+          {
+            "name": "erlang_io",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Schedulers",
+        "line_label": "%type% - %hostname%",
+        "metrics": [
+          {
+            "name": "erlang_schedulers",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Processes",
+        "line_label": "%type% - %hostname%",
+        "metrics": [
+          {
+            "name": "erlang_processes",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "memory",
+        "line_label": "%type% - %hostname%",
+        "format": "size",
+        "format_input": "kilobyte",
+        "metrics": [
+          {
+            "name": "erlang_memory",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

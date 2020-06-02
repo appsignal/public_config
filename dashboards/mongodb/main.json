@@ -1,0 +1,80 @@
+{
+  "metric_keys": [
+    "mongodb_query_duration"
+  ],
+  "dashboard": {
+    "title": "MongoDB",
+    "description": "The MongoDB dashboard gives an overview of query duration per database.\n",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "MongoDB Database Throughput",
+        "line_label": "%database%",
+        "format": "number",
+        "metrics": [
+          {
+            "name": "mongodb_query_duration",
+            "fields": [
+              {
+                "field": "count"
+              }
+            ],
+            "tags": [
+              {
+                "key": "database",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "MongoDB Database Query Duration Mean",
+        "line_label": "%database%",
+        "format": "duration",
+        "metrics": [
+          {
+            "name": "mongodb_query_duration",
+            "fields": [
+              {
+                "field": "mean"
+              }
+            ],
+            "tags": [
+              {
+                "key": "database",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "MongoDB Database Query Duration 95th Percentile",
+        "line_label": "%database%",
+        "format": "duration",
+        "metrics": [
+          {
+            "name": "mongodb_query_duration",
+            "fields": [
+              {
+                "field": "p95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "database",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
