@@ -1,139 +1,22 @@
 {
   "metric_keys": [
-    "index_cache_hit_rate"
+    "redis_active_connections"
   ],
   "dashboard": {
-    "title": "Heroku Postgres",
-    "description": "Postgres metrics provided by the Heroku Log Drain. Shows database size, connections and index hit rates.",
+    "title": "Heroku Redis",
+    "description": "Redis metrics provided by the Heroku Log Drain. Shows active connections, hit rate, evicted keys and redis host metrics.",
     "visuals": [
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Database Size",
-        "description": "The number of bytes contained in the database. This includes all table and index data on disk, including database bloat.",
-        "line_label": "%source%",
-        "format": "size",
-        "format_input": "byte",
-        "draw_null_as_zero": false,
-        "metrics": [
-          {
-            "name": "db_size",
-            "fields": [
-              {
-                "field": "gauge"
-              }
-            ],
-            "tags": [
-              {
-                "key": "addon",
-                "value": "postgresql-*"
-              },
-              {
-                "key": "source",
-                "value": "*"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
-        "title": "Tables",
-        "description": "The number of tables in the database.",
-        "line_label": "%source%",
-        "format": "number",
-        "draw_null_as_zero": false,
-        "metrics": [
-          {
-            "name": "tables",
-            "fields": [
-              {
-                "field": "gauge"
-              }
-            ],
-            "tags": [
-              {
-                "key": "addon",
-                "value": "postgresql-*"
-              },
-              {
-                "key": "source",
-                "value": "*"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
-        "title": "Index Cache Hit Rate",
-        "description": "Ratio of index lookups served from shared buffer cache, rounded to five decimal points. Heroku recommends a value of 0.98 or greater if possible. If your index hit rate is consistently less than 0.98, you should investigate your Expensive Queries or you may need to upgrade your database plan for more RAM.",
-        "line_label": "%source%",
-        "format": "number",
-        "draw_null_as_zero": false,
-        "metrics": [
-          {
-            "name": "index_cache_hit_rate",
-            "fields": [
-              {
-                "field": "gauge"
-              }
-            ],
-            "tags": [
-              {
-                "key": "addon",
-                "value": "postgresql-*"
-              },
-              {
-                "key": "source",
-                "value": "*"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
-        "title": "Table Cache Hit Rate",
-        "description": "Ratio of table lookups served from shared buffer cache, rounded to five decimal points. Heroku recommends a value of 0.98 or greater if possible. If your table hit rate is consistently less than 0.98, you may need to upgrade your database plan for more RAM.",
-        "line_label": "%source%",
-        "format": "number",
-        "draw_null_as_zero": false,
-        "metrics": [
-          {
-            "name": "table_cache_hit_rate",
-            "fields": [
-              {
-                "field": "gauge"
-              }
-            ],
-            "tags": [
-              {
-                "key": "addon",
-                "value": "postgresql-*"
-              },
-              {
-                "key": "source",
-                "value": "*"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
         "title": "Active Connections",
-        "description": "The number of connections established on the database.",
+        "description": "The number of connections established on the Redis instance.",
         "line_label": "%source%",
         "format": "number",
         "draw_null_as_zero": false,
         "metrics": [
           {
-            "name": "active_connections",
+            "name": "redis_active_connections",
             "fields": [
               {
                 "field": "gauge"
@@ -142,7 +25,7 @@
             "tags": [
               {
                 "key": "addon",
-                "value": "postgresql-*"
+                "value": "redis-*"
               },
               {
                 "key": "source",
@@ -155,14 +38,14 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Waiting Connections",
-        "description": "Number of connections waiting on a lock to be acquired. If many connections are waiting, this can be a sign of mishandled database concurrency.",
+        "title": "Redis hit rate",
+        "description": "The ratio of successful reads out of all read operations, rounded to five decimal points.",
         "line_label": "%source%",
         "format": "number",
         "draw_null_as_zero": false,
         "metrics": [
           {
-            "name": "waiting_connections",
+            "name": "redis_hit_rate",
             "fields": [
               {
                 "field": "gauge"
@@ -171,7 +54,36 @@
             "tags": [
               {
                 "key": "addon",
-                "value": "postgresql-*"
+                "value": "redis-*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Redis evicted keys",
+        "description": "The number of evicted keys due to reaching your instance maxmemory limit.",
+        "line_label": "%source%",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "redis_evicted_keys",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "addon",
+                "value": "redis-*"
               },
               {
                 "key": "source",
@@ -185,7 +97,7 @@
         "type": "timeseries",
         "display": "line",
         "title": "Memory",
-        "description": "Approximate amount of memory used by your database’s Postgres processes in kB. This includes shared buffer cache as well as memory for each connection.",
+        "description": "Approximate amount of memory used by your Redis processes in kB. This includes shared buffer cache as well as memory for each connection.",
         "line_label": "%source%",
         "format": "size",
         "format_input": "kilobyte",
@@ -201,7 +113,7 @@
             "tags": [
               {
                 "key": "addon",
-                "value": "postgresql-*"
+                "value": "redis-*"
               },
               {
                 "key": "source",
@@ -209,7 +121,7 @@
               },
               {
                 "key": "state",
-                "value": "postgres"
+                "value": "redis"
               }
             ]
           }
@@ -218,7 +130,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Database server Load average",
+        "title": "Redis server Load average",
         "description": "Average load on the system over a period of 1 minute",
         "line_label": "%source%",
         "format": "number",
@@ -234,7 +146,7 @@
             "tags": [
               {
                 "key": "addon",
-                "value": "postgresql-*"
+                "value": "redis-*"
               },
               {
                 "key": "source",
@@ -247,7 +159,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Database server I/O",
+        "title": "Redis server I/O",
         "description": "Number of read/write operations in I/O sizes of 16KB blocks",
         "line_label": "%source% - %name%",
         "format": "number",
@@ -263,7 +175,7 @@
             "tags": [
               {
                 "key": "addon",
-                "value": "postgresql-*"
+                "value": "redis-*"
               },
               {
                 "key": "source",
@@ -281,7 +193,7 @@
             "tags": [
               {
                 "key": "addon",
-                "value": "postgresql-*"
+                "value": "redis-*"
               },
               {
                 "key": "source",
@@ -294,7 +206,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Database server memory",
+        "title": "Redis server memory",
         "description": "Server memory in use/free/cached",
         "line_label": "%source% - %state%",
         "format": "size",
@@ -310,7 +222,7 @@
             "tags": [
               {
                 "key": "addon",
-                "value": "postgresql-*"
+                "value": "redis-*"
               },
               {
                 "key": "source",
@@ -332,7 +244,7 @@
             "tags": [
               {
                 "key": "addon",
-                "value": "postgresql-*"
+                "value": "redis-*"
               },
               {
                 "key": "source",
@@ -354,7 +266,7 @@
             "tags": [
               {
                 "key": "addon",
-                "value": "postgresql-*"
+                "value": "redis-*"
               },
               {
                 "key": "source",
