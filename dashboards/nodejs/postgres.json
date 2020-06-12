@@ -1,0 +1,100 @@
+{
+  "metric_keys": [
+    "postgres_pool"
+  ],
+  "dashboard": {
+    "title": "Postgres",
+    "description": "",
+    "visuals": [
+      {
+        "title": "Postgres Query Duration",
+        "description": "Query duration per namespace",
+        "line_label": "%namespace% - %field%",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "span_group_duration",
+            "fields": [
+              {
+                "field": "MEAN"
+              },
+              {
+                "field": "P90"
+              },
+              {
+                "field": "P95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "group",
+                "value": "sql.postgres"
+              },
+              {
+                "key": "namespace",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Postgres Query Throughput",
+        "description": "Number of queries executed per namespace",
+        "line_label": "%namespace% - %field%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "span_group_duration",
+            "fields": [
+              {
+                "field": "COUNT"
+              }
+            ],
+            "tags": [
+              {
+                "key": "group",
+                "value": "sql.postgres"
+              },
+              {
+                "key": "namespace",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Postgres Pool",
+        "description": "Total, idle and waiting connections in the pool",
+        "line_label": "%field%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "postgres_pool",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "metric",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}
