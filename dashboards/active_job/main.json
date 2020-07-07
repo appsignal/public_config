@@ -1,0 +1,40 @@
+{
+  "metric_keys": [
+    "active_job_queue_job_count"
+  ],
+  "dashboard": {
+    "title": "Active Job",
+    "description": "This dashboard gives an overview of Active Job jobs. Checkout queue lengths and the status per job.",
+    "visuals": [
+      {
+        "title": "Overall job status",
+        "description": "Job status reported by Active Job",
+        "line_label": "%name% %queue%-%status%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "active_job_queue_job_count",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "queue",
+                "value": "*"
+              },
+              {
+                "key": "status",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}
