@@ -4,12 +4,12 @@
   ],
   "dashboard": {
     "title": "Active Job",
-    "description": "This dashboard gives an overview of Active Job jobs. Checkout queue lengths and the status per job.",
+    "description": "This dashboard gives an overview of Active Job jobs. View queue lengths and the status per queue and priority.",
     "visuals": [
       {
-        "title": "Overall job status",
-        "description": "Job status reported by Active Job",
-        "line_label": "%name% %queue%-%status%",
+        "title": "Job status per queue",
+        "description": "Processed and failed jobs per queue.",
+        "line_label": "%queue% queue - %status%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -24,6 +24,39 @@
             "tags": [
               {
                 "key": "queue",
+                "value": "*"
+              },
+              {
+                "key": "status",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Job status per queue with priority",
+        "description": "Processed and failed jobs per queue with priority.",
+        "line_label": "%queue% queue - priority %priority% - %status%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "active_job_queue_priority_job_count",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "queue",
+                "value": "*"
+              },
+              {
+                "key": "priority",
                 "value": "*"
               },
               {
