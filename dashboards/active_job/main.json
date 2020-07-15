@@ -37,7 +37,7 @@
       },
       {
         "title": "Job status per queue with priority",
-        "description": "Processed and failed jobs per queue with priority.",
+        "description": "Processed and failed jobs per queue with priority. This graph may be empty if the configured adapter does not support a priority system.",
         "line_label": "%queue% queue - priority %priority% - %status%",
         "display": "LINE",
         "format": "number",
@@ -67,6 +67,60 @@
           }
         ],
         "type": "timeseries"
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Throughput per job class",
+        "line_label": "%namespace% - %action%",
+        "format": "number",
+        "metrics": [
+          {
+            "name": "transaction_duration",
+            "fields": [
+              {
+                "field": "count"
+              }
+            ],
+            "tags": [
+              {
+                "key": "namespace",
+                "value": "background"
+              },
+              {
+                "key": "action",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Duration per job class",
+        "line_label": "%namespace% - %action%",
+        "format": "duration",
+        "metrics": [
+          {
+            "name": "transaction_duration",
+            "fields": [
+              {
+                "field": "mean"
+              }
+            ],
+            "tags": [
+              {
+                "key": "namespace",
+                "value": "background"
+              },
+              {
+                "key": "action",
+                "value": "*"
+              }
+            ]
+          }
+        ]
       }
     ]
   }
