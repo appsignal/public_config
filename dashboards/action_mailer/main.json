@@ -1,0 +1,69 @@
+{
+  "metric_keys": [
+    "action_mailer_process"
+  ],
+  "dashboard": {
+    "title": "ActionMailer metrics",
+    "description": "This dashboard shows ActionMailer metrics for all your mailers.",
+    "visuals": [
+      {
+        "title": "ActionMailer Deliveries",
+        "description": "Deliveries per mailer/action",
+        "line_label": "%mailer%#%action%",
+        "display": "LINE",
+        "format": "throughput",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "action_mailer_process",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "action",
+                "value": "*"
+              },
+              {
+                "key": "mailer",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "ActionMailer deliveries",
+        "description": "Deliveries per mailer/action, shown in percentage per minute.",
+        "line_label": "%mailer%#%action%",
+        "display": "AREA_RELATIVE",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "action_mailer_process",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "action",
+                "value": "*"
+              },
+              {
+                "key": "mailer",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}
