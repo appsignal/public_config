@@ -11,7 +11,7 @@
         "description": "Deliveries per mailer/action",
         "line_label": "%mailer%#%action%",
         "display": "LINE",
-        "format": "number",
+        "format": "throughput",
         "draw_null_as_zero": true,
         "metrics": [
           {
