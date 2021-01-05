@@ -1,0 +1,117 @@
+{
+  "metric_keys": [
+    "nodejs_total_heap_size"
+  ],
+  "dashboard": {
+    "title": "Node.js Heap Statistics",
+    "description": "",
+    "visuals": [
+      {
+        "title": "Heap",
+        "description": "V8 Heap Statistics",
+        "line_label": "%name%",
+        "display": "LINE",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "nodejs_total_heap_size",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": []
+          },
+          {
+            "name": "nodejs_total_heap_size_executable",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": []
+          },
+          {
+            "name": "nodejs_used_heap_size",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": []
+          },
+          {
+            "name": "nodejs_total_physical_size",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": []
+          },
+          {
+            "name": "nodejs_peak_malloced_memory",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": []
+          },
+          {
+            "name": "nodejs_malloced_memory",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": []
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Native Contexts",
+        "description": "The number of the top-level contexts currently active. Increase of this number over time indicates a memory leak.",
+        "line_label": "%name%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "nodejs_number_of_native_contexts",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": []
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Detached Contexts",
+        "description": "The number of contexts that were detached and not yet garbage collected. This number being non-zero indicates a potential memory leak.",
+        "line_label": "%name%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "nodejs_number_of_detached_contexts",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": []
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}
