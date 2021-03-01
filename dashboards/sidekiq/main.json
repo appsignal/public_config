@@ -230,7 +230,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Memory usage",
+        "title": "Redis memory usage",
         "line_label": "%name% - %hostname%",
         "format": "size",
         "format_input": "byte",
