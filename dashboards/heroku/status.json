@@ -1,0 +1,59 @@
+{
+  "metric_keys": [
+    "heroku_status"
+  ],
+  "dashboard": {
+    "title": "Heroku Status",
+    "description": "Heroku status codes grouped by response code range (2xx, 3xx, 4xx and 5xx)",
+    "visuals": [
+      {
+        "title": "Heroku status codes",
+        "line_label": "%name% %code%",
+        "display": "LINE",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "heroku_status",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "code",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Heroku status codes",
+        "description": "Status codes shown as a percentage of the total request count.",
+        "line_label": "%name% %code%",
+        "display": "AREA_RELATIVE",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "heroku_status",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "code",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}
