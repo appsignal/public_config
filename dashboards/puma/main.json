@@ -60,7 +60,7 @@
         "type": "timeseries",
         "display": "line",
         "title": "Pool capacity",
-        "description": "Total thread pool capacity of the Puma server, including the number of threads that are waiting to be booted.",
+        "description": "Total thread pool availablity of the Puma server. How many idle threads are ready to receive requests.",
         "line_label": "%hostname%",
         "metrics": [
           {
