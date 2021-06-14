@@ -111,6 +111,35 @@
             ]
           }
         ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Atom usage",
+        "description": "Usage of atoms in Erlang and the configured limit.",
+        "line_label": "%type% - %hostname%",
+        "format": "size",
+        "format_input": "kilobyte",
+        "metrics": [
+          {
+            "name": "erlang_atoms",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
       }
     ]
   }
