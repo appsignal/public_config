@@ -140,6 +140,38 @@
             ]
           }
         ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Scheduler utilization",
+        "description": "Load distribution for Erlang schedulers.",
+        "line_label": "%type% #%id% - %hostname%",
+        "format": "percent",
+        "metrics": [
+          {
+            "name": "erlang_scheduler_utilization",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              },
+              {
+                "key": "id",
+                "value": "*"
+              },
+              {
+                "key": "type",
+                "value": "scheduler"
+              }
+            ]
+          }
+        ]
       }
     ]
   }
