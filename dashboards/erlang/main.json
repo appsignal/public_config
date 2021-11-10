@@ -167,7 +167,7 @@
               },
               {
                 "key": "type",
-                "value": "scheduler"
+                "value": "normal"
               }
             ]
           }
