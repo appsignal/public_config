@@ -172,6 +172,33 @@
             ]
           }
         ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Run queue length",
+        "description": "Total for all schedulers, by type.",
+        "line_label": "%type% - %hostname%",
+        "metrics": [
+          {
+            "name": "total_run_queue_lengths",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ]
       }
     ]
   }
