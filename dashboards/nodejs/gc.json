@@ -9,7 +9,7 @@
       {
         "title": "Heap",
         "description": "V8 Heap Statistics",
-        "line_label": "%name%",
+        "line_label": "%name% - %hostname%",
         "display": "LINE",
         "format": "size",
         "format_input": "byte",
@@ -22,7 +22,12 @@
                 "field": "GAUGE"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           },
           {
             "name": "nodejs_total_heap_size_executable",
@@ -31,7 +36,12 @@
                 "field": "GAUGE"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           },
           {
             "name": "nodejs_used_heap_size",
@@ -40,7 +50,12 @@
                 "field": "GAUGE"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           },
           {
             "name": "nodejs_total_physical_size",
@@ -49,16 +64,12 @@
                 "field": "GAUGE"
               }
             ],
-            "tags": []
-          },
-          {
-            "name": "nodejs_peak_malloced_memory",
-            "fields": [
+            "tags": [
               {
-                "field": "GAUGE"
+                "key": "hostname",
+                "value": "*"
               }
-            ],
-            "tags": []
+            ]
           },
           {
             "name": "nodejs_malloced_memory",
@@ -67,7 +78,12 @@
                 "field": "GAUGE"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ],
         "type": "timeseries"
@@ -75,7 +91,7 @@
       {
         "title": "Native Contexts",
         "description": "The number of the top-level contexts currently active. Increase of this number over time indicates a memory leak.",
-        "line_label": "%name%",
+        "line_label": "%name% - %hostname%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -87,7 +103,12 @@
                 "field": "GAUGE"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ],
         "type": "timeseries"
@@ -95,7 +116,7 @@
       {
         "title": "Detached Contexts",
         "description": "The number of contexts that were detached and not yet garbage collected. This number being non-zero indicates a potential memory leak.",
-        "line_label": "%name%",
+        "line_label": "%name% - %hostname%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -107,7 +128,12 @@
                 "field": "GAUGE"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ],
         "type": "timeseries"
