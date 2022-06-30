@@ -3,7 +3,7 @@
     "total_allocated_objects"
   ],
   "dashboard": {
-    "title": "MRI",
+    "title": "Ruby (VM) metrics",
     "description": "A dashboard showing GC and VM statistics for MRI.",
     "visuals": [
       {
