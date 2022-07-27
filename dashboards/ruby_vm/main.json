@@ -7,15 +7,15 @@
     "description": "A dashboard showing GC and VM statistics for MRI.",
     "visuals": [
       {
-        "title": "Total Allocated Objects",
-        "description": "The cumulative number of allocated objects",
+        "title": "Allocated Objects",
+        "description": "The number of allocated objects in memory between minutely measurements",
         "line_label": "%name%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
         "metrics": [
           {
-            "name": "total_allocated_objects",
+            "name": "allocated_objects",
             "fields": [
               {
                 "field": "GAUGE"
