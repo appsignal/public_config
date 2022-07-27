@@ -1,0 +1,164 @@
+{
+  "metric_keys": [
+    "total_allocated_objects"
+  ],
+  "dashboard": {
+    "title": "Ruby (VM) metrics",
+    "description": "A dashboard showing GC and VM statistics for MRI.",
+    "visuals": [
+      {
+        "title": "Allocated Objects",
+        "description": "The number of allocated objects in memory between minutely measurements",
+        "line_label": "%name%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "allocated_objects",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": []
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "GC counts",
+        "description": "Garbage collection counts, split over major and minor GC runs",
+        "line_label": "%name% %field% %metric%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "gc_count",
+            "fields": [
+              {
+                "field": "MEAN"
+              },
+              {
+                "field": "P90"
+              },
+              {
+                "field": "P95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "metric",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Heap slots",
+        "description": "Heap slots, split over live and free",
+        "line_label": "%name% %field% %metric%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "heap_slots",
+            "fields": [
+              {
+                "field": "MEAN"
+              },
+              {
+                "field": "P90"
+              },
+              {
+                "field": "P95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "metric",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Ruby VM",
+        "description": "Stats from the RubyVM.stat method",
+        "line_label": "%name% %field% %metric%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "ruby_vm",
+            "fields": [
+              {
+                "field": "MEAN"
+              },
+              {
+                "field": "P90"
+              },
+              {
+                "field": "P95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "metric",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Thread count",
+        "description": "The number of running threads",
+        "line_label": "%name%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "thread_count",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": []
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "GC total time",
+        "description": "The total garbage collection time, in milliseconds",
+        "line_label": "%name%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "gc_total_time",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": []
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}
