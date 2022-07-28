@@ -148,7 +148,7 @@
         "description": "The total garbage collection time, in milliseconds",
         "line_label": "%name%",
         "display": "LINE",
-        "format": "number",
+        "format": "duration",
         "draw_null_as_zero": true,
         "metrics": [
           {
