@@ -21,7 +21,12 @@
                 "field": "GAUGE"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ],
         "type": "timeseries"
@@ -44,6 +49,10 @@
             "tags": [
               {
                 "key": "metric",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
                 "value": "*"
               }
             ]
@@ -70,6 +79,10 @@
               {
                 "key": "metric",
                 "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
               }
             ]
           }
@@ -95,6 +108,10 @@
               {
                 "key": "metric",
                 "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
               }
             ]
           }
@@ -116,7 +133,12 @@
                 "field": "GAUGE"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ],
         "type": "timeseries"
@@ -136,7 +158,12 @@
                 "field": "GAUGE"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ],
         "type": "timeseries"
