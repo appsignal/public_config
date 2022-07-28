@@ -21,7 +21,12 @@
                 "field": "GAUGE"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
           }
         ],
         "type": "timeseries"
@@ -38,18 +43,16 @@
             "name": "gc_count",
             "fields": [
               {
-                "field": "MEAN"
-              },
-              {
-                "field": "P90"
-              },
-              {
-                "field": "P95"
+                "field": "GAUGE"
               }
             ],
             "tags": [
               {
                 "key": "metric",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
                 "value": "*"
               }
             ]
@@ -69,18 +72,16 @@
             "name": "heap_slots",
             "fields": [
               {
-                "field": "MEAN"
-              },
-              {
-                "field": "P90"
-              },
-              {
-                "field": "P95"
+                "field": "GAUGE"
               }
             ],
             "tags": [
               {
                 "key": "metric",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
                 "value": "*"
               }
             ]
@@ -100,18 +101,16 @@
             "name": "ruby_vm",
             "fields": [
               {
-                "field": "MEAN"
-              },
-              {
-                "field": "P90"
-              },
-              {
-                "field": "P95"
+                "field": "GAUGE"
               }
             ],
             "tags": [
               {
                 "key": "metric",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
                 "value": "*"
               }
             ]
@@ -134,27 +133,12 @@
                 "field": "GAUGE"
               }
             ],
-            "tags": []
-          }
-        ],
-        "type": "timeseries"
-      },
-      {
-        "title": "GC total time",
-        "description": "The total garbage collection time, in milliseconds",
-        "line_label": "%name%",
-        "display": "LINE",
-        "format": "number",
-        "draw_null_as_zero": true,
-        "metrics": [
-          {
-            "name": "gc_total_time",
-            "fields": [
+            "tags": [
               {
-                "field": "GAUGE"
+                "key": "hostname",
+                "value": "*"
               }
-            ],
-            "tags": []
+            ]
           }
         ],
         "type": "timeseries"
