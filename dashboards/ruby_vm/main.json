@@ -38,13 +38,7 @@
             "name": "gc_count",
             "fields": [
               {
-                "field": "MEAN"
-              },
-              {
-                "field": "P90"
-              },
-              {
-                "field": "P95"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -69,13 +63,7 @@
             "name": "heap_slots",
             "fields": [
               {
-                "field": "MEAN"
-              },
-              {
-                "field": "P90"
-              },
-              {
-                "field": "P95"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -100,13 +88,7 @@
             "name": "ruby_vm",
             "fields": [
               {
-                "field": "MEAN"
-              },
-              {
-                "field": "P90"
-              },
-              {
-                "field": "P95"
+                "field": "GAUGE"
               }
             ],
             "tags": [
