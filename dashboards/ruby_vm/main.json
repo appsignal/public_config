@@ -142,31 +142,6 @@
           }
         ],
         "type": "timeseries"
-      },
-      {
-        "title": "GC total time",
-        "description": "The total garbage collection time, in milliseconds",
-        "line_label": "%name%",
-        "display": "LINE",
-        "format": "duration",
-        "draw_null_as_zero": true,
-        "metrics": [
-          {
-            "name": "gc_total_time",
-            "fields": [
-              {
-                "field": "GAUGE"
-              }
-            ],
-            "tags": [
-              {
-                "key": "hostname",
-                "value": "*"
-              }
-            ]
-          }
-        ],
-        "type": "timeseries"
       }
     ]
   }
