@@ -1,6 +1,6 @@
 {
   "metric_keys": [
-    "total_allocated_objects"
+    "allocated_objects"
   ],
   "dashboard": {
     "title": "Ruby (VM) metrics",
