@@ -142,6 +142,31 @@
           }
         ],
         "type": "timeseries"
+      },
+      {
+        "title": "GC time",
+        "description": "The Garbage Collection time measured. (Not enabled by default.)",
+        "line_label": "%name%",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "gc_time",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
       }
     ]
   }
