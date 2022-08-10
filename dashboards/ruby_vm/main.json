@@ -145,7 +145,7 @@
       },
       {
         "title": "GC time",
-        "description": "The Garbage Collection time measured. (Not enabled by default.)",
+        "description": "The Garbage Collection time measured, if Ruby GC profiling is enabled",
         "line_label": "%name%",
         "display": "LINE",
         "format": "duration",
