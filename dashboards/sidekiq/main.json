@@ -11,6 +11,8 @@
         "display": "line",
         "title": "Overall job status",
         "line_label": "%name% - %hostname% - %status%",
+        "format": "number",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "sidekiq_job_count",
@@ -38,6 +40,7 @@
         "title": "Job status per queue",
         "line_label": "%name% - %queue% - %status%",
         "format": "number",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "sidekiq_queue_job_count",
@@ -65,6 +68,7 @@
         "title": "Throughput per worker",
         "line_label": "%name% - %namespace% - %action%",
         "format": "number",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "transaction_duration",
@@ -92,6 +96,7 @@
         "title": "Duration per worker",
         "line_label": "%name% - %namespace% - %action%",
         "format": "duration",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "transaction_duration",
@@ -119,6 +124,7 @@
         "title": "Queue length",
         "line_label": "%name% - %hostname% - %queue%",
         "format": "number",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "sidekiq_queue_length",
@@ -146,6 +152,7 @@
         "title": "Queue latency",
         "line_label": "%name% - %hostname% - %queue%",
         "format": "duration",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "sidekiq_queue_latency",
@@ -173,6 +180,7 @@
         "title": "Worker / Processes count",
         "line_label": "%name% - %hostname%",
         "format": "number",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "sidekiq_worker_count",
@@ -210,6 +218,7 @@
         "title": "Connection count",
         "line_label": "%name% - %hostname%",
         "format": "number",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "sidekiq_connection_count",
@@ -234,6 +243,7 @@
         "line_label": "%name% - %hostname%",
         "format": "size",
         "format_input": "byte",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "sidekiq_memory_usage",

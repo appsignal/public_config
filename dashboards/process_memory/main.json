@@ -14,6 +14,7 @@
         "line_label": "%process_name% - %hostname%",
         "format": "size",
         "format_input": "kilobyte",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "process_rss",
@@ -43,6 +44,7 @@
         "line_label": "%process_name% - %hostname%",
         "format": "size",
         "format_input": "kilobyte",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "process_rss",

@@ -9,6 +9,8 @@
       {
         "type": "timeseries",
         "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
         "title": "Threads running/max/idle",
         "description": "Number of threads per type counted over all workers, if running multiple processes.",
         "line_label": "%type% - %hostname%",
@@ -36,6 +38,8 @@
       {
         "type": "timeseries",
         "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
         "title": "Connection backlog",
         "description": "Number of established but unaccepted connections that are in the server backlog queue and still need to be processed.",
         "line_label": "%hostname%",
@@ -59,6 +63,8 @@
       {
         "type": "timeseries",
         "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
         "title": "Pool capacity",
         "description": "Total thread pool availablity of the Puma server. How many idle threads are ready to receive requests.",
         "line_label": "%hostname%",
@@ -82,6 +88,8 @@
       {
         "type": "timeseries",
         "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
         "title": "Puma worker info",
         "description": "Number of workers per type. Old workers are still running old code after a deploy and should eventually be replaced with fresh workers running new code.",
         "line_label": "%type% - %hostname%",

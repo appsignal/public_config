@@ -11,6 +11,7 @@
         "line_label": "%name% %code%",
         "display": "LINE",
         "draw_null_as_zero": false,
+        "format": "number",
         "metrics": [
           {
             "name": "heroku_status",
