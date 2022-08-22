@@ -13,6 +13,8 @@ class Dashboard
   end
 
   def validate
+    return unless definition
+
     required_field "metric_keys"
     required_field "dashboard", "title"
     required_field "dashboard", "description"
@@ -102,7 +104,6 @@ task :validate do
       dashboard.definition = JSON.parse(file_contents)
     rescue StandardError
       dashboard.issues << "Unable to parse the Dashboard JSON for '#{file_path}'"
-      next
     end
 
     dashboard.validate
