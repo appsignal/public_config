@@ -16,6 +16,7 @@ class Dashboard
     return unless definition
 
     required_field "metric_keys"
+    required_field "dashboard"
     required_field "dashboard", "title"
     required_field "dashboard", "description"
     required_field "dashboard", "visuals"
@@ -40,7 +41,7 @@ class Dashboard
             end
           end
 
-          # Validate metrictags
+          # Validate metric tags
           metric.fetch("tags", []).each_with_index do |_tag, tag_index|
             REQUIRED_VISUAL_METRIC_TAG_FIELDS.each do |tag_field|
               required_field(*metric_base, "tags", tag_index, tag_field)
