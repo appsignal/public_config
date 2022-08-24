@@ -12,6 +12,7 @@
         "title": "MongoDB Database Throughput",
         "line_label": "%database%",
         "format": "number",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "mongodb_query_duration",
@@ -35,6 +36,7 @@
         "title": "MongoDB Database Query Duration Mean",
         "line_label": "%database%",
         "format": "duration",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "mongodb_query_duration",
@@ -58,6 +60,7 @@
         "title": "MongoDB Database Query Duration 95th Percentile",
         "line_label": "%database%",
         "format": "duration",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "mongodb_query_duration",

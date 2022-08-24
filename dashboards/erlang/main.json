@@ -11,6 +11,8 @@
         "display": "line",
         "title": "IO",
         "line_label": "%type% - %hostname%",
+        "format": "number",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "erlang_io",
@@ -37,6 +39,8 @@
         "display": "line",
         "title": "Schedulers",
         "line_label": "%type% - %hostname%",
+        "format": "number",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "erlang_schedulers",
@@ -63,6 +67,8 @@
         "display": "line",
         "title": "Processes",
         "line_label": "%type% - %hostname%",
+        "format": "number",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "erlang_processes",
@@ -91,6 +97,7 @@
         "line_label": "%type% - %hostname%",
         "format": "size",
         "format_input": "kilobyte",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "erlang_memory",
@@ -120,6 +127,7 @@
         "line_label": "%type% - %hostname%",
         "format": "size",
         "format_input": "kilobyte",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "erlang_atoms",
@@ -148,6 +156,7 @@
         "description": "Load distribution for Erlang schedulers.",
         "line_label": "%type% #%id% - %hostname%",
         "format": "percent",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "erlang_scheduler_utilization",
@@ -179,6 +188,8 @@
         "title": "Run queue length",
         "description": "Total for all schedulers, by type.",
         "line_label": "%type% - %hostname%",
+        "format": "number",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "total_run_queue_lengths",

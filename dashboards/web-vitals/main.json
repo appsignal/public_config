@@ -13,6 +13,7 @@
         "description": "Time between the browser requesting a page and when it receives the first byte of information from the server.",
         "line_label": "%name% %field%",
         "format": "duration",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "webvital_ttfb",
@@ -37,6 +38,7 @@
         "description": "Duration before the browser renders the first bit of content from the DOM.",
         "line_label": "%name% %field%",
         "format": "duration",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "webvital_fcp",
@@ -61,6 +63,7 @@
         "description": "The point in time in the page load timeline when the page's main content has likely loaded.",
         "line_label": "%name% %field%",
         "format": "duration",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "webvital_lcp",
@@ -85,6 +88,7 @@
         "description": "Time from when a user first interacts with a page to the time when the browser is actually able to respond to that interaction.",
         "line_label": "%name% %field%",
         "format": "duration",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "webvital_fid",
@@ -109,6 +113,7 @@
         "description": "Quantifies how often users experience unexpected layout shifts",
         "line_label": "%name% %field%",
         "format": "number",
+        "draw_null_as_zero": true,
         "metrics": [
           {
             "name": "webvital_cls",
