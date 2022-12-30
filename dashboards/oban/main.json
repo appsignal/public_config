@@ -1,0 +1,144 @@
+{
+  "metric_keys": [
+    "oban_job_start"
+  ],
+  "dashboard": {
+    "title": "Oban",
+    "description": "The Oban dashboard shows metrics for your job queues and workers.\n",
+    "visuals": [
+      {
+        "title": "Jobs started",
+        "description": "per worker and queue",
+        "line_label": "%worker% (%queue%)",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "oban_job_start",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "queue",
+                "value": "*"
+              },
+              {
+                "key": "worker",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Job duration",
+        "description": "per worker",
+        "line_label": "%name% %worker%",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "oban_job_duration",
+            "fields": [
+              {
+                "field": "MEAN"
+              }
+            ],
+            "tags": [
+              {
+                "key": "worker",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Job queue time",
+        "description": "(time between scheduling and starting jobs) per queue",
+        "line_label": "%name% %queue%",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "oban_job_queue_time",
+            "fields": [
+              {
+                "field": "P95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "queue",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Job exceptions",
+        "description": "per worker",
+        "line_label": "%worker%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "oban_job_stop",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "state",
+                "value": "failure"
+              },
+              {
+                "key": "worker",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Jobs inserted",
+        "description": "per worker",
+        "line_label": "%worker%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "oban_job_insert",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "worker",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}
