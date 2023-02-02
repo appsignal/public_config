@@ -1,0 +1,302 @@
+{
+  "metric_keys": [
+    "nginx_request_time"
+  ],
+  "dashboard": {
+    "title": "NGINX",
+    "description": "Graphs for metrics from your NGINX server",
+    "visuals": [
+      {
+        "title": "Request time",
+        "description": "per request",
+        "line_label": "%group% @ %hostname% (%field%)",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "nginx_request_time",
+            "fields": [
+              {
+                "field": "MEAN"
+              },
+              {
+                "field": "P95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "group",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Throughput",
+        "description": "per minute, number of requests",
+        "line_label": "%group% @ %hostname%",
+        "display": "LINE",
+        "format": "throughput",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "nginx_request_time",
+            "fields": [
+              {
+                "field": "COUNT"
+              }
+            ],
+            "tags": [
+              {
+                "key": "group",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Request length",
+        "description": "in bytes, per request",
+        "line_label": "%group% @ %hostname% (%field%)",
+        "display": "LINE",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "nginx_request_length",
+            "fields": [
+              {
+                "field": "MEAN"
+              },
+              {
+                "field": "P95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "group",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Response length",
+        "description": "in bytes, per request",
+        "line_label": "%group% @ %hostname% (%field%)",
+        "display": "LINE",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "nginx_bytes_sent",
+            "fields": [
+              {
+                "field": "MEAN"
+              },
+              {
+                "field": "P95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "group",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Status codes",
+        "description": "per minute",
+        "line_label": "%status% (%group% @ %hostname%)",
+        "display": "LINE",
+        "format": "throughput",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "nginx_status",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "group",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              },
+              {
+                "key": "status",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Connections",
+        "description": "at a point in time every minute",
+        "line_label": "%hostname% (%measurement%)",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "nginx_connections",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              },
+              {
+                "key": "measurement",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Upstream status codes",
+        "description": "per minute",
+        "line_label": "%status% (%group% @ %upstream%)",
+        "display": "LINE",
+        "format": "throughput",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "nginx_upstream_status",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "group",
+                "value": "*"
+              },
+              {
+                "key": "status",
+                "value": "*"
+              },
+              {
+                "key": "upstream",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Upstream response time",
+        "description": "per request",
+        "line_label": "%group% @ %upstream% (%field%)",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "nginx_upstream_time",
+            "fields": [
+              {
+                "field": "P95"
+              },
+              {
+                "field": "MEAN"
+              }
+            ],
+            "tags": [
+              {
+                "key": "group",
+                "value": "*"
+              },
+              {
+                "key": "measurement",
+                "value": "response"
+              },
+              {
+                "key": "upstream",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Upstream cache status",
+        "description": "per request",
+        "line_label": "%status% (%group% @ %hostname%)",
+        "display": "LINE",
+        "format": "throughput",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "nginx_upstream_cache_status",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "group",
+                "value": "*"
+              },
+              {
+                "key": "status",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }  
+}
