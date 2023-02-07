@@ -4,7 +4,7 @@
   ],
   "dashboard": {
     "title": "NGINX",
-    "description": "Graphs for metrics from your NGINX server",
+    "description": "NGINX server metrics: https://docs.appsignal.com/metrics/nginx.html",
     "visuals": [
       {
         "title": "Request time",
