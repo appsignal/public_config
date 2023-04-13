@@ -1,0 +1,62 @@
+{
+  "metric_keys": [
+    "gvl_global_timer",
+    "gvl_waiting_threads"
+  ],
+  "dashboard": {
+    "title": "Ruby GVL",
+    "description": "Metrics for the Ruby interpreter's global VM lock (GVL)",
+    "visuals": [
+      {
+        "title": "Global timer",
+        "description": "The time spent by all threads in waiting to be resumed",
+        "line_label": "%name%",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "gvl_global_timer",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Waiting threads",
+        "description": "The number of threads waiting to be resumed",
+        "line_label": "%name%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "gvl_waiting_threads",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}
