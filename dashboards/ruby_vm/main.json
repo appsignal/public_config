@@ -7,9 +7,9 @@
     "description": "A dashboard showing GC and VM statistics for MRI.",
     "visuals": [
       {
-        "title": "Allocated Objects",
-        "description": "The number of allocated objects in memory between minutely measurements",
-        "line_label": "%name%",
+        "title": "Allocated objects",
+        "description": "The number of allocated objects in memory",
+        "line_label": "%hostname%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -34,7 +34,7 @@
       {
         "title": "GC counts",
         "description": "Garbage collection counts, split over major and minor GC runs",
-        "line_label": "%name% %field% %metric%",
+        "line_label": "%metric% (%hostname%)",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -63,7 +63,7 @@
       {
         "title": "Heap slots",
         "description": "Heap slots, split over live and free",
-        "line_label": "%name% %field% %metric%",
+        "line_label": "%metric% (%hostname%)",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -92,7 +92,7 @@
       {
         "title": "Ruby VM",
         "description": "Stats from the RubyVM.stat method",
-        "line_label": "%name% %field% %metric%",
+        "line_label": "%metric% (%hostname%)",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -121,7 +121,7 @@
       {
         "title": "Thread count",
         "description": "The number of running threads",
-        "line_label": "%name%",
+        "line_label": "%hostname%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -146,7 +146,7 @@
       {
         "title": "GC time",
         "description": "The Garbage Collection time measured, if Ruby GC profiling is enabled",
-        "line_label": "%name%",
+        "line_label": "%hostname%",
         "display": "LINE",
         "format": "duration",
         "draw_null_as_zero": true,
