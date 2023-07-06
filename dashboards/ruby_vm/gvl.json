@@ -10,7 +10,7 @@
       {
         "title": "Global timer",
         "description": "The time spent by all threads in waiting to be resumed",
-        "line_label": "%name%",
+        "line_label": "%hostname%",
         "display": "LINE",
         "format": "duration",
         "draw_null_as_zero": true,
@@ -35,7 +35,7 @@
       {
         "title": "Waiting threads",
         "description": "The number of threads waiting to be resumed",
-        "line_label": "%name%",
+        "line_label": "%hostname%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
