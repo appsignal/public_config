@@ -91,7 +91,7 @@
         "format": "number",
         "draw_null_as_zero": true,
         "title": "Workers",
-        "description": "Workers running old code should eventually be replaced with new workers.",
+        "description": "After a deploy, old workers should be replaced with newly booted workers.",
         "line_label": "%type% - %hostname%",
         "metrics": [
           {

@@ -9,7 +9,7 @@ The following graphs are displayed in this magic dashboard:
 - [Throughput](#throughput)
 - [Query duration](#query-duration)
 
-### Throughput
+## Throughput
 
 The "Throughput" graph shows the amount of queries executed on each MongoDB database.
 
@@ -17,7 +17,7 @@ This graph displays values from the `mongodb_query_duration` metric. This graph 
 
 - The **database** that the query was executed on. 
 
-### Query duration
+## Query duration
 
 The "Query duration" graph shows the 95th percentile and average duration of the queries executed on each MongoDB database.
 
