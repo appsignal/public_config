@@ -9,7 +9,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Active Connections",
+        "title": "Active connections",
         "description": "The number of connections established on the Redis instance.",
         "line_label": "%source%",
         "format": "number",
@@ -38,7 +38,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Redis hit rate",
+        "title": "Hit rate",
         "description": "The ratio of successful reads out of all read operations, rounded to five decimal points.",
         "line_label": "%source%",
         "format": "number",
@@ -67,7 +67,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Redis evicted keys",
+        "title": "Evicted keys",
         "description": "The number of evicted keys due to reaching your instance maxmemory limit.",
         "line_label": "%source%",
         "format": "number",
@@ -130,7 +130,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Redis server Load average",
+        "title": "Server load average",
         "description": "Average load on the system over a period of 1 minute",
         "line_label": "%source%",
         "format": "number",
@@ -159,7 +159,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Redis server I/O",
+        "title": "Server I/O",
         "description": "Number of read/write operations in I/O sizes of 16KB blocks",
         "line_label": "%source% - %name%",
         "format": "number",
@@ -206,7 +206,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Redis server memory",
+        "title": "Server memory",
         "description": "Server memory in use/free/cached",
         "line_label": "%source% - %state%",
         "format": "size",

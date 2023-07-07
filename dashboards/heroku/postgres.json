@@ -218,7 +218,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Database server Load average",
+        "title": "Server load average",
         "description": "Average load on the system over a period of 1 minute",
         "line_label": "%source%",
         "format": "number",
@@ -247,7 +247,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Database server I/O",
+        "title": "Server I/O",
         "description": "Number of read/write operations in I/O sizes of 16KB blocks",
         "line_label": "%source% - %name%",
         "format": "number",
@@ -294,7 +294,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "Database server memory",
+        "title": "Server memory",
         "description": "Server memory in use/free/cached",
         "line_label": "%source% - %state%",
         "format": "size",
