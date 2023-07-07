@@ -3,12 +3,12 @@
     "action_mailer_process"
   ],
   "dashboard": {
-    "title": "ActionMailer metrics",
+    "title": "ActionMailer",
     "description": "This dashboard shows ActionMailer metrics for all your mailers.",
     "visuals": [
       {
-        "title": "ActionMailer Deliveries",
-        "description": "Deliveries per mailer/action",
+        "title": "Deliveries",
+        "description": "in total, per mailer and action",
         "line_label": "%mailer%#%action%",
         "display": "LINE",
         "format": "throughput",
@@ -36,8 +36,8 @@
         "type": "timeseries"
       },
       {
-        "title": "ActionMailer deliveries",
-        "description": "Deliveries per mailer/action, shown in percentage per minute.",
+        "title": "Deliveries",
+        "description": "as a percentage of total deliveries, per mailer and action",
         "line_label": "%mailer%#%action%",
         "display": "AREA_RELATIVE",
         "format": "percent",
