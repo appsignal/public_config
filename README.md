@@ -11,14 +11,14 @@ Magic Dashboards can be found in the `dashboards/` sub directory. Each directory
 - [Erlang](/dashboards/erlang/)
 - [Heroku](/dashboards/heroku/)
 - [MongoDB](/dashboards/mongodb/)
-- [Next.js](/dashboards/nextjs/)
+- [Next.js](/dashboards/nextjs/) (deprecated)
 - [NGINX](/dashboards/nginx/)
 - [Node.js](/dashboards/nodejs/)
 - [Oban](/dashboards/oban/)
 - [Puma](/dashboards/puma/)
 - [Ruby VM](/dashboards/ruby_vm/)
 - [Sidekiq](/dashboards/sidekiq/)
-- [Web Vitals](/dashboard/web-vitals/)
+- [Web Vitals](/dashboard/web-vitals/) (deprecated)
 
 ### Validation
 
