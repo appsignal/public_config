@@ -9,7 +9,8 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "MongoDB Database Throughput",
+        "title": "Throughput",
+        "description": "Queries performed on each database",
         "line_label": "%database%",
         "format": "number",
         "draw_null_as_zero": true,
@@ -33,7 +34,8 @@
       {
         "type": "timeseries",
         "display": "line",
-        "title": "MongoDB Database Query Duration Mean",
+        "title": "Query duration",
+        "description": "Average and 95th percentile duration for each database",
         "line_label": "%database%",
         "format": "duration",
         "draw_null_as_zero": true,
@@ -43,28 +45,7 @@
             "fields": [
               {
                 "field": "mean"
-              }
-            ],
-            "tags": [
-              {
-                "key": "database",
-                "value": "*"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
-        "title": "MongoDB Database Query Duration 95th Percentile",
-        "line_label": "%database%",
-        "format": "duration",
-        "draw_null_as_zero": true,
-        "metrics": [
-          {
-            "name": "mongodb_query_duration",
-            "fields": [
+              },
               {
                 "field": "p95"
               }
