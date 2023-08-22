@@ -1,0 +1,400 @@
+{
+  "metric_keys": [
+    "vector_pg_up"
+  ],
+  "dashboard": {
+    "title": "PostgreSQL",
+    "description": "",
+    "visuals": [
+      {
+        "title": "pg_stat_database_deadlocks_total",
+        "description": "Number of deadlocks detected in this database.",
+        "line_label": "%name% %db%-%endpoint%-%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "vector_pg_stat_database_deadlocks_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              },
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "pg_stat_database_numbackends",
+        "line_label": "%name% %db%-%endpoint%-%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "vector_pg_stat_database_numbackends",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              },
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "pg_stat_database_temp_bytes_total",
+        "description": "Total amount of data written to temporary files by queries in this database. ",
+        "line_label": "%name% %db%-%endpoint%-%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "vector_pg_stat_database_temp_bytes_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              },
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "pg_stat_database_temp_files_total",
+        "line_label": "%name% %db%-%endpoint%-%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "vector_pg_stat_database_temp_files_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              },
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "pg_stat_database_tup_deleted_total",
+        "description": "Number of rows deleted by queries in this database.",
+        "line_label": "%name% %db%-%endpoint%-%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "vector_pg_stat_database_tup_deleted_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              },
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "pg_stat_database_tup_fetched_total",
+        "description": "Number of rows fetched by queries in this database.",
+        "line_label": "%name% %db%-%endpoint%-%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "vector_pg_stat_database_tup_fetched_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              },
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "pg_stat_database_tup_inserted_total",
+        "description": "Number of rows inserted by queries in this database.",
+        "line_label": "%name% %db%-%endpoint%-%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "vector_pg_stat_database_tup_inserted_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              },
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "pg_stat_database_tup_returned_total",
+        "description": "Number of rows returned by queries in this database.",
+        "line_label": "%name% %db%-%endpoint%-%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "vector_pg_stat_database_tup_returned_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              },
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "pg_stat_database_tup_updated_total",
+        "description": "Number of rows updated by queries in this database.",
+        "line_label": "%name% %db%-%endpoint%-%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "vector_pg_stat_database_tup_updated_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              },
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "pg_stat_database_xact_commit_total",
+        "description": "Number of transactions in this database that have been committed.",
+        "line_label": "%name% %db%-%endpoint%-%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "vector_pg_stat_database_xact_commit_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              },
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "pg_stat_database_xact_rollback_total",
+        "line_label": "%name% %db%-%endpoint%-%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "vector_pg_stat_database_xact_rollback_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              },
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "pg_up",
+        "description": "Whether the PostgreSQL server is up or not.",
+        "line_label": "%name% %endpoint%-%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "vector_pg_up",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}
