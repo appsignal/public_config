@@ -14,4 +14,3 @@ When enabled, it shows a subset of the [metrics listed in Vector's documentation
 - pg_stat_database_tup_updated_total
 - pg_stat_database_xact_commit_total
 - pg_stat_database_xact_rollback_total
-- up
