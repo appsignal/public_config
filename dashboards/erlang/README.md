@@ -15,7 +15,7 @@ The number of schedulers defaults to the number of CPU cores on the machine.
 
 ## Processes
 
-The number of processes and the limit are plotted here.
+The number of Erlang processes and the limit are plotted here.
 The limit is the maximum number of simultaneously existing processes at the local node.
 
 ## Memory
