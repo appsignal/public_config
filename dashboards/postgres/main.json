@@ -9,7 +9,7 @@
       {
         "title": "Fetched rows",
         "description": "Number of rows that were fetched by queries.",
-        "line_label": "%name% %db%-%endpoint%-%host%",
+        "line_label": "%host%: %db%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -42,7 +42,7 @@
       {
         "title": "Returned rows",
         "description": "Number of rows that were returned by queries.",
-        "line_label": "%name% %db%-%endpoint%-%host%",
+        "line_label": "%host%: %db%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -75,7 +75,7 @@
       {
         "title": "Inserted rows",
         "description": "Number of rows that were inserted by queries.",
-        "line_label": "%name% %db%-%endpoint%-%host%",
+        "line_label": "%host%: %db%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -108,7 +108,7 @@
       {
         "title": "Updated rows",
         "description": "Number of rows that were updated by queries.",
-        "line_label": "%name% %db%-%endpoint%-%host%",
+        "line_label": "%host%: %db%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -141,7 +141,7 @@
       {
         "title": "Deleted rows",
         "description": "Number of rows that were deleted by queries.",
-        "line_label": "%name% %db%-%endpoint%-%host%",
+        "line_label": "%host%: %db%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -174,7 +174,7 @@
       {
         "title": "Transactions committed",
         "description": "Number of transactions that have been committed.",
-        "line_label": "%name% %db%-%endpoint%-%host%",
+        "line_label": "%host%: %db%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -207,7 +207,7 @@
       {
         "title": "Transactions rolled back",
         "description": "Number of transactions that were rolled back.",
-        "line_label": "%name% %db%-%endpoint%-%host%",
+        "line_label": "%host%: %db%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -240,7 +240,7 @@
       {
         "title": "Deadlocks detected",
         "description": "Number of deadlocks that were detected.",
-        "line_label": "%name% %db%-%endpoint%-%host%",
+        "line_label": "%host%: %db%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -273,7 +273,7 @@
       {
         "title": "Database backends",
         "description": "Number of backends currently connected to the databases.",
-        "line_label": "%name% %db%-%endpoint%-%host%",
+        "line_label": "%host%: %db%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -306,7 +306,7 @@
       {
         "title": "Data written to temporary files",
         "description": "Total amount of data that was written to temporary files by queries.",
-        "line_label": "%name% %db%-%endpoint%-%host%",
+        "line_label": "%host%: %db%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -339,7 +339,7 @@
       {
         "title": "pg_stat_database_temp_files_total",
         "description": "Number of temporary files that were written by queries in databases.",
-        "line_label": "%name% %db%-%endpoint%-%host%",
+        "line_label": "%host%: %db%",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
