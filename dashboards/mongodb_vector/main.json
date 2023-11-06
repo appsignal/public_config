@@ -1,0 +1,207 @@
+{
+  "metric_keys": [
+    "mongod_metrics_document_total"
+  ],
+  "dashboard": {
+    "title": "MongoDB/Status",
+    "description": "The general status of your MongoDB instances monitored with Vector",
+    "visuals": [
+      {
+        "title": "Memory usage",
+        "description": "resident, by host",
+        "line_label": "%host%",
+        "display": "LINE",
+        "format": "size",
+        "format_input": "megabyte",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "memory",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "type",
+                "value": "resident"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Network usage",
+        "description": "in bytes, by host, incoming and outgoing",
+        "line_label": "%state% (%host%)",
+        "display": "LINE",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "network_bytes_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "state",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Document operations",
+        "description": "count, per host and type",
+        "line_label": "%state% (%host%)",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_metrics_document_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "state",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Network connections",
+        "description": "count, by host and state",
+        "line_label": "%state% (%host%)",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "connections",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "state",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Transactions",
+        "description": "event count, by host and type",
+        "line_label": "%type% (%host%)",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_wiredtiger_transactions_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "type",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Open sessions",
+        "description": "count, per host",
+        "line_label": "%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_wiredtiger_session_open_sessions",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}
