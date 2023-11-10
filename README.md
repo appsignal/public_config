@@ -18,6 +18,7 @@ Magic Dashboards can be found in the `dashboards/` sub directory. Each directory
 - [Puma](/dashboards/puma/)
 - [Ruby VM](/dashboards/ruby_vm/)
 - [Sidekiq](/dashboards/sidekiq/)
+- [Karafka](/dashboards/karafka/)
 - [Web Vitals](/dashboard/web-vitals/) (deprecated)
 
 ### Validation
