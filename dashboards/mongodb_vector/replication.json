@@ -30,6 +30,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
               }
             ]
           }
@@ -60,6 +64,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
               }
             ]
           }
@@ -93,6 +101,10 @@
               {
                 "key": "type",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
               }
             ]
           }
@@ -122,6 +134,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
               }
             ]
           }

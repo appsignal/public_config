@@ -33,6 +33,10 @@
               {
                 "key": "type",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
               }
             ]
           }
@@ -67,6 +71,10 @@
               {
                 "key": "type",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
               }
             ]
           }
@@ -101,6 +109,10 @@
               {
                 "key": "type",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
               }
             ]
           }
@@ -135,6 +147,10 @@
               {
                 "key": "type",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
               }
             ]
           }
@@ -168,6 +184,10 @@
               {
                 "key": "type",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
               }
             ]
           }
@@ -201,6 +221,10 @@
               {
                 "key": "state",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
               }
             ]
           }
