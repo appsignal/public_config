@@ -1,10 +1,10 @@
-# ActionMailer magic dashboard
+# ActionMailer automated dashboard
 
 [ActionMailer](https://guides.rubyonrails.org/action_mailer_basics.html) is the e-mail delivery system built for Ruby on Rails.
 
-When using [the AppSignal for Ruby gem](https://docs.appsignal.com/ruby/integrations/mongodb.html) in an application that uses ActionMailer, the ActionMailer magic dashboard will appear.
+When using [the AppSignal for Ruby gem](https://docs.appsignal.com/ruby/integrations/mongodb.html) in an application that uses ActionMailer, the ActionMailer automated dashboard will appear.
 
-The following graphs are displayed in this magic dashboard:
+The following graphs are displayed in this automated dashboard:
 
 - [Deliveries](#deliveries)
 

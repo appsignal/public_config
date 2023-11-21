@@ -1,23 +1,23 @@
-# Ruby VM magic dashboards
+# Ruby VM automated dashboards
 
 The Ruby Virtual Machine refers to the internals of the Ruby interpreter (sometimes referred to as MRI) which is the program that is used to execute applications written in the Ruby programming language.
 
-> ⚠️ These magic dashboards will only appear when using the "mainline" or "official" Ruby interpreter, sometimes referred to as MRI (Matz's Ruby Interpreter) -- when using other Ruby interpreters, such as JRuby, this magic dashboard will not appear.
+> ⚠️ These automated dashboards will only appear when using the "mainline" or "official" Ruby interpreter, sometimes referred to as MRI (Matz's Ruby Interpreter) -- when using other Ruby interpreters, such as JRuby, this automated dashboard will not appear.
 
 During the lifetime of the Ruby application, the Ruby VM will take care of managing the memory that the application needs, occassionally freeing memory that is no longer used, a process which is referred to as "Garbage Collection" (GC). During a garbage collection event, the application will essentially be put on pause. This can lead to increased latency and response times, for example, if the garbage collection event takes place while handling an user's request.
 
-There are two magic dashboards for the Ruby virtual machine:
+There are two automated dashboards for the Ruby virtual machine:
 
-- [Virtual Machine](#virtual-machine-magic-dashboard)
-- [Global VM Lock](#global-vm-lock-magic-dashboard)
+- [Virtual Machine](#virtual-machine-automated-dashboard)
+- [Global VM Lock](#global-vm-lock-automated-dashboard)
 
-## Virtual Machine magic dashboard
+## Virtual Machine automated dashboard
 
-The "Ruby (VM) metrics" magic dashboard contains graphs for the metrics that are emitted by the AppSignal for Ruby integration's [MRI minutely probe](https://github.com/appsignal/appsignal-ruby/blob/main/lib/appsignal/probes/mri.rb). This probe is enabled by default since Ruby version 2.9.0, and can be disabled by [overriding the `:mri` probe](https://docs.appsignal.com/ruby/instrumentation/minutely-probes.html#overriding-default-probes). The minutely probe asks the Ruby VM about its state once per minute, and reports that data to AppSignal. All the measurements, therefore, are taken once per minute.
+The "Ruby (VM) metrics" automated dashboard contains graphs for the metrics that are emitted by the AppSignal for Ruby integration's [MRI minutely probe](https://github.com/appsignal/appsignal-ruby/blob/main/lib/appsignal/probes/mri.rb). This probe is enabled by default since Ruby version 2.9.0, and can be disabled by [overriding the `:mri` probe](https://docs.appsignal.com/ruby/instrumentation/minutely-probes.html#overriding-default-probes). The minutely probe asks the Ruby VM about its state once per minute, and reports that data to AppSignal. All the measurements, therefore, are taken once per minute.
 
 These stats correspond to information obtained from the [`GC.stat`](https://ruby-doc.org/core-2.7.0/GC.html#method-c-stat) and [`RubyVM.stat`](https://www.rubydoc.info/stdlib/core/RubyVM.stat) objects exposed by the Ruby virtual machine. Many explanations for the contents of this dashboard are derived from [this informative blog post on `GC.stat` by Nate Berkopec](https://www.speedshop.co/2017/03/09/a-guide-to-gc-stat.html).
 
-The following graphs are displayed in this magic dashboard:
+The following graphs are displayed in this automated dashboard:
 
 - [Allocated objects](#allocated-objects)
 - [GC counts](#gc-counts)
@@ -141,9 +141,9 @@ This graph displays values from the `gc_time` metric. This graph will show a lin
 
 - The **hostname** of the machine that emitted the metric.
 
-## Global VM Lock magic dashboard
+## Global VM Lock automated dashboard
 
-The "Ruby GVL" magic dashboard contains graphs for the metrics that are emitted by the AppSignal for Ruby integration's [GVL minutely probe](https://github.com/appsignal/appsignal-ruby/blob/main/lib/appsignal/probes/gvl.rb).
+The "Ruby GVL" automated dashboard contains graphs for the metrics that are emitted by the AppSignal for Ruby integration's [GVL minutely probe](https://github.com/appsignal/appsignal-ruby/blob/main/lib/appsignal/probes/gvl.rb).
 
 > ⚠️ This probe is only enabled if the user is using AppSignal for Ruby version 3.3.9 or higher, Ruby version 3.2 or higher, and the `gvltools` gem version 0.2 or higher is installed.
 
@@ -151,7 +151,7 @@ The Global VM Lock (GVL) is the mechanism within the Ruby VM that schedules the 
 
 When the above conditions are met, the measurement of global VM lock waiting threads and global VM lock timings is enabled by default. Measuring these values, however, incurs a performance cost in itself. To avoid this performance cost throughout the application, it is possible for the user to set the `enable_gvl_waiting_threads` and `enable_gvl_global_timer` AppSignal configuration options to `false`, and then manually control when these metrics are activated through the use of GVLTools itself, [as described in our documentation](https://docs.appsignal.com/ruby/integrations/global-vm-lock.html).
 
-The following graphs are displayed in this magic dashboard:
+The following graphs are displayed in this automated dashboard:
 
 - [Global timer](#global-timer)
 - [Waiting threads](#waiting-threads)
