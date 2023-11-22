@@ -1,12 +1,12 @@
-# Puma magic dashboard
+# Puma automated dashboard
 
 [Puma](https://puma.io/) is a web server for Rack-based Ruby web applications.
 
-When using [the Puma integration in the AppSignal for Ruby gem](https://docs.appsignal.com/ruby/integrations/puma.html), the Puma magic dashboard will appear. This README uses the existing Puma documentation as reference.
+When using [the Puma integration in the AppSignal for Ruby gem](https://docs.appsignal.com/ruby/integrations/puma.html), the Puma automated dashboard will appear. This README uses the existing Puma documentation as reference.
 
 > ⚠️ Puma version 3.11.4 or higher is required.
 
-The following graphs are displayed in this magic dashboard:
+The following graphs are displayed in this automated dashboard:
 
 - [Threads](#threads)
 - [Connection backlog](#connection-backlog)

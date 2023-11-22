@@ -1,4 +1,4 @@
-# Process memory magic dashboard
+# Process memory automated dashboard
 
 The AppSignal tracks memory usage metrics about the process that it was started by, the app that's being monitored.
 

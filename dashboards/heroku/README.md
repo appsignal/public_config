@@ -1,20 +1,20 @@
-# Heroku magic dashboards
+# Heroku automated dashboards
 
 [Heroku](https://www.heroku.com/) is a cloud platform-as-a-service that allows you to easily deploy your applications and their dependencies.
 
 This README uses the existing [Heroku dashboards documentation](https://docs.appsignal.com/heroku/dashboards.html) as reference.
 
-When using [the AppSignal Heroku log drain](https://docs.appsignal.com/heroku/setup-logdrain.html) to send data about your Heroku application to AppSignal, the following magic dashboards may appear:
+When using [the AppSignal Heroku log drain](https://docs.appsignal.com/heroku/setup-logdrain.html) to send data about your Heroku application to AppSignal, the following automated dashboards may appear:
 
-- [Status magic dashboard](#status-magic-dashboard)
-- [Redis magic dashboard](#redis-magic-dashboard)
-- [PostgreSQL magic dashboard](#postgresql-magic-dashboard)
+- [Status automated dashboard](#status-automated-dashboard)
+- [Redis automated dashboard](#redis-automated-dashboard)
+- [PostgreSQL automated dashboard](#postgresql-automated-dashboard)
 
-## Status magic dashboard
+## Status automated dashboard
 
 The "Heroku Status" dashboard will show information about the response status codes emitted by your Heroku application.
 
-The following graphs are displayed in this magic dashboard:
+The following graphs are displayed in this automated dashboard:
 
 - [Status codes](#status-codes)
 
@@ -26,13 +26,13 @@ These graphs display values from the `heroku_status` metric. These graphs will s
 
 - The status **code** that was sent as a response.
 
-## Redis magic dashboard
+## Redis automated dashboard
 
 The "Heroku Redis" dashboard will show information about the premium Redis instances deployed in Heroku for your application.
 
 > ⚠️ This dashboard will only appear for applications that have a premium Redis instance deployed with Heroku.
 
-The following graphs are displayed in this magic dashboard:
+The following graphs are displayed in this automated dashboard:
 
 - [Active connections](#active-connections)
 - [Hit rate](#hit-rate)
@@ -102,13 +102,13 @@ This graph displays values from the `memory` metric. This graph will show a line
   - "free"
   - "cached"
 
-## PostgreSQL magic dashboard
+## PostgreSQL automated dashboard
 
 The "Heroku Postgres" dashboard will show information about the PostgreSQL instances deployed in Heroku for your application.
 
 > ⚠️ This dashboard will only appear for applications that have a PostgreSQL instance deployed with Heroku.
 
-The following graphs are displayed in this magic dashboard:
+The following graphs are displayed in this automated dashboard:
 
 - [Database size](#database-size)
 - [Tables](#tables)

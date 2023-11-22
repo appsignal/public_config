@@ -1,4 +1,4 @@
-# Erlang magic dashboard
+# Erlang automated dashboard
 
 AppSignal tracks Erlang VM metrics.
 It has graphs metrics on IO, schedulers, processes and memory, to give a high-level overview of what's happening on the VM.

@@ -1,3 +1,3 @@
-# Next.js Web Vitals magic dashboard (deprecated)
+# Next.js Web Vitals automated dashboard (deprecated)
 
-As of version 3.x of the AppSignal for Node.js integration, the metrics used on the Next.js Web Vitals magic dashboard are no longer emitted, and therefore this magic dashboard is no longer created.
+As of version 3.x of the AppSignal for Node.js integration, the metrics used on the Next.js Web Vitals automated dashboard are no longer emitted, and therefore this automated dashboard is no longer created.

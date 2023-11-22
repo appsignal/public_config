@@ -1,21 +1,22 @@
-# AppSignal Magic Dashboards
+# AppSignal Automated Dashboards
 
-The `public_config` repository is a place for AppSignal's public configuration. This is currently used for the Magic Dashboards.
+The `public_config` repository is a place for AppSignal's public configuration. This is currently used for the Automated Dashboards.
 
-## Magic Dashboards
+## Automated Dashboards
 
-Magic Dashboards can be found in the `dashboards/` sub directory. Each directory is a different integration, like a language or package. Each dashboard is its own file in these sub-directories in the JSON format:
+Automated Dashboards can be found in the `dashboards/` sub directory. Each directory is a different integration, like a language or package. Each dashboard is its own file in these sub-directories in the JSON format:
 
 - [Action Mailer](/dashboards/action_mailer/)
 - [Active Job](/dashboards/active_job/)
 - [Erlang](/dashboards/erlang/)
 - [Heroku](/dashboards/heroku/)
-- [MongoDB](/dashboards/mongodb/)
+- [MongoDB](/dashboards/mongodb/) (via AppSignal for Ruby)
 - [Next.js](/dashboards/nextjs/) (deprecated)
 - [NGINX](/dashboards/nginx/)
 - [Node.js](/dashboards/nodejs/)
 - [Oban](/dashboards/oban/)
 - [Puma](/dashboards/puma/)
+- [PostgreSQL](/dashboards/postgresql/) (via Vector)
 - [Ruby VM](/dashboards/ruby_vm/)
 - [Sidekiq](/dashboards/sidekiq/)
 - [Karafka](/dashboards/karafka/)
