@@ -1,12 +1,12 @@
-# Oban magic dashboard
+# Oban automated dashboard
 
 [Oban](https://oban.pro/) is a background job system for Elixir.
 
-When using [the Oban integration in the AppSignal for Elixir gem](https://docs.appsignal.com/elixir/integrations/oban.html), the Oban magic dashboard will appear. This README uses the existing Oban documentation as reference.
+When using [the Oban integration in the AppSignal for Elixir gem](https://docs.appsignal.com/elixir/integrations/oban.html), the Oban automated dashboard will appear. This README uses the existing Oban documentation as reference.
 
 > ⚠️ Oban version 2.0 or higher is required.
 
-The following graphs are displayed in this magic dashboard:
+The following graphs are displayed in this automated dashboard:
 
 - [Job duration](#job-duration)
 - [Job queue time](#job-queue-time)

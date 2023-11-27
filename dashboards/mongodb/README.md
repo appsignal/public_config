@@ -1,10 +1,10 @@
-# MongoDB magic dashboard
+# MongoDB automated dashboard
 
 [MongoDB](https://www.mongodb.com/) is a NoSQL, web-scale database that allows easy storage and retrieval of arbitrarily-structured documents.
 
-When using [the MongoDB integration in the AppSignal for Ruby gem](https://docs.appsignal.com/ruby/integrations/mongodb.html), the MongoDB magic dashboard will appear. This README uses the existing MongoDB documentation as reference.
+When using [the MongoDB integration in the AppSignal for Ruby gem](https://docs.appsignal.com/ruby/integrations/mongodb.html), the MongoDB automated dashboard will appear. This README uses the existing MongoDB documentation as reference.
 
-The following graphs are displayed in this magic dashboard:
+The following graphs are displayed in this automated dashboard:
 
 - [Throughput](#throughput)
 - [Query duration](#query-duration)
