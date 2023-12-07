@@ -1,6 +1,6 @@
-# PostgresQL Dashboard
+# PostgreSQL Dashboard
 
-AppSignal tracks PostgresQL metrics through its [Vector sink](https://docs.appsignal.com/vector.html).
+AppSignal tracks PostgreSQL metrics through its [Vector sink](https://docs.appsignal.com/vector.html).
 When enabled, it shows a subset of the [metrics listed in Vector's documentation](https://vector.dev/docs/reference/configuration/sources/postgresql_metrics/):
 
 - pg_stat_database_deadlocks_total

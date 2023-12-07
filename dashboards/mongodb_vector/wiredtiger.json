@@ -1,0 +1,236 @@
+{
+  "metric_keys": [
+    "mongod_wiredtiger_log_operations_total"
+  ],
+  "dashboard": {
+    "title": "MongoDB/WiredTiger",
+    "description": "Metrics from MongoDB's WiredTiger database engine internals",
+    "visuals": [
+      {
+        "title": "Journal operations",
+        "description": "count, by host and type",
+        "line_label": "%type% (%host%)",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_wiredtiger_log_operations_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Journal operations",
+        "description": "in bytes, payload received and bytes written, by host",
+        "line_label": "%type% (%host%)",
+        "display": "LINE",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_wiredtiger_log_bytes_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Cache size",
+        "description": "in bytes, per host and type",
+        "line_label": "%type% (%host%)",
+        "display": "LINE",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_wiredtiger_cache_bytes",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Block manager",
+        "description": "in bytes read and written, per host",
+        "line_label": "%type% (%host%)",
+        "display": "LINE",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_wiredtiger_blockmanager_bytes_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Concurrent transaction tickets",
+        "description": "available count, by host and type",
+        "line_label": "%type% (%host%)",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_wiredtiger_concurrent_transactions_available_tickets",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Open cursors",
+        "description": "count, by host and state",
+        "line_label": "%state% (%host%)",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_metrics_cursor_open",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "state",
+                "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}

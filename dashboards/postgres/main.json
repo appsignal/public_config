@@ -33,6 +33,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "postgresql"
               }
             ]
           }
@@ -66,6 +70,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "postgresql"
               }
             ]
           }
@@ -99,6 +107,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "postgresql"
               }
             ]
           }
@@ -132,6 +144,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "postgresql"
               }
             ]
           }
@@ -165,6 +181,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "postgresql"
               }
             ]
           }
@@ -198,6 +218,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "postgresql"
               }
             ]
           }
@@ -231,6 +255,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "postgresql"
               }
             ]
           }
@@ -264,6 +292,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "postgresql"
               }
             ]
           }
@@ -297,6 +329,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "postgresql"
               }
             ]
           }
@@ -330,6 +366,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "postgresql"
               }
             ]
           }
@@ -363,6 +403,10 @@
               {
                 "key": "host",
                 "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "postgresql"
               }
             ]
           }

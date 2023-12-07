@@ -1,0 +1,149 @@
+{
+  "metric_keys": [
+    "mongod_metrics_repl_network_bytes_total"
+  ],
+  "dashboard": {
+    "title": "MongoDB/Replication",
+    "description": "Metrics from MongoDB's cluster replication engine internals",
+    "visuals": [
+      {
+        "title": "Network replication",
+        "description": "in bytes, per host",
+        "line_label": "%host%",
+        "display": "LINE",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_metrics_repl_network_bytes_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Replication buffer",
+        "description": "in bytes, per host",
+        "line_label": "%host%",
+        "display": "LINE",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_metrics_repl_buffer_size_bytes",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Replication executor queue",
+        "description": "operations count, per state and host",
+        "line_label": "%type% (%host%)",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_metrics_repl_executor_queue",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "type",
+                "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Replication batch apply time",
+        "description": "in seconds, per host",
+        "line_label": "%host%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "mongod_metrics_repl_apply_batches_seconds_total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "endpoint",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "vector_namespace",
+                "value": "mongodb"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}
