@@ -1,7 +1,5 @@
 {
-  "metric_keys": [
-    "index_cache_hit_rate"
-  ],
+  "metric_keys": ["index_cache_hit_rate"],
   "dashboard": {
     "title": "Heroku Postgres",
     "description": "Postgres metrics provided by the Heroku Log Drain. Shows database size, connections and index hit rates.",
@@ -363,6 +361,64 @@
               {
                 "key": "state",
                 "value": "cached"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "WAL usage",
+        "description": "Write Ahead Log usage, in percentage. A healthy database has this metric at 0.75 or lower. Higher than 0.75 Heroku automatically limits connections to the Heroku Postgres instance.",
+        "line_label": "%source%",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "wal_percentage_used",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "addon",
+                "value": "postgresql-*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "title": "Follower lag",
+        "description": "Measured as the number of commits that this follower is behind its leader. This graph can be empty if there are no followers.",
+        "line_label": "%source%",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "follower_lag",
+            "fields": [
+              {
+                "field": "gauge"
+              }
+            ],
+            "tags": [
+              {
+                "key": "addon",
+                "value": "postgresql-*"
+              },
+              {
+                "key": "source",
+                "value": "*"
               }
             ]
           }
