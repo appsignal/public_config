@@ -1,0 +1,102 @@
+{
+  "metric_keys": [
+    "pod_cpu_usage_nano_cores"
+  ],
+  "dashboard": {
+    "title": "Kubernetes Pods",
+    "description": "",
+    "visuals": [
+      {
+	"title": "Pod CPU Usage",
+	"description": "pod_cpu_usage_nano_cores",
+	"line_label": "%name% %pod%",
+	"display": "LINE",
+	"format": "number",
+	"draw_null_as_zero": true,
+	"metrics": [
+	  {
+	    "name": "pod_cpu_usage_nano_cores",
+	    "fields": [
+	      {
+		"field": "GAUGE"
+	      }
+	    ],
+	    "tags": [
+	      {
+		"key": "pod",
+		"value": "*"
+	      }
+	    ]
+	  }
+	],
+	"type": "timeseries"
+      },
+      {
+	"title": "Pod Memory Usage",
+	"description": "pod_memory_usage_bytes vs pod_memory_available_bytes",
+	"line_label": "%name% %pod%",
+	"display": "LINE",
+	"format": "size",
+	"format_input": "byte",
+	"draw_null_as_zero": true,
+	"metrics": [
+	  {
+	    "name": "pod_memory_working_set_bytes",
+	    "fields": [
+	      {
+		"field": "GAUGE"
+	      }
+	    ],
+	    "tags": [
+	      {
+		"key": "pod",
+		"value": "*"
+	      }
+	    ]
+	  }
+	],
+	"type": "timeseries"
+      },
+      {
+	"title": "Pod Swap",
+	"description": "pod_swap_usage_bytes vs. pod_swap_available_bytes",
+	"line_label": "%name% %pod%",
+	"display": "LINE",
+	"format": "size",
+	"format_input": "byte",
+	"draw_null_as_zero": true,
+	"metrics": [
+	  {
+	    "name": "pod_swap_available_bytes",
+	    "fields": [
+	      {
+		"field": "GAUGE"
+	      }
+	    ],
+	    "tags": [
+	      {
+		"key": "pod",
+		"value": "*"
+	      }
+	    ]
+	  },
+	  {
+	    "name": "pod_swap_usage_bytes",
+	    "fields": [
+	      {
+		"field": "GAUGE"
+	      }
+	    ],
+	    "tags": [
+	      {
+		"key": "pod",
+		"value": "*"
+	      }
+	    ]
+	  }
+	],
+	"type": "timeseries"
+      }
+    ]
+  }
+}
