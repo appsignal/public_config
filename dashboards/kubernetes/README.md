@@ -1,6 +1,6 @@
 # Kubernetes automated dashboard
 
-There is currently one automated dashboard for AppSignal for Kubernetes:
+The following automated dashboards exist for AppSignal for Kubernetes:
 
 - [Nodes](#nodes)
 - [Pods](#pods)
