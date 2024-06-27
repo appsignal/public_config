@@ -10,7 +10,7 @@
       {
         "title": "Global timer",
         "description": "The time spent by all threads in waiting to be resumed",
-        "line_label": "%hostname%",
+        "line_label": "%process_name% #%process_id% (%hostname%)",
         "display": "LINE",
         "format": "duration",
         "draw_null_as_zero": true,
@@ -26,6 +26,14 @@
               {
                 "key": "hostname",
                 "value": "*"
+              },
+              {
+                "key": "process_id",
+                "value": "*"
+              },
+              {
+                "key": "process_name",
+                "value": "*"
               }
             ]
           }
@@ -35,7 +43,7 @@
       {
         "title": "Waiting threads",
         "description": "The number of threads waiting to be resumed",
-        "line_label": "%hostname%",
+        "line_label": "%process_name% #%process_id% (%hostname%)",
         "display": "LINE",
         "format": "number",
         "draw_null_as_zero": true,
@@ -50,6 +58,14 @@
             "tags": [
               {
                 "key": "hostname",
+                "value": "*"
+              },
+              {
+                "key": "process_id",
+                "value": "*"
+              },
+              {
+                "key": "process_name",
                 "value": "*"
               }
             ]
