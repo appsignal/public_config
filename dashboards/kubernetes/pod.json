@@ -4,7 +4,7 @@
   ],
   "dashboard": {
     "title": "Kubernetes Pods",
-    "description": "",
+    "description": "The Kubernetes Pods dashboard shows CPU, memory and swap metrics for each running pod in the cluster.\n",
     "visuals": [
       {
 	"title": "Pod CPU Usage",
