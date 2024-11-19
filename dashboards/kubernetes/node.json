@@ -4,7 +4,7 @@
   ],
   "dashboard": {
     "title": "Kubernetes Nodes",
-    "description": "The Kubernetes Nodes dashboard shows CPU, memory, swap, file system and network traffic metrics for each running node in the cluster.\n",
+    "description": "The Kubernetes Nodes dashboard shows CPU, memory, swap, file system and network traffic metrics for each running node in the cluster.",
     "visuals": [
       {
         "title": "Node CPU Usage",
