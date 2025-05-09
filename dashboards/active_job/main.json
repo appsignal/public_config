@@ -123,6 +123,36 @@
             ]
           }
         ]
+      },
+      {
+        "type": "timeseries",
+        "title": "Queue time per queue",
+        "line_label": "%queue% - %field%",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "active_job_queue_time",
+            "fields": [
+              {
+                "field": "MEAN"
+              },
+              {
+                "field": "P90"
+              },
+              {
+                "field": "P95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "queue",
+                "value": "*"
+              }
+            ]
+          }
+        ]
       }
     ]
   }

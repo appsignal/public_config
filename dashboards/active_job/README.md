@@ -20,7 +20,7 @@ This graph displays values from the `active_job_queue_job_count` metric. This gr
 - The **status** of the job that was executed, either:
   - "processed" (including failed)
   - "failed"
-- The **queue** in which the job was enqueued. 
+- The **queue** in which the job was enqueued.
 
 ## Job status per queue with priority
 
@@ -33,7 +33,7 @@ This graph displays values from the `active_job_queue_priority_job_count` metric
 - The **status** of the job that was executed, either:
   - "processed" (including failed)
   - "failed"
-- The **queue** in which the job was enqueued. 
+- The **queue** in which the job was enqueued.
 - The **priority** that was given to the job.
 
 ## Throughput per job class
@@ -42,7 +42,7 @@ The "Throughput per job class" graph shows the amount of jobs that were executed
 
 This graph displays values from the `transaction_duration` metric. This graph will show a line for each combination of values of the following metric tags:
 
-- The **action** that defines the job, which includes the class in which the action is defined. 
+- The **action** that defines the job, which includes the class in which the action is defined.
 
 ## Duration per job class
 
@@ -50,4 +50,10 @@ The "Duration per job class" graph shows the amount of time that it took for job
 
 This graph displays values from the `transaction_duration` metric. This graph will show a line for each combination of values of the following metric tags:
 
-- The **action** that defines the job, which includes the class in which the action is defined. 
+- The **action** that defines the job, which includes the class in which the action is defined.
+
+## Queue time per queue
+
+The "Queue time per queue" graph shows the amount of time that it took for jobs to execute from when they were queued.
+
+This graph displays values from the `active_job_queue_time` metric. Per queue, this graph will show a line for the mean, and the 90th and 95th percentiles, of the queue time.
