@@ -20,7 +20,7 @@ Automated Dashboards can be found in the `dashboards/` sub directory. Each direc
 - [Ruby VM](/dashboards/ruby_vm/)
 - [Sidekiq](/dashboards/sidekiq/)
 - [Karafka](/dashboards/karafka/)
-- [Web Vitals](/dashboard/web-vitals/) (deprecated)
+- [Web Vitals](/dashboards/web-vitals/)
 
 ### Validation
 
