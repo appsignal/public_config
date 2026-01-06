@@ -1,3 +1,5 @@
-# Next.js Web Vitals automated dashboard (deprecated)
+# Web Vitals automated dashboard
 
-As of version 3.x of the AppSignal for Node.js integration, the metrics used on the Next.js Web Vitals automated dashboard are no longer emitted, and therefore this automated dashboard is no longer created.
+Dashboard used to display Web Vitals.
+
+These can be reported by the [Vercel Speed Insights drain](https://docs.appsignal.com/vercel/speed-insights.html).
