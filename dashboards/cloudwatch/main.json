@@ -1,0 +1,62 @@
+{
+  "metric_keys": [
+    "cloudwatch_metricstreams_metric_update",
+    "cloudwatch_metricstreams_total_metric_update",
+    "cloudwatch_metricstreams_publish_error_rate"
+  ],
+  "dashboard": {
+    "title": "AWS CloudWatch",
+    "description": "Monitor AWS CloudWatch Metric Streams performance and error rates.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "MetricUpdate vs TotalMetricUpdate",
+        "description": "MetricUpdate is the number of metric updates sent to the metric stream. TotalMetricUpdate is MetricUpdate + a number based on additional statistics that are being streamed.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "cloudwatch_metricstreams_metric_update",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          },
+          {
+            "name": "cloudwatch_metricstreams_total_metric_update",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "PublishErrorRate",
+        "description": "The number of unrecoverable errors that occur when putting data into the Firehose delivery stream.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "cloudwatch_metricstreams_publish_error_rate",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      }
+    ]
+  }
+}
