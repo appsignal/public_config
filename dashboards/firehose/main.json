@@ -1,27 +1,27 @@
 {
   "metric_keys": [
-    "firehose_delivery_to_s3_records",
-    "firehose_describe_delivery_stream_requests",
-    "firehose_failed_validation_records",
-    "firehose_incoming_put_requests",
-    "firehose_incoming_records",
-    "firehose_kms_key_access_denied",
-    "firehose_kms_key_disabled",
-    "firehose_kms_key_invalid_state",
-    "firehose_kms_key_not_found",
-    "firehose_list_delivery_streams_latency",
-    "firehose_list_delivery_streams_requests",
-    "firehose_put_record_batch_success",
-    "firehose_put_record_batch_failure",
-    "firehose_delivery_to_http_endpoint_data_freshness",
-    "firehose_delivery_to_http_endpoint_processed_bytes",
-    "firehose_delivery_to_http_endpoint_bytes",
-    "firehose_delivery_to_http_endpoint_records",
-    "firehose_delivery_to_http_endpoint_processed_records",
-    "firehose_throttled_records",
-    "firehose_bytes_per_second_limit",
-    "firehose_records_per_second_limit",
-    "firehose_incoming_bytes"
+    "aws_firehose_delivery_to_s3_records",
+    "aws_firehose_describe_delivery_stream_requests",
+    "aws_firehose_failed_validation_records",
+    "aws_firehose_incoming_put_requests",
+    "aws_firehose_incoming_records",
+    "aws_firehose_kms_key_access_denied",
+    "aws_firehose_kms_key_disabled",
+    "aws_firehose_kms_key_invalid_state",
+    "aws_firehose_kms_key_not_found",
+    "aws_firehose_list_delivery_streams_latency",
+    "aws_firehose_list_delivery_streams_requests",
+    "aws_firehose_put_record_batch_success",
+    "aws_firehose_put_record_batch_failure",
+    "aws_firehose_delivery_to_http_endpoint_data_freshness",
+    "aws_firehose_delivery_to_http_endpoint_processed_bytes",
+    "aws_firehose_delivery_to_http_endpoint_bytes",
+    "aws_firehose_delivery_to_http_endpoint_records",
+    "aws_firehose_delivery_to_http_endpoint_processed_records",
+    "aws_firehose_throttled_records",
+    "aws_firehose_bytes_per_second_limit",
+    "aws_firehose_records_per_second_limit",
+    "aws_firehose_incoming_bytes"
   ],
   "dashboard": {
     "title": "AWS Firehose",
@@ -37,7 +37,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_delivery_to_s3_records",
+            "name": "aws_firehose_delivery_to_s3_records",
             "fields": [
               {
                 "field": "COUNTER"
@@ -57,7 +57,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_describe_delivery_stream_requests",
+            "name": "aws_firehose_describe_delivery_stream_requests",
             "fields": [
               {
                 "field": "COUNTER"
@@ -77,7 +77,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_failed_validation_records",
+            "name": "aws_firehose_failed_validation_records",
             "fields": [
               {
                 "field": "COUNTER"
@@ -97,7 +97,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_incoming_put_requests",
+            "name": "aws_firehose_incoming_put_requests",
             "fields": [
               {
                 "field": "COUNTER"
@@ -106,7 +106,7 @@
             "tags": []
           },
           {
-            "name": "firehose_incoming_records",
+            "name": "aws_firehose_incoming_records",
             "fields": [
               {
                 "field": "COUNTER"
@@ -126,7 +126,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_kms_key_access_denied",
+            "name": "aws_firehose_kms_key_access_denied",
             "fields": [
               {
                 "field": "COUNTER"
@@ -135,7 +135,7 @@
             "tags": []
           },
           {
-            "name": "firehose_kms_key_disabled",
+            "name": "aws_firehose_kms_key_disabled",
             "fields": [
               {
                 "field": "COUNTER"
@@ -144,7 +144,7 @@
             "tags": []
           },
           {
-            "name": "firehose_kms_key_invalid_state",
+            "name": "aws_firehose_kms_key_invalid_state",
             "fields": [
               {
                 "field": "COUNTER"
@@ -153,7 +153,7 @@
             "tags": []
           },
           {
-            "name": "firehose_kms_key_not_found",
+            "name": "aws_firehose_kms_key_not_found",
             "fields": [
               {
                 "field": "COUNTER"
@@ -173,7 +173,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_list_delivery_streams_latency",
+            "name": "aws_firehose_list_delivery_streams_latency",
             "fields": [
               {
                 "field": "COUNTER"
@@ -193,7 +193,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_put_record_batch_success",
+            "name": "aws_firehose_put_record_batch_success",
             "fields": [
               {
                 "field": "COUNTER"
@@ -202,7 +202,7 @@
             "tags": []
           },
           {
-            "name": "firehose_put_record_batch_failure",
+            "name": "aws_firehose_put_record_batch_failure",
             "fields": [
               {
                 "field": "COUNTER"
@@ -222,7 +222,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_delivery_to_http_endpoint_data_freshness",
+            "name": "aws_firehose_delivery_to_http_endpoint_data_freshness",
             "fields": [
               {
                 "field": "COUNTER"
@@ -242,7 +242,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_delivery_to_http_endpoint_processed_bytes",
+            "name": "aws_firehose_delivery_to_http_endpoint_processed_bytes",
             "fields": [
               {
                 "field": "COUNTER"
@@ -251,7 +251,7 @@
             "tags": []
           },
           {
-            "name": "firehose_delivery_to_http_endpoint_bytes",
+            "name": "aws_firehose_delivery_to_http_endpoint_bytes",
             "fields": [
               {
                 "field": "COUNTER"
@@ -271,7 +271,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_delivery_to_http_endpoint_records",
+            "name": "aws_firehose_delivery_to_http_endpoint_records",
             "fields": [
               {
                 "field": "COUNTER"
@@ -280,7 +280,7 @@
             "tags": []
           },
           {
-            "name": "firehose_delivery_to_http_endpoint_processed_records",
+            "name": "aws_firehose_delivery_to_http_endpoint_processed_records",
             "fields": [
               {
                 "field": "COUNTER"
@@ -300,7 +300,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_throttled_records",
+            "name": "aws_firehose_throttled_records",
             "fields": [
               {
                 "field": "COUNTER"
@@ -320,7 +320,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_bytes_per_second_limit",
+            "name": "aws_firehose_bytes_per_second_limit",
             "fields": [
               {
                 "field": "COUNTER"
@@ -340,7 +340,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_records_per_second_limit",
+            "name": "aws_firehose_records_per_second_limit",
             "fields": [
               {
                 "field": "COUNTER"
@@ -360,7 +360,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_list_delivery_streams_requests",
+            "name": "aws_firehose_list_delivery_streams_requests",
             "fields": [
               {
                 "field": "COUNTER"
@@ -380,7 +380,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "firehose_incoming_bytes",
+            "name": "aws_firehose_incoming_bytes",
             "fields": [
               {
                 "field": "COUNTER"

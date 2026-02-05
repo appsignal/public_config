@@ -1,8 +1,8 @@
 {
   "metric_keys": [
-    "cloudwatch_metricstreams_metric_update",
-    "cloudwatch_metricstreams_total_metric_update",
-    "cloudwatch_metricstreams_publish_error_rate"
+    "aws_cloudwatch_metricstreams_metric_update",
+    "aws_cloudwatch_metricstreams_total_metric_update",
+    "aws_cloudwatch_metricstreams_publish_error_rate"
   ],
   "dashboard": {
     "title": "AWS CloudWatch",
@@ -18,7 +18,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "cloudwatch_metricstreams_metric_update",
+            "name": "aws_cloudwatch_metricstreams_metric_update",
             "fields": [
               {
                 "field": "COUNTER"
@@ -27,7 +27,7 @@
             "tags": []
           },
           {
-            "name": "cloudwatch_metricstreams_total_metric_update",
+            "name": "aws_cloudwatch_metricstreams_total_metric_update",
             "fields": [
               {
                 "field": "COUNTER"
@@ -47,7 +47,7 @@
         "line_label": "%name%",
         "metrics": [
           {
-            "name": "cloudwatch_metricstreams_publish_error_rate",
+            "name": "aws_cloudwatch_metricstreams_publish_error_rate",
             "fields": [
               {
                 "field": "COUNTER"
