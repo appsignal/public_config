@@ -11,26 +11,6 @@
         "display": "line",
         "format": "number",
         "draw_null_as_zero": true,
-        "title": "DeliveryToS3.Records",
-        "description": "The number of records delivered to Amazon S3 over the specified time period. Amazon Data Firehose emits this metric only when you enable backup for all documents.",
-        "line_label": "%name%",
-        "metrics": [
-          {
-            "name": "aws_firehose_delivery_to_s3_records",
-            "fields": [
-              {
-                "field": "COUNTER"
-              }
-            ],
-            "tags": []
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
-        "format": "number",
-        "draw_null_as_zero": true,
         "title": "DescribeDeliveryStream.Requests",
         "description": "The total number of DescribeDeliveryStream requests.",
         "line_label": "%name%",
