@@ -1,0 +1,189 @@
+{
+  "metric_keys": [
+    "aws_lambda_invocations"
+  ],
+  "dashboard": {
+    "title": "AWS Lambda",
+    "description": "Monitor AWS Lambda function performance, invocations, errors, and concurrency metrics.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Invocations",
+        "description": "The number of times your function code is invoked, including successful invocations and those that result in function errors.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_lambda_invocations",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Errors",
+        "description": "The number of invocations that result in a function error. Function errors include exceptions thrown by your code and exceptions thrown by the Lambda runtime.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_lambda_errors",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Throttles",
+        "description": "The number of invocation requests that are throttled. When all function instances are processing requests and no concurrency is available to scale up, Lambda rejects additional requests.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_lambda_throttles",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Duration",
+        "description": "The amount of time that your function code spends processing an event. The billed duration for an invocation is the value of Duration rounded up to the nearest millisecond.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_lambda_duration",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "ConcurrentExecutions vs UnreservedConcurrentExecutions",
+        "description": "ConcurrentExecutions shows function instances processing events. UnreservedConcurrentExecutions shows events processed by functions without reserved concurrency.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_lambda_concurrent_executions",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          },
+          {
+            "name": "aws_lambda_unreserved_concurrent_executions",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "ClaimedAccountConcurrency",
+        "description": "The sum of the concurrency of the functions that don't have reserved concurrency. Represents the concurrency that is not available for functions with reserved concurrency.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_lambda_claimed_account_concurrency",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "AsyncEventsReceived vs AsyncEventsDropped",
+        "description": "AsyncEventsReceived shows events successfully queued for processing. AsyncEventsDropped shows events dropped without running the function.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_lambda_async_events_received",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          },
+          {
+            "name": "aws_lambda_async_events_dropped",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "AsyncEventAge",
+        "description": "The time between when Lambda successfully queues the event and when the function is invoked. The value of this metric increases when events are being retried due to invocation failures or throttling.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_lambda_async_event_age",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      }
+    ]
+  }
+}
