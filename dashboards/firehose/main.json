@@ -147,35 +147,6 @@
         "display": "line",
         "format": "number",
         "draw_null_as_zero": true,
-        "title": "PutRecordBatch",
-        "description": "The number of successful and failed PutRecordBatch operations, showing batch processing performance and error rates.",
-        "line_label": "%name%",
-        "metrics": [
-          {
-            "name": "aws_firehose_put_record_batch_success",
-            "fields": [
-              {
-                "field": "COUNTER"
-              }
-            ],
-            "tags": []
-          },
-          {
-            "name": "aws_firehose_put_record_batch_failure",
-            "fields": [
-              {
-                "field": "COUNTER"
-              }
-            ],
-            "tags": []
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
-        "format": "number",
-        "draw_null_as_zero": true,
         "title": "DeliveryToHttpEndpointDataFreshness",
         "description": "The age (from getting into Amazon Data Firehose to now) of the oldest record in Amazon Data Firehose. Any record older than this age has been delivered to OpenSearch Service.",
         "line_label": "%name%",
