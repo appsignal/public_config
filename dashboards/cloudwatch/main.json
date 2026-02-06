@@ -1,8 +1,6 @@
 {
   "metric_keys": [
-    "aws_cloudwatch_metricstreams_metric_update",
-    "aws_cloudwatch_metricstreams_total_metric_update",
-    "aws_cloudwatch_metricstreams_publish_error_rate"
+    "aws_cloudwatch_metricstreams_metric_update"
   ],
   "dashboard": {
     "title": "AWS CloudWatch",

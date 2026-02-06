@@ -1,27 +1,6 @@
 {
   "metric_keys": [
-    "aws_firehose_delivery_to_s3_records",
-    "aws_firehose_describe_delivery_stream_requests",
-    "aws_firehose_failed_validation_records",
-    "aws_firehose_incoming_put_requests",
-    "aws_firehose_incoming_records",
-    "aws_firehose_kms_key_access_denied",
-    "aws_firehose_kms_key_disabled",
-    "aws_firehose_kms_key_invalid_state",
-    "aws_firehose_kms_key_not_found",
-    "aws_firehose_list_delivery_streams_latency",
-    "aws_firehose_list_delivery_streams_requests",
-    "aws_firehose_put_record_batch_success",
-    "aws_firehose_put_record_batch_failure",
-    "aws_firehose_delivery_to_http_endpoint_data_freshness",
-    "aws_firehose_delivery_to_http_endpoint_processed_bytes",
-    "aws_firehose_delivery_to_http_endpoint_bytes",
-    "aws_firehose_delivery_to_http_endpoint_records",
-    "aws_firehose_delivery_to_http_endpoint_processed_records",
-    "aws_firehose_throttled_records",
-    "aws_firehose_bytes_per_second_limit",
-    "aws_firehose_records_per_second_limit",
-    "aws_firehose_incoming_bytes"
+    "aws_firehose_incoming_records"
   ],
   "dashboard": {
     "title": "AWS Firehose",
