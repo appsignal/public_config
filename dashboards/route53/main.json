@@ -1,0 +1,71 @@
+{
+  "metric_keys": [
+    "aws_route53_dns_queries"
+  ],
+  "dashboard": {
+    "title": "AWS Route53",
+    "description": "Monitor AWS Route53 DNS queries and health checks.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "DNSQueries",
+        "description": "The number of DNS queries that Route 53 responds to for all resource record sets in the hosted zone.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_route53_dns_queries",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "HealthCheckPercentageHealthy",
+        "description": "The percentage of Route 53 health checkers that consider the selected endpoint to be healthy.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_route53_health_check_percentage_healthy",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "HealthCheckStatus",
+        "description": "The status of the health check endpoint. 1 indicates healthy, 0 indicates unhealthy.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_route53_health_check_status",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": []
+          }
+        ]
+      }
+    ]
+  }
+}
