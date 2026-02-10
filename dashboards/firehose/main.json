@@ -3,7 +3,7 @@
     "aws_firehose_incoming_records"
   ],
   "dashboard": {
-    "title": "AWS Firehose",
+    "title": "AWS/Firehose",
     "description": "Monitor AWS Firehose delivery streams performance, throughput, and error rates.",
     "visuals": [
       {

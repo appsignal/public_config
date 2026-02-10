@@ -3,7 +3,7 @@
     "aws_route53_dns_queries"
   ],
   "dashboard": {
-    "title": "AWS Route53",
+    "title": "AWS/Route53",
     "description": "Monitor AWS Route53 DNS queries and health checks.",
     "visuals": [
       {

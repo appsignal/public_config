@@ -3,7 +3,7 @@
     "aws_lambda_invocations"
   ],
   "dashboard": {
-    "title": "AWS Lambda",
+    "title": "AWS/Lambda",
     "description": "Monitor AWS Lambda function performance, invocations, errors, and concurrency metrics.",
     "visuals": [
       {

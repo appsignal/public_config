@@ -3,7 +3,7 @@
     "aws_cloudwatch_metricstreams_metric_update"
   ],
   "dashboard": {
-    "title": "AWS CloudWatch",
+    "title": "AWS/CloudWatch",
     "description": "Monitor AWS CloudWatch Metric Streams performance and error rates.",
     "visuals": [
       {
