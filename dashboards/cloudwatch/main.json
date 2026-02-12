@@ -13,7 +13,7 @@
         "draw_null_as_zero": true,
         "title": "MetricUpdate vs TotalMetricUpdate",
         "description": "MetricUpdate is the number of metric updates sent to the metric stream. TotalMetricUpdate is MetricUpdate + a number based on additional statistics that are being streamed.",
-        "line_label": "%name%",
+        "line_label": "%name% %MetricStreamName%",
         "metrics": [
           {
             "name": "aws_cloudwatch_metricstreams_metric_update",
@@ -22,7 +22,12 @@
                 "field": "COUNTER"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "MetricStreamName",
+                "value": "*"
+              }
+            ]
           },
           {
             "name": "aws_cloudwatch_metricstreams_total_metric_update",
@@ -31,7 +36,12 @@
                 "field": "COUNTER"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "MetricStreamName",
+                "value": "*"
+              }
+            ]
           }
         ]
       },
@@ -42,7 +52,7 @@
         "draw_null_as_zero": true,
         "title": "PublishErrorRate",
         "description": "The number of unrecoverable errors that occur when putting data into the Firehose delivery stream.",
-        "line_label": "%name%",
+        "line_label": "%name% %MetricStreamName%",
         "metrics": [
           {
             "name": "aws_cloudwatch_metricstreams_publish_error_rate",
@@ -51,7 +61,12 @@
                 "field": "COUNTER"
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "MetricStreamName",
+                "value": "*"
+              }
+            ]
           }
         ]
       }
