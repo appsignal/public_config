@@ -11,15 +11,15 @@
         "display": "line",
         "format": "number",
         "draw_null_as_zero": true,
-        "title": "DescribeDeliveryStream.Requests",
-        "description": "The total number of DescribeDeliveryStream requests.",
+        "title": "FailedValidation.Records",
+        "description": "The number of records that failed record validation.",
         "line_label": "%name% %DeliveryStreamName%",
         "metrics": [
           {
-            "name": "aws_firehose_describe_delivery_stream_requests",
+            "name": "aws_firehose_failed_validation_records",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -36,15 +36,15 @@
         "display": "line",
         "format": "number",
         "draw_null_as_zero": true,
-        "title": "FailedValidation.Records",
-        "description": "The number of records that failed record validation.",
+        "title": "FailedValidation.Bytes",
+        "description": "The number of bytes that failed record validation.",
         "line_label": "%name% %DeliveryStreamName%",
         "metrics": [
           {
-            "name": "aws_firehose_failed_validation_records",
+            "name": "aws_firehose_failed_validation_bytes",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -69,7 +69,7 @@
             "name": "aws_firehose_incoming_put_requests",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -83,7 +83,7 @@
             "name": "aws_firehose_incoming_records",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -108,7 +108,7 @@
             "name": "aws_firehose_kms_key_access_denied",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -122,7 +122,7 @@
             "name": "aws_firehose_kms_key_disabled",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -136,7 +136,7 @@
             "name": "aws_firehose_kms_key_invalid_state",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -150,32 +150,7 @@
             "name": "aws_firehose_kms_key_not_found",
             "fields": [
               {
-                "field": "COUNTER"
-              }
-            ],
-            "tags": [
-              {
-                "key": "DeliveryStreamName",
-                "value": "*"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
-        "format": "number",
-        "draw_null_as_zero": true,
-        "title": "ListDeliveryStreams.Latency",
-        "description": "The time taken per ListDeliveryStream operation, measured over the specified time period.",
-        "line_label": "%name% %DeliveryStreamName%",
-        "metrics": [
-          {
-            "name": "aws_firehose_list_delivery_streams_latency",
-            "fields": [
-              {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -200,7 +175,7 @@
             "name": "aws_firehose_delivery_to_http_endpoint_data_freshness",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -225,7 +200,7 @@
             "name": "aws_firehose_delivery_to_http_endpoint_processed_bytes",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -239,7 +214,7 @@
             "name": "aws_firehose_delivery_to_http_endpoint_bytes",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -264,7 +239,7 @@
             "name": "aws_firehose_delivery_to_http_endpoint_records",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -278,7 +253,32 @@
             "name": "aws_firehose_delivery_to_http_endpoint_processed_records",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "DeliveryToHttpEndpoint.Success",
+        "description": "The number of successful deliveries to the HTTP endpoint.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_delivery_to_http_endpoint_success",
+            "fields": [
+              {
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -303,7 +303,7 @@
             "name": "aws_firehose_throttled_records",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -328,7 +328,7 @@
             "name": "aws_firehose_bytes_per_second_limit",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -353,32 +353,7 @@
             "name": "aws_firehose_records_per_second_limit",
             "fields": [
               {
-                "field": "COUNTER"
-              }
-            ],
-            "tags": [
-              {
-                "key": "DeliveryStreamName",
-                "value": "*"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
-        "format": "number",
-        "draw_null_as_zero": true,
-        "title": "ListDeliveryStreams.Requests",
-        "description": "The total number of ListFirehose requests.",
-        "line_label": "%name% %DeliveryStreamName%",
-        "metrics": [
-          {
-            "name": "aws_firehose_list_delivery_streams_requests",
-            "fields": [
-              {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -403,7 +378,110 @@
             "name": "aws_firehose_incoming_bytes",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "PutRecord vs PutRecordBatch Requests",
+        "description": "The number of PutRecord and PutRecordBatch requests.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_put_record_requests",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "aws_firehose_put_record_batch_requests",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "PutRecord vs PutRecordBatch Latency",
+        "description": "The latency of PutRecord and PutRecordBatch operations.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_put_record_latency",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "aws_firehose_put_record_batch_latency",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "PutRequestsPerSecondLimit",
+        "description": "The current maximum number of put requests per second that a Firehose stream can ingest before throttling.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_put_requests_per_second_limit",
+            "fields": [
+              {
+                "field": "GAUGE"
               }
             ],
             "tags": [

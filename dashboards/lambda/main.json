@@ -19,7 +19,7 @@
             "name": "aws_lambda_invocations",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -44,7 +44,7 @@
             "name": "aws_lambda_errors",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -69,7 +69,7 @@
             "name": "aws_lambda_throttles",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -94,7 +94,7 @@
             "name": "aws_lambda_duration",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -119,7 +119,7 @@
             "name": "aws_lambda_concurrent_executions",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -133,7 +133,7 @@
             "name": "aws_lambda_unreserved_concurrent_executions",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -152,19 +152,13 @@
         "draw_null_as_zero": true,
         "title": "ClaimedAccountConcurrency",
         "description": "The sum of the concurrency of the functions that don't have reserved concurrency. Represents the concurrency that is not available for functions with reserved concurrency.",
-        "line_label": "%name% %FunctionName%",
+        "line_label": "%name%",
         "metrics": [
           {
             "name": "aws_lambda_claimed_account_concurrency",
             "fields": [
               {
-                "field": "COUNTER"
-              }
-            ],
-            "tags": [
-              {
-                "key": "FunctionName",
-                "value": "*"
+                "field": "GAUGE"
               }
             ]
           }
@@ -183,7 +177,7 @@
             "name": "aws_lambda_async_events_received",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -197,7 +191,7 @@
             "name": "aws_lambda_async_events_dropped",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -222,7 +216,7 @@
             "name": "aws_lambda_async_event_age",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
