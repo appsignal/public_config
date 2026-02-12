@@ -19,7 +19,7 @@
             "name": "aws_route53_dns_queries",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -44,7 +44,7 @@
             "name": "aws_route53_health_check_percentage_healthy",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -69,7 +69,7 @@
             "name": "aws_route53_health_check_status",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [

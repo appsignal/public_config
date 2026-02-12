@@ -19,7 +19,7 @@
             "name": "aws_cloudwatch_metricstreams_metric_update",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -33,7 +33,7 @@
             "name": "aws_cloudwatch_metricstreams_total_metric_update",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -58,7 +58,7 @@
             "name": "aws_cloudwatch_metricstreams_publish_error_rate",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [

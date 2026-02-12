@@ -19,7 +19,7 @@
             "name": "aws_firehose_describe_delivery_stream_requests",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -44,7 +44,7 @@
             "name": "aws_firehose_failed_validation_records",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -69,7 +69,7 @@
             "name": "aws_firehose_incoming_put_requests",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -83,7 +83,7 @@
             "name": "aws_firehose_incoming_records",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -108,7 +108,7 @@
             "name": "aws_firehose_kms_key_access_denied",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -122,7 +122,7 @@
             "name": "aws_firehose_kms_key_disabled",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -136,7 +136,7 @@
             "name": "aws_firehose_kms_key_invalid_state",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -150,7 +150,7 @@
             "name": "aws_firehose_kms_key_not_found",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -175,7 +175,7 @@
             "name": "aws_firehose_list_delivery_streams_latency",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -200,7 +200,7 @@
             "name": "aws_firehose_delivery_to_http_endpoint_data_freshness",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -225,7 +225,7 @@
             "name": "aws_firehose_delivery_to_http_endpoint_processed_bytes",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -239,7 +239,7 @@
             "name": "aws_firehose_delivery_to_http_endpoint_bytes",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -264,7 +264,7 @@
             "name": "aws_firehose_delivery_to_http_endpoint_records",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -278,7 +278,7 @@
             "name": "aws_firehose_delivery_to_http_endpoint_processed_records",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -303,7 +303,7 @@
             "name": "aws_firehose_throttled_records",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -328,7 +328,7 @@
             "name": "aws_firehose_bytes_per_second_limit",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -353,7 +353,7 @@
             "name": "aws_firehose_records_per_second_limit",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -378,7 +378,7 @@
             "name": "aws_firehose_list_delivery_streams_requests",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
@@ -403,7 +403,7 @@
             "name": "aws_firehose_incoming_bytes",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "GAUGE"
               }
             ],
             "tags": [
