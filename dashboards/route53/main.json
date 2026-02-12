@@ -44,7 +44,7 @@
             "name": "aws_route53_health_check_percentage_healthy",
             "fields": [
               {
-                "field": "GAUGE"
+                "field": "PERCENTAGE"
               }
             ],
             "tags": [
