@@ -1,0 +1,498 @@
+{
+  "metric_keys": [
+    "aws_firehose_incoming_records"
+  ],
+  "dashboard": {
+    "title": "AWS/Firehose",
+    "description": "Monitor AWS Firehose delivery streams performance, throughput, and error rates.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "FailedValidation.Records",
+        "description": "The number of records that failed record validation.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_failed_validation_records",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "FailedValidation.Bytes",
+        "description": "The number of bytes that failed record validation.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_failed_validation_bytes",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "IncomingPutRequests vs IncomingRecords",
+        "description": "The number of successful PutRecord and PutRecordBatch requests vs the number of records ingested successfully into the Firehose stream over the specified time period.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_incoming_put_requests",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "aws_firehose_incoming_records",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "KMSKeyAccessDenied vs KMSKeyDisabled vs KMSKeyInvalidState vs KMSKeyNotFound",
+        "description": "The number of times the service encounters a KMSAccessDeniedException, KMSDisabledException, KMSInvalidStateException, or KMSNotFoundException for the Firehose stream.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_kms_key_access_denied",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "aws_firehose_kms_key_disabled",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "aws_firehose_kms_key_invalid_state",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "aws_firehose_kms_key_not_found",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "DeliveryToHttpEndpointDataFreshness",
+        "description": "The age (from getting into Amazon Data Firehose to now) of the oldest record in Amazon Data Firehose. Any record older than this age has been delivered to OpenSearch Service.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_delivery_to_http_endpoint_data_freshness",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "DeliveryToHttpEndpoint.Bytes vs DeliveryToHttpEndpoint.ProcessedBytes",
+        "description": "The number of bytes delivered successfully to the HTTP endpoint vs the number of attempted processed bytes, including retries.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_delivery_to_http_endpoint_processed_bytes",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "aws_firehose_delivery_to_http_endpoint_bytes",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "DeliveryToHttpEndpoint.Records vs DeliveryToHttpEndpoint.ProcessedRecords",
+        "description": "The number of records delivered successfully to the HTTP endpoint vs the number of attempted records including retries.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_delivery_to_http_endpoint_records",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "aws_firehose_delivery_to_http_endpoint_processed_records",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "DeliveryToHttpEndpoint.Success",
+        "description": "The number of successful deliveries to the HTTP endpoint.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_delivery_to_http_endpoint_success",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "ThrottledRecords",
+        "description": "The number of records that were throttled because data ingestion exceeded one of the Firehose stream limits.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_throttled_records",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "BytesPerSecondLimit",
+        "description": "The current maximum number of bytes per second that a Firehose stream can ingest before throttling.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_bytes_per_second_limit",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "RecordsPerSecondLimit",
+        "description": "The current maximum number of records per second that a Firehose stream can ingest before throttling.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_records_per_second_limit",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "IncomingBytes",
+        "description": "The number of bytes ingested successfully into the Firehose stream over the specified time period.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_incoming_bytes",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "PutRecord vs PutRecordBatch Requests",
+        "description": "The number of PutRecord and PutRecordBatch requests.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_put_record_requests",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "aws_firehose_put_record_batch_requests",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "PutRecord vs PutRecordBatch Latency",
+        "description": "The latency of PutRecord and PutRecordBatch operations.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_put_record_latency",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "aws_firehose_put_record_batch_latency",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "PutRequestsPerSecondLimit",
+        "description": "The current maximum number of put requests per second that a Firehose stream can ingest before throttling.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_put_requests_per_second_limit",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "DeliveryStreamName",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
