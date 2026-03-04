@@ -2,6 +2,7 @@
   "metric_keys": [
     "aws_lambda_invocations"
   ],
+  "label": "beta",
   "dashboard": {
     "title": "AWS/Lambda",
     "description": "Monitor AWS Lambda function performance, invocations, errors, and concurrency metrics.",
