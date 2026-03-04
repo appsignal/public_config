@@ -2,11 +2,19 @@ name: Public config validation
 
 on:
   push:
+    branches:
+    - main
   pull_request:
+    types:
+    - opened
+    - reopened
+    - synchronize
+  schedule:
+  - cron: 0 0 * * 1-5
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/develop' }}
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: "${{ !contains(github.ref, 'main')}}"
 
 jobs:
   validate:
