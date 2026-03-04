@@ -2,7 +2,7 @@
   "metric_keys": [
     "aws_route53_dns_queries"
   ],
-  "label": "beta",
+  "label": "Beta",
   "dashboard": {
     "title": "AWS/Route53",
     "description": "Monitor AWS Route53 DNS queries and health checks.",

@@ -2,7 +2,7 @@
   "metric_keys": [
     "aws_firehose_incoming_records"
   ],
-  "label": "beta",
+  "label": "Beta",
   "dashboard": {
     "title": "AWS/Firehose",
     "description": "Monitor AWS Firehose delivery streams performance, throughput, and error rates.",
