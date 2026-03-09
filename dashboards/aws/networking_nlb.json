@@ -1,0 +1,145 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_network_elb_processed_bytes"
+  ],
+  "dashboard": {
+    "title": "AWS/NetworkELB",
+    "description": "Monitor Network Load Balancer target health, connection flow, throughput, TCP resets, and TLS errors.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Target Health",
+        "description": "The number of targets that are considered healthy/unhealthy.",
+        "line_label": "%name% %TargetGroup%",
+        "metrics": [
+          {
+            "name": "aws_network_elb_healthy_host_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TargetGroup", "value": "*" }]
+          },
+          {
+            "name": "aws_network_elb_un_healthy_host_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TargetGroup", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Active Connections",
+        "description": "The total number of concurrent active TCP flows (connections) from clients to targets.",
+        "line_label": "%name% %LoadBalancer%",
+        "metrics": [
+          {
+            "name": "aws_network_elb_active_flow_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LoadBalancer", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "New Connections",
+        "description": "The total number of new TCP flows (connections) established from clients to targets in the time period.",
+        "line_label": "%name% %LoadBalancer%",
+        "metrics": [
+          {
+            "name": "aws_network_elb_new_flow_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LoadBalancer", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Processed Bytes",
+        "description": "The total number of bytes processed by the load balancer including TCP/UDP headers.",
+        "line_label": "%name% %LoadBalancer%",
+        "metrics": [
+          {
+            "name": "aws_network_elb_processed_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LoadBalancer", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "TCP Resets",
+        "description": "The total number of reset (RST) packets sent from the client, the load balancer, and the target.",
+        "line_label": "%name% %LoadBalancer%",
+        "metrics": [
+          {
+            "name": "aws_network_elb_tcp_client_reset_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LoadBalancer", "value": "*" }]
+          },
+          {
+            "name": "aws_network_elb_tcp_elb_reset_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LoadBalancer", "value": "*" }]
+          },
+          {
+            "name": "aws_network_elb_tcp_target_reset_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LoadBalancer", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "TLS Negotiation Errors",
+        "description": "The total number of TLS handshakes that failed during negotiation between the client/target and the load balancer.",
+        "line_label": "%name% %LoadBalancer%",
+        "metrics": [
+          {
+            "name": "aws_network_elb_client_tls_negotiation_error_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LoadBalancer", "value": "*" }]
+          },
+          {
+            "name": "aws_network_elb_target_tls_negotiation_error_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LoadBalancer", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Consumed LCUs",
+        "description": "The number of load balancer capacity units (LCU) used by the load balancer.",
+        "line_label": "%name% %LoadBalancer%",
+        "metrics": [
+          {
+            "name": "aws_network_elb_consumed_lcus",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LoadBalancer", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

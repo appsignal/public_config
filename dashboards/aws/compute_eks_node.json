@@ -1,0 +1,130 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_containerinsights_node_cpu_utilization"
+  ],
+  "dashboard": {
+    "title": "AWS/EKS Nodes",
+    "description": "Monitor EKS node-level CPU, memory, filesystem, and network metrics across the cluster.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "title": "Node CPU Utilization",
+        "description": "The percentage of CPU units used on the node.",
+        "line_label": "%name% %NodeName%",
+        "metrics": [
+          {
+            "name": "aws_containerinsights_node_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NodeName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "title": "Node Memory Utilization",
+        "description": "The percentage of memory currently in use on the node.",
+        "line_label": "%name% %NodeName%",
+        "metrics": [
+          {
+            "name": "aws_containerinsights_node_memory_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NodeName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "title": "Node Filesystem Utilization",
+        "description": "The percentage of filesystem capacity in use on the node.",
+        "line_label": "%name% %NodeName%",
+        "metrics": [
+          {
+            "name": "aws_containerinsights_node_filesystem_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NodeName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Node Network Traffic",
+        "description": "The total number of bytes per second transmitted and received over the network by the node.",
+        "line_label": "%name% %NodeName%",
+        "metrics": [
+          {
+            "name": "aws_containerinsights_node_network_total_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NodeName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Running Pods per Node",
+        "description": "The number of pods currently running on the node.",
+        "line_label": "%name% %NodeName%",
+        "metrics": [
+          {
+            "name": "aws_containerinsights_node_number_of_running_pods",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NodeName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Running Containers per Node",
+        "description": "The number of containers currently running on the node.",
+        "line_label": "%name% %NodeName%",
+        "metrics": [
+          {
+            "name": "aws_containerinsights_node_number_of_running_containers",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NodeName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Cluster Node Count",
+        "description": "The total number of nodes and failed nodes in the EKS cluster.",
+        "line_label": "%name% %ClusterName%",
+        "metrics": [
+          {
+            "name": "aws_containerinsights_cluster_node_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterName", "value": "*" }]
+          },
+          {
+            "name": "aws_containerinsights_cluster_failed_node_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

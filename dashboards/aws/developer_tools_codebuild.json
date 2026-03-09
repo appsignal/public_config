@@ -1,0 +1,94 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_codebuild_builds"
+  ],
+  "dashboard": {
+    "title": "AWS/CodeBuild",
+    "description": "Monitor CodeBuild project build counts, success/failure rates, and build phase durations.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Builds",
+        "description": "Total, succeeded, and failed builds.",
+        "line_label": "%name% %ProjectName%",
+        "metrics": [
+          {
+            "name": "aws_codebuild_builds",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ProjectName", "value": "*" }]
+          },
+          {
+            "name": "aws_codebuild_succeeded_builds",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ProjectName", "value": "*" }]
+          },
+          {
+            "name": "aws_codebuild_failed_builds",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ProjectName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "format_input": "second",
+        "draw_null_as_zero": false,
+        "title": "Build Duration",
+        "description": "Time to complete the build phase.",
+        "line_label": "%name% %ProjectName%",
+        "metrics": [
+          {
+            "name": "aws_codebuild_duration",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ProjectName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "format_input": "second",
+        "draw_null_as_zero": false,
+        "title": "Queue Duration",
+        "description": "Time a build spends in the queue waiting for resources.",
+        "line_label": "%name% %ProjectName%",
+        "metrics": [
+          {
+            "name": "aws_codebuild_queued_duration",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ProjectName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "format_input": "second",
+        "draw_null_as_zero": false,
+        "title": "Provisioning & Source Download",
+        "description": "Time spent provisioning build environment and downloading source code.",
+        "line_label": "%name% %ProjectName%",
+        "metrics": [
+          {
+            "name": "aws_codebuild_provisioning_duration",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ProjectName", "value": "*" }]
+          },
+          {
+            "name": "aws_codebuild_download_source_duration",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ProjectName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

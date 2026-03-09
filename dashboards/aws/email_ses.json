@@ -1,0 +1,73 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_ses_send"
+  ],
+  "dashboard": {
+    "title": "AWS/SES",
+    "description": "Monitor SES email delivery, bounces, complaints, and sender reputation rates.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Email Sending",
+        "description": "Emails sent, successfully delivered, and rejected.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_ses_send",
+            "fields": [{ "field": "GAUGE" }]
+          },
+          {
+            "name": "aws_ses_delivery",
+            "fields": [{ "field": "GAUGE" }]
+          },
+          {
+            "name": "aws_ses_reject",
+            "fields": [{ "field": "GAUGE" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Bounces vs Complaints",
+        "description": "Bounced and complained email counts.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_ses_bounce",
+            "fields": [{ "field": "GAUGE" }]
+          },
+          {
+            "name": "aws_ses_complaint",
+            "fields": [{ "field": "GAUGE" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Reputation Rates",
+        "description": "Account-level bounce and complaint rates tracked by SES reputation system.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_ses_reputation_bounce_rate",
+            "fields": [{ "field": "GAUGE" }]
+          },
+          {
+            "name": "aws_ses_reputation_complaint_rate",
+            "fields": [{ "field": "GAUGE" }]
+          }
+        ]
+      }
+    ]
+  }
+}

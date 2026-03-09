@@ -1,0 +1,151 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_s3_bucket_size_bytes"
+  ],
+  "dashboard": {
+    "title": "AWS/S3",
+    "description": "Monitor Amazon S3 bucket storage size, object counts, request metrics, errors, and latency.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Bucket Size",
+        "description": "The amount of data in bytes stored in a bucket. This is a daily storage metric reported once per day.",
+        "line_label": "%name% %BucketName%",
+        "metrics": [
+          {
+            "name": "aws_s3_bucket_size_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "BucketName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Number of Objects",
+        "description": "The total number of objects stored in a bucket. This is a daily storage metric reported once per day.",
+        "line_label": "%name% %BucketName%",
+        "metrics": [
+          {
+            "name": "aws_s3_number_of_objects",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "BucketName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "All Requests",
+        "description": "The total number of HTTP requests made to the S3 bucket, regardless of type. Requires request metrics configuration.",
+        "line_label": "%name% %BucketName%",
+        "metrics": [
+          {
+            "name": "aws_s3_all_requests",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "BucketName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Request Types",
+        "description": "The number of HTTP GET/PUT/DELETE requests made to the bucket.",
+        "line_label": "%name% %BucketName%",
+        "metrics": [
+          {
+            "name": "aws_s3_get_requests",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "BucketName", "value": "*" }]
+          },
+          {
+            "name": "aws_s3_put_requests",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "BucketName", "value": "*" }]
+          },
+          {
+            "name": "aws_s3_delete_requests",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "BucketName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "4xx vs 5xx Errors",
+        "description": "The number of HTTP 4xx/5xx server error status code requests made to the bucket.",
+        "line_label": "%name% %BucketName%",
+        "metrics": [
+          {
+            "name": "aws_s3_4xx_errors",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "BucketName", "value": "*" }]
+          },
+          {
+            "name": "aws_s3_5xx_errors",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "BucketName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "First Byte Latency vs Total Request Latency",
+        "description": "The per-request time from when the S3 bucket received a complete request to when the response started to be returned (first byte) or was complete (total).",
+        "line_label": "%name% %BucketName%",
+        "metrics": [
+          {
+            "name": "aws_s3_first_byte_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "BucketName", "value": "*" }]
+          },
+          {
+            "name": "aws_s3_total_request_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "BucketName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Bytes Downloaded vs Uploaded",
+        "description": "The number of bytes downloaded from/uploaded to the S3 bucket.",
+        "line_label": "%name% %BucketName%",
+        "metrics": [
+          {
+            "name": "aws_s3_bytes_downloaded",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "BucketName", "value": "*" }]
+          },
+          {
+            "name": "aws_s3_bytes_uploaded",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "BucketName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

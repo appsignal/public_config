@@ -1,0 +1,152 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_kafka_active_controller_count"
+  ],
+  "dashboard": {
+    "title": "AWS/Kafka",
+    "description": "Monitor MSK cluster health, partition replication, throughput, and resource utilization.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Cluster Health",
+        "description": "Active controller count (should be 1) and offline partitions (should be 0).",
+        "line_label": "%name% %Cluster Name%",
+        "metrics": [
+          {
+            "name": "aws_kafka_active_controller_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Cluster Name", "value": "*" }]
+          },
+          {
+            "name": "aws_kafka_offline_partitions_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Cluster Name", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Under-Replicated Partitions",
+        "description": "Number of partitions where replicas are not in sync with the leader.",
+        "line_label": "%name% %Cluster Name%",
+        "metrics": [
+          {
+            "name": "aws_kafka_under_replicated_partitions",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Cluster Name", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Under Min ISR Partitions",
+        "description": "Partitions where in-sync replicas are below the minimum. More critical than under-replicated for data durability.",
+        "line_label": "%name% %Cluster Name%",
+        "metrics": [
+          {
+            "name": "aws_kafka_under_min_isr_partition_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Cluster Name", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "throughput",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Throughput",
+        "description": "Bytes received and sent per second by the cluster.",
+        "line_label": "%name% %Cluster Name%",
+        "metrics": [
+          {
+            "name": "aws_kafka_bytes_in_per_sec",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Cluster Name", "value": "*" }]
+          },
+          {
+            "name": "aws_kafka_bytes_out_per_sec",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Cluster Name", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Messages In",
+        "description": "Number of messages produced to the cluster per second.",
+        "line_label": "%name% %Cluster Name%",
+        "metrics": [
+          {
+            "name": "aws_kafka_messages_in_per_sec",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Cluster Name", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "CPU Usage",
+        "description": "Percentage of CPU in user space across brokers.",
+        "line_label": "%name% %Cluster Name%",
+        "metrics": [
+          {
+            "name": "aws_kafka_cpu_user",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Cluster Name", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Disk Usage",
+        "description": "Percentage of disk space used for data logs.",
+        "line_label": "%name% %Cluster Name%",
+        "metrics": [
+          {
+            "name": "aws_kafka_kafka_data_logs_disk_used",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Cluster Name", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "format_input": "second",
+        "draw_null_as_zero": false,
+        "title": "Consumer Max Lag",
+        "description": "Maximum time lag between producer and consumer for a topic. Requires enhanced monitoring.",
+        "line_label": "%name% %Consumer Group%",
+        "metrics": [
+          {
+            "name": "aws_kafka_estimated_max_time_lag",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Consumer Group", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_states_executions_started"
+  ],
+  "dashboard": {
+    "title": "AWS/States",
+    "description": "Monitor AWS Step Functions state machine executions, outcomes, throttling, and execution duration.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Executions Started",
+        "description": "The number of state machine executions that have been started.",
+        "line_label": "%name% %StateMachineArn%",
+        "metrics": [
+          {
+            "name": "aws_states_executions_started",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StateMachineArn", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Executions Succeeded vs Failed",
+        "description": "The number of state machine executions that completed successfully vs. that failed.",
+        "line_label": "%name% %StateMachineArn%",
+        "metrics": [
+          {
+            "name": "aws_states_executions_succeeded",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StateMachineArn", "value": "*" }]
+          },
+          {
+            "name": "aws_states_executions_failed",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StateMachineArn", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Executions Aborted vs Timed Out",
+        "description": "The number of state machine executions that were aborted or cancelled vs. that timed out.",
+        "line_label": "%name% %StateMachineArn%",
+        "metrics": [
+          {
+            "name": "aws_states_executions_aborted",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StateMachineArn", "value": "*" }]
+          },
+          {
+            "name": "aws_states_executions_timed_out",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StateMachineArn", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Execution Throttled",
+        "description": "The number of StateTransition events that were throttled due to exceeding the account's StateTransition quota.",
+        "line_label": "%name% %StateMachineArn%",
+        "metrics": [
+          {
+            "name": "aws_states_execution_throttled",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StateMachineArn", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Execution Time",
+        "description": "The interval from when the execution starts to when it closes.",
+        "line_label": "%name% %StateMachineArn%",
+        "metrics": [
+          {
+            "name": "aws_states_execution_time",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StateMachineArn", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

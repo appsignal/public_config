@@ -1,0 +1,114 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_sqs_number_of_messages_sent"
+  ],
+  "dashboard": {
+    "title": "AWS/SQS",
+    "description": "Monitor Amazon SQS queue message throughput, queue depth, message age, and message size.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Messages Sent vs Received vs Deleted",
+        "description": "The number of messages added to/retrieved from/deleted from the queue.",
+        "line_label": "%name% %QueueName%",
+        "metrics": [
+          {
+            "name": "aws_sqs_number_of_messages_sent",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "QueueName", "value": "*" }]
+          },
+          {
+            "name": "aws_sqs_number_of_messages_received",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "QueueName", "value": "*" }]
+          },
+          {
+            "name": "aws_sqs_number_of_messages_deleted",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "QueueName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Queue Depth (Visible vs Not Visible vs Delayed)",
+        "description": "The number of messages available for retrieval, in flight (sent to a client but not yet deleted or timed out), and delayed (in the queue but not yet available).",
+        "line_label": "%name% %QueueName%",
+        "metrics": [
+          {
+            "name": "aws_sqs_approximate_number_of_messages_visible",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "QueueName", "value": "*" }]
+          },
+          {
+            "name": "aws_sqs_approximate_number_of_messages_not_visible",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "QueueName", "value": "*" }]
+          },
+          {
+            "name": "aws_sqs_approximate_number_of_messages_delayed",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "QueueName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "format_input": "second",
+        "draw_null_as_zero": false,
+        "title": "Age of Oldest Message",
+        "description": "The approximate age of the oldest non-deleted message in the queue.",
+        "line_label": "%name% %QueueName%",
+        "metrics": [
+          {
+            "name": "aws_sqs_approximate_age_of_oldest_message",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "QueueName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Sent Message Size",
+        "description": "The size of messages added to the queue.",
+        "line_label": "%name% %QueueName%",
+        "metrics": [
+          {
+            "name": "aws_sqs_sent_message_size",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "QueueName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Empty Receives",
+        "description": "ReceiveMessage API calls that returned no messages. High values indicate polling inefficiency.",
+        "line_label": "%name% %QueueName%",
+        "metrics": [
+          {
+            "name": "aws_sqs_number_of_empty_receives",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "QueueName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_rds_volume_bytes_used"
+  ],
+  "dashboard": {
+    "title": "AWS/Aurora",
+    "description": "Monitor Amazon Aurora cluster-specific metrics including replica lag, volume I/O, serverless capacity, and backup storage.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Aurora Replica Lag",
+        "description": "The amount of lag in milliseconds when replicating updates from the primary Aurora instance.",
+        "line_label": "%name% %DBInstanceIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_rds_aurora_replica_lag",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Aurora Replica Lag (Max vs Min)",
+        "description": "The maximum and minimum amount of lag between the primary instance and each Aurora DB instance in the cluster.",
+        "line_label": "%name% %DBInstanceIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_rds_aurora_replica_lag_maximum",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          },
+          {
+            "name": "aws_rds_aurora_replica_lag_minimum",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Volume Read vs Write IOPs",
+        "description": "The average number of billed read/write I/O operations from the cluster volume.",
+        "line_label": "%name% %DBClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_rds_volume_read_iops",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBClusterIdentifier", "value": "*" }]
+          },
+          {
+            "name": "aws_rds_volume_write_iops",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBClusterIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Volume Bytes Used",
+        "description": "The amount of storage used by the Aurora cluster volume.",
+        "line_label": "%name% %DBClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_rds_volume_bytes_used",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBClusterIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Serverless Database Capacity",
+        "description": "The current capacity of an Aurora Serverless DB cluster in Aurora Capacity Units (ACUs).",
+        "line_label": "%name% %DBClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_rds_serverless_database_capacity",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBClusterIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Backup Storage Used",
+        "description": "The total amount of backup storage used for retention and manual snapshots.",
+        "line_label": "%name% %DBClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_rds_backup_retention_period_storage_used",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBClusterIdentifier", "value": "*" }]
+          },
+          {
+            "name": "aws_rds_snapshot_storage_used",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBClusterIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "title": "CPU Utilization",
+        "description": "The percentage of CPU utilization for the Aurora DB instance.",
+        "line_label": "%name% %DBInstanceIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_rds_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Database Connections",
+        "description": "The number of client network connections to the Aurora DB instance.",
+        "line_label": "%name% %DBInstanceIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_rds_database_connections",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Freeable Memory",
+        "description": "The amount of available random access memory on the Aurora DB instance.",
+        "line_label": "%name% %DBInstanceIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_rds_freeable_memory",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Buffer Cache Hit Ratio",
+        "description": "Percentage of requests served by the buffer cache. A low ratio indicates excessive disk I/O.",
+        "line_label": "%name% %DBInstanceIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_rds_buffer_cache_hit_ratio",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

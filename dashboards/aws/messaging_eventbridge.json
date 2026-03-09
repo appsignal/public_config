@@ -1,0 +1,113 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_events_invocations"
+  ],
+  "dashboard": {
+    "title": "AWS/Events",
+    "description": "Monitor Amazon EventBridge event matching, rule invocations, failures, dead-letter delivery, and latency.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Matched Events vs Triggered Rules",
+        "description": "The number of events that matched at least one rule vs. the number of triggered rules that ran in response to a matched event.",
+        "line_label": "%name% %RuleName%",
+        "metrics": [
+          {
+            "name": "aws_events_matched_events",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "RuleName", "value": "*" }]
+          },
+          {
+            "name": "aws_events_triggered_rules",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "RuleName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Invocations",
+        "description": "The number of times a target is invoked by a rule in response to an event.",
+        "line_label": "%name% %RuleName%",
+        "metrics": [
+          {
+            "name": "aws_events_invocations",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "RuleName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Failed Invocations",
+        "description": "The number of invocations that failed permanently, not retried.",
+        "line_label": "%name% %RuleName%",
+        "metrics": [
+          {
+            "name": "aws_events_failed_invocations",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "RuleName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Dead Letter Invocations",
+        "description": "The number of invocations that were sent to a dead-letter queue after all retry attempts were exhausted.",
+        "line_label": "%name% %RuleName%",
+        "metrics": [
+          {
+            "name": "aws_events_dead_letter_invocations",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "RuleName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Throttled Rules",
+        "description": "The number of triggered rules that are being throttled.",
+        "line_label": "%name% %RuleName%",
+        "metrics": [
+          {
+            "name": "aws_events_throttled_rules",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "RuleName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Ingestion to Invocation Start Latency",
+        "description": "The time between when an event is ingested by EventBridge and when the target is first invoked.",
+        "line_label": "%name% %RuleName%",
+        "metrics": [
+          {
+            "name": "aws_events_ingestion_to_invocation_start_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "RuleName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

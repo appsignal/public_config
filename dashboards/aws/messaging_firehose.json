@@ -1,0 +1,111 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_firehose_incoming_records"
+  ],
+  "dashboard": {
+    "title": "AWS/Firehose",
+    "description": "Monitor Firehose delivery stream ingestion, S3 delivery throughput, data freshness, and delivery success.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Incoming Bytes",
+        "description": "Bytes ingested into the delivery stream.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_incoming_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DeliveryStreamName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Incoming Records",
+        "description": "Number of records ingested into the delivery stream.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_incoming_records",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DeliveryStreamName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Delivery to S3 - Bytes",
+        "description": "Bytes delivered to Amazon S3.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_delivery_to_s3_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DeliveryStreamName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Delivery to S3 - Records",
+        "description": "Records delivered to Amazon S3.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_delivery_to_s3_records",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DeliveryStreamName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "format_input": "second",
+        "draw_null_as_zero": false,
+        "title": "Delivery to S3 - Data Freshness",
+        "description": "Age of the oldest record in the delivery stream. Higher values indicate delivery delays.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_delivery_to_s3_data_freshness",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DeliveryStreamName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Delivery to S3 - Success",
+        "description": "Sum of successful S3 put operations.",
+        "line_label": "%name% %DeliveryStreamName%",
+        "metrics": [
+          {
+            "name": "aws_firehose_delivery_to_s3_success",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DeliveryStreamName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

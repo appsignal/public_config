@@ -1,0 +1,71 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_athena_total_execution_time"
+  ],
+  "dashboard": {
+    "title": "AWS/Athena",
+    "description": "Monitor Athena query execution times, query phase durations, and data scanned.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Query Execution Time",
+        "description": "Total time to execute a query including queue and planning time.",
+        "line_label": "%name% %WorkGroup%",
+        "metrics": [
+          {
+            "name": "aws_athena_total_execution_time",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "WorkGroup", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Query Phases",
+        "description": "Time spent in queue, planning, and processing phases.",
+        "line_label": "%name% %WorkGroup%",
+        "metrics": [
+          {
+            "name": "aws_athena_query_queue_time",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "WorkGroup", "value": "*" }]
+          },
+          {
+            "name": "aws_athena_query_planning_time",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "WorkGroup", "value": "*" }]
+          },
+          {
+            "name": "aws_athena_service_processing_time",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "WorkGroup", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Data Scanned",
+        "description": "Amount of data scanned by queries.",
+        "line_label": "%name% %WorkGroup%",
+        "metrics": [
+          {
+            "name": "aws_athena_processed_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "WorkGroup", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_amazonmq_current_connections_count"
+  ],
+  "dashboard": {
+    "title": "AWS/AmazonMQ ActiveMQ",
+    "description": "Monitor Amazon MQ ActiveMQ broker health including CPU, heap, storage, connections, and message throughput.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "CPU Utilization",
+        "description": "Percentage of allocated EC2 compute units currently in use.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Heap Usage",
+        "description": "Percentage of the ActiveMQ JVM memory limit currently used.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_heap_usage",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Store Usage",
+        "description": "Percentage of storage limit used. Broker stops accepting messages at 100%.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_store_percent_usage",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Connections",
+        "description": "Number of active connections on the broker.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_current_connections_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Producers vs Consumers",
+        "description": "Number of message producers and consumers active on the broker.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_total_producer_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          },
+          {
+            "name": "aws_amazonmq_total_consumer_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Total Messages",
+        "description": "Number of messages stored on the broker.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_total_message_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Enqueue vs Dequeue",
+        "description": "Messages enqueued and dequeued per minute per queue.",
+        "line_label": "%name% %Queue%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_enqueue_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Queue", "value": "*" }]
+          },
+          {
+            "name": "aws_amazonmq_dequeue_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Queue", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Network In vs Out",
+        "description": "Incoming and outgoing network traffic for the broker.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_network_in",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          },
+          {
+            "name": "aws_amazonmq_network_out",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_cloudfront_requests"
+  ],
+  "dashboard": {
+    "title": "AWS/CloudFront",
+    "description": "Monitor Amazon CloudFront distribution request counts, data transfer, error rates, and cache hit rates.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Requests",
+        "description": "The total number of viewer requests received by CloudFront for all HTTP methods.",
+        "line_label": "%name% %DistributionId%",
+        "metrics": [
+          {
+            "name": "aws_cloudfront_requests",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DistributionId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Bytes Downloaded vs Uploaded",
+        "description": "The number of bytes downloaded/uploaded by viewers for GET, HEAD, and OPTIONS requests (downloaded) and POST and PUT requests (uploaded).",
+        "line_label": "%name% %DistributionId%",
+        "metrics": [
+          {
+            "name": "aws_cloudfront_bytes_downloaded",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DistributionId", "value": "*" }]
+          },
+          {
+            "name": "aws_cloudfront_bytes_uploaded",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DistributionId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Total Error Rate",
+        "description": "The percentage of all viewer requests for which the response's HTTP status code is 4xx or 5xx.",
+        "line_label": "%name% %DistributionId%",
+        "metrics": [
+          {
+            "name": "aws_cloudfront_total_error_rate",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DistributionId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "4xx vs 5xx Error Rate",
+        "description": "The percentage of all viewer requests for which the response's HTTP status code is 4xx or 5xx respectively.",
+        "line_label": "%name% %DistributionId%",
+        "metrics": [
+          {
+            "name": "aws_cloudfront_4xx_error_rate",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DistributionId", "value": "*" }]
+          },
+          {
+            "name": "aws_cloudfront_5xx_error_rate",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DistributionId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Cache Hit Rate",
+        "description": "The percentage of all cacheable requests for which CloudFront served the content from its cache.",
+        "line_label": "%name% %DistributionId%",
+        "metrics": [
+          {
+            "name": "aws_cloudfront_cache_hit_rate",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DistributionId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Origin Latency",
+        "description": "Time from when CloudFront receives a request to when it starts receiving the response from the origin.",
+        "line_label": "%name% %DistributionId%",
+        "metrics": [
+          {
+            "name": "aws_cloudfront_origin_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DistributionId", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

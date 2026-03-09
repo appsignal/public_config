@@ -1,0 +1,28 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_billing_estimated_charges"
+  ],
+  "dashboard": {
+    "title": "AWS/Billing",
+    "description": "Monitor estimated AWS charges broken down by service.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Estimated Charges",
+        "description": "Estimated AWS charges for the billing period. Use ServiceName tag to break down by service.",
+        "line_label": "%name% %ServiceName%",
+        "metrics": [
+          {
+            "name": "aws_billing_estimated_charges",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

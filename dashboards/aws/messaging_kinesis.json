@@ -1,0 +1,161 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_kinesis_incoming_records"
+  ],
+  "dashboard": {
+    "title": "AWS/Kinesis",
+    "description": "Monitor Amazon Kinesis Data Streams throughput, iterator age, put/get operations, and provisioned throughput limits.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Incoming Records",
+        "description": "The number of records successfully put to the Kinesis stream.",
+        "line_label": "%name% %StreamName%",
+        "metrics": [
+          {
+            "name": "aws_kinesis_incoming_records",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StreamName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Incoming Bytes",
+        "description": "The number of bytes successfully put to the Kinesis stream.",
+        "line_label": "%name% %StreamName%",
+        "metrics": [
+          {
+            "name": "aws_kinesis_incoming_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StreamName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "GetRecords Iterator Age",
+        "description": "The age of the last record in all GetRecords calls made against a shard, measured from when the record was written to the stream. An increasing value indicates the consumer is falling behind.",
+        "line_label": "%name% %StreamName%",
+        "metrics": [
+          {
+            "name": "aws_kinesis_get_records_iterator_age_milliseconds",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StreamName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "GetRecords Records vs Bytes",
+        "description": "The number of records/bytes retrieved from the shard per GetRecords call.",
+        "line_label": "%name% %StreamName%",
+        "metrics": [
+          {
+            "name": "aws_kinesis_get_records_records",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StreamName", "value": "*" }]
+          },
+          {
+            "name": "aws_kinesis_get_records_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StreamName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "PutRecord vs PutRecords Success",
+        "description": "The number of successful PutRecord/PutRecords operations per Kinesis stream.",
+        "line_label": "%name% %StreamName%",
+        "metrics": [
+          {
+            "name": "aws_kinesis_put_record_success",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StreamName", "value": "*" }]
+          },
+          {
+            "name": "aws_kinesis_put_records_success",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StreamName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Read vs Write Throughput Exceeded",
+        "description": "The number of GetRecords/PutRecord and PutRecords calls that are throttled for the stream.",
+        "line_label": "%name% %StreamName%",
+        "metrics": [
+          {
+            "name": "aws_kinesis_read_provisioned_throughput_exceeded",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StreamName", "value": "*" }]
+          },
+          {
+            "name": "aws_kinesis_write_provisioned_throughput_exceeded",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StreamName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "PutRecord vs PutRecords Latency",
+        "description": "The time taken per PutRecord/PutRecords operation, measured over the specified time period.",
+        "line_label": "%name% %StreamName%",
+        "metrics": [
+          {
+            "name": "aws_kinesis_put_record_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StreamName", "value": "*" }]
+          },
+          {
+            "name": "aws_kinesis_put_records_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StreamName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "GetRecords Latency",
+        "description": "The time taken per GetRecords operation.",
+        "line_label": "%name% %StreamName%",
+        "metrics": [
+          {
+            "name": "aws_kinesis_get_records_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "StreamName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}
