@@ -1,0 +1,86 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_route53_health_check_status"
+  ],
+  "dashboard": {
+    "title": "AWS/Route53",
+    "description": "Monitor Route 53 health check status, endpoint latency, and DNS query volume.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Health Check Status",
+        "description": "Status of Route 53 health checks. 1 = healthy, 0 = unhealthy.",
+        "line_label": "%name% %HealthCheckId%",
+        "metrics": [
+          {
+            "name": "aws_route53_health_check_status",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "HealthCheckId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Health Check Percentage Healthy",
+        "description": "Percentage of Route 53 health checkers that consider the endpoint healthy.",
+        "line_label": "%name% %HealthCheckId%",
+        "metrics": [
+          {
+            "name": "aws_route53_health_check_percentage_healthy",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "HealthCheckId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Endpoint Latency",
+        "description": "TCP connection time, SSL handshake time, and time to first byte as measured by Route 53 health checkers.",
+        "line_label": "%name% %HealthCheckId%",
+        "metrics": [
+          {
+            "name": "aws_route53_connection_time",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "HealthCheckId", "value": "*" }]
+          },
+          {
+            "name": "aws_route53_ssl_handshake_time",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "HealthCheckId", "value": "*" }]
+          },
+          {
+            "name": "aws_route53_time_to_first_byte",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "HealthCheckId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "DNS Query Volume",
+        "description": "The number of DNS queries Route 53 responds to for each hosted zone.",
+        "line_label": "%name% %HostedZoneId%",
+        "metrics": [
+          {
+            "name": "aws_route53_dns_queries",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "HostedZoneId", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

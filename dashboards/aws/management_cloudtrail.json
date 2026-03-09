@@ -1,0 +1,27 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_cloudtrail_event_count"
+  ],
+  "dashboard": {
+    "title": "AWS/CloudTrail",
+    "description": "Monitor CloudTrail API event volume.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Events",
+        "description": "Number of API events recorded by CloudTrail.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "aws_cloudtrail_event_count",
+            "fields": [{ "field": "GAUGE" }]
+          }
+        ]
+      }
+    ]
+  }
+}

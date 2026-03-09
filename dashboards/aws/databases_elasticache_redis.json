@@ -1,0 +1,255 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_elasticache_cache_hits"
+  ],
+  "dashboard": {
+    "title": "AWS/ElastiCache Redis",
+    "description": "Monitor Amazon ElastiCache Redis cluster performance including cache hits/misses, CPU, memory, connections, and replication.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Cache Hits vs Misses",
+        "description": "The number of successful/unsuccessful read-only key lookups in the main dictionary.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_cache_hits",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          },
+          {
+            "name": "aws_elasticache_cache_misses",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Cache Hit Rate",
+        "description": "The percentage of successful key lookups out of total key lookups (hits / (hits + misses)).",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_cache_hit_rate",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "title": "Engine CPU Utilization",
+        "description": "The CPU utilization of the Redis engine thread. Since Redis is single-threaded, this can reach 100% on a single core.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_engine_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Current Connections",
+        "description": "The number of client connections, excluding connections from read replicas.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_curr_connections",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Evictions",
+        "description": "The number of keys that have been evicted due to the maxmemory limit.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_evictions",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Bytes Used for Cache",
+        "description": "The total number of bytes allocated by Redis for all purposes, including the dataset, buffers, etc.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_bytes_used_for_cache",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "title": "Database Memory Usage Percentage",
+        "description": "The percentage of the available memory for the cluster that is in use.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_database_memory_usage_percentage",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Freeable Memory",
+        "description": "The amount of free memory available on the host.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_freeable_memory",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Network In vs Out",
+        "description": "The number of bytes the host has read from/written to the network.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_network_bytes_in",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          },
+          {
+            "name": "aws_elasticache_network_bytes_out",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "format_input": "second",
+        "draw_null_as_zero": false,
+        "title": "Replication Lag",
+        "description": "How far behind (in seconds) the replica is in applying changes from the primary node.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_replication_lag",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Current Items",
+        "description": "The number of items in the cache. Derived from the Redis keyspace statistic.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_curr_items",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Commands: Get vs Set",
+        "description": "The total number of get-type/set-type commands per second.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_get_type_cmds",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          },
+          {
+            "name": "aws_elasticache_set_type_cmds",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Host CPU Utilization",
+        "description": "Host-level CPU utilization across all cores. Complements Engine CPU which only measures the Redis thread.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Memory Fragmentation Ratio",
+        "description": "Ratio of OS-allocated memory to Redis-requested memory. Values significantly above 1 indicate fragmentation.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_memory_fragmentation_ratio",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

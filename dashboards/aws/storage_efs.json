@@ -1,0 +1,122 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_efs_total_io_bytes"
+  ],
+  "dashboard": {
+    "title": "AWS/EFS",
+    "description": "Monitor EFS throughput, I/O limits, burst credits, client connections, and storage usage.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Throughput",
+        "description": "Bytes transferred for read, write, and metadata operations.",
+        "line_label": "%name% %FileSystemId%",
+        "metrics": [
+          {
+            "name": "aws_efs_data_read_io_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "FileSystemId", "value": "*" }]
+          },
+          {
+            "name": "aws_efs_data_write_io_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "FileSystemId", "value": "*" }]
+          },
+          {
+            "name": "aws_efs_metadata_io_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "FileSystemId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "throughput",
+        "format_input": "byte",
+        "draw_null_as_zero": false,
+        "title": "Permitted Throughput",
+        "description": "Maximum throughput the file system is allowed to drive.",
+        "line_label": "%name% %FileSystemId%",
+        "metrics": [
+          {
+            "name": "aws_efs_permitted_throughput",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "FileSystemId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "I/O Limit",
+        "description": "How close the file system is to reaching the General Purpose performance mode I/O limit.",
+        "line_label": "%name% %FileSystemId%",
+        "metrics": [
+          {
+            "name": "aws_efs_percent_io_limit",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "FileSystemId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": false,
+        "title": "Burst Credit Balance",
+        "description": "Number of burst credits available for throughput bursting above baseline.",
+        "line_label": "%name% %FileSystemId%",
+        "metrics": [
+          {
+            "name": "aws_efs_burst_credit_balance",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "FileSystemId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Client Connections",
+        "description": "Number of client connections to the file system.",
+        "line_label": "%name% %FileSystemId%",
+        "metrics": [
+          {
+            "name": "aws_efs_client_connections",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "FileSystemId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Storage",
+        "description": "Total file system size in bytes.",
+        "line_label": "%name% %FileSystemId%",
+        "metrics": [
+          {
+            "name": "aws_efs_storage_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "FileSystemId", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

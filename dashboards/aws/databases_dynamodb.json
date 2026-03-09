@@ -1,0 +1,192 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_dynamodb_consumed_read_capacity_units"
+  ],
+  "dashboard": {
+    "title": "AWS/DynamoDB",
+    "description": "Monitor Amazon DynamoDB table performance including capacity consumption, throttling, latency, and errors.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Consumed Read vs Write Capacity",
+        "description": "The number of read/write capacity units consumed over the specified time period.",
+        "line_label": "%name% %TableName%",
+        "metrics": [
+          {
+            "name": "aws_dynamodb_consumed_read_capacity_units",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          },
+          {
+            "name": "aws_dynamodb_consumed_write_capacity_units",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Provisioned Read vs Write Capacity",
+        "description": "The number of provisioned read/write capacity units for a table.",
+        "line_label": "%name% %TableName%",
+        "metrics": [
+          {
+            "name": "aws_dynamodb_provisioned_read_capacity_units",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          },
+          {
+            "name": "aws_dynamodb_provisioned_write_capacity_units",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Read vs Write Throttle Events",
+        "description": "Requests to DynamoDB that exceed the provisioned read/write capacity for a table.",
+        "line_label": "%name% %TableName%",
+        "metrics": [
+          {
+            "name": "aws_dynamodb_read_throttle_events",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          },
+          {
+            "name": "aws_dynamodb_write_throttle_events",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Successful Request Latency",
+        "description": "The elapsed time for successful requests to DynamoDB.",
+        "line_label": "%name% %TableName%",
+        "metrics": [
+          {
+            "name": "aws_dynamodb_successful_request_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "System Errors vs User Errors",
+        "description": "Requests that generate an HTTP 500 (system) or 400 (user) status code.",
+        "line_label": "%name% %TableName%",
+        "metrics": [
+          {
+            "name": "aws_dynamodb_system_errors",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          },
+          {
+            "name": "aws_dynamodb_user_errors",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Conditional Check Failed Requests",
+        "description": "The number of failed attempts to perform conditional writes.",
+        "line_label": "%name% %TableName%",
+        "metrics": [
+          {
+            "name": "aws_dynamodb_conditional_check_failed_requests",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Returned Item Count",
+        "description": "The number of items returned by Query and Scan operations.",
+        "line_label": "%name% %TableName%",
+        "metrics": [
+          {
+            "name": "aws_dynamodb_returned_item_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Time To Live Deleted Item Count",
+        "description": "The number of items deleted by Time to Live (TTL).",
+        "line_label": "%name% %TableName%",
+        "metrics": [
+          {
+            "name": "aws_dynamodb_time_to_live_deleted_item_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Replication Latency",
+        "description": "The elapsed time between an updated item in one replica table and that item appearing in another replica in the global table.",
+        "line_label": "%name% %TableName%",
+        "metrics": [
+          {
+            "name": "aws_dynamodb_replication_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Transaction Conflict",
+        "description": "Rejected item-level requests due to transactional conflicts.",
+        "line_label": "%name% %TableName%",
+        "metrics": [
+          {
+            "name": "aws_dynamodb_transaction_conflict",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TableName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

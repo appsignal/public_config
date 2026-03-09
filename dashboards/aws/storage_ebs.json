@@ -1,0 +1,142 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_ebs_volume_read_ops"
+  ],
+  "dashboard": {
+    "title": "AWS/EBS",
+    "description": "Monitor EBS volume throughput, IOPS, queue length, latency, and burst credit balance.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Read vs Write Bytes",
+        "description": "Bytes transferred in read and write operations.",
+        "line_label": "%name% %VolumeId%",
+        "metrics": [
+          {
+            "name": "aws_ebs_volume_read_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "VolumeId", "value": "*" }]
+          },
+          {
+            "name": "aws_ebs_volume_write_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "VolumeId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Read vs Write Ops",
+        "description": "Completed read and write I/O operations.",
+        "line_label": "%name% %VolumeId%",
+        "metrics": [
+          {
+            "name": "aws_ebs_volume_read_ops",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "VolumeId", "value": "*" }]
+          },
+          {
+            "name": "aws_ebs_volume_write_ops",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "VolumeId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Queue Length",
+        "description": "Number of pending read and write operation requests.",
+        "line_label": "%name% %VolumeId%",
+        "metrics": [
+          {
+            "name": "aws_ebs_volume_queue_length",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "VolumeId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "format_input": "second",
+        "draw_null_as_zero": false,
+        "title": "Read vs Write Time",
+        "description": "Total time spent on completed read and write operations.",
+        "line_label": "%name% %VolumeId%",
+        "metrics": [
+          {
+            "name": "aws_ebs_volume_total_read_time",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "VolumeId", "value": "*" }]
+          },
+          {
+            "name": "aws_ebs_volume_total_write_time",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "VolumeId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "format_input": "second",
+        "draw_null_as_zero": true,
+        "title": "Idle Time",
+        "description": "Total time with no read or write operations submitted.",
+        "line_label": "%name% %VolumeId%",
+        "metrics": [
+          {
+            "name": "aws_ebs_volume_idle_time",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "VolumeId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Burst Balance",
+        "description": "Percentage of I/O credits remaining in the burst bucket. Available for gp2, st1, and sc1 volumes.",
+        "line_label": "%name% %VolumeId%",
+        "metrics": [
+          {
+            "name": "aws_ebs_burst_balance",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "VolumeId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Volume Status Check",
+        "description": "Volume I/O status check. Returns 0 (passed) or 1 (impaired).",
+        "line_label": "%name% %VolumeId%",
+        "metrics": [
+          {
+            "name": "aws_ebs_volume_stalled_io_check",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "VolumeId", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

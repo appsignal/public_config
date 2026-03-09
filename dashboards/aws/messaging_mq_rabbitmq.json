@@ -1,0 +1,173 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_amazonmq_publish_rate"
+  ],
+  "dashboard": {
+    "title": "AWS/AmazonMQ RabbitMQ",
+    "description": "Monitor Amazon MQ RabbitMQ broker health including CPU, memory, disk, connections, and message throughput.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "CPU Utilization",
+        "description": "Percentage of allocated EC2 compute units currently in use.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_system_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": false,
+        "title": "Memory Used vs Limit",
+        "description": "RAM used by RabbitMQ vs the configured memory limit. Producers are blocked when exceeded.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_rabbit_mq_mem_used",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          },
+          {
+            "name": "aws_amazonmq_rabbit_mq_mem_limit",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": false,
+        "title": "Disk Free vs Limit",
+        "description": "Available disk space vs the configured disk limit. Producers are blocked when exceeded.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_rabbit_mq_disk_free",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          },
+          {
+            "name": "aws_amazonmq_rabbit_mq_disk_free_limit",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Connections vs Channels",
+        "description": "Total connections and channels established on the broker.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_connection_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          },
+          {
+            "name": "aws_amazonmq_channel_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Publish vs Ack Rate",
+        "description": "Rate of messages published and acknowledged per second.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_publish_rate",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          },
+          {
+            "name": "aws_amazonmq_ack_rate",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Queue Depth",
+        "description": "Messages ready for delivery and messages awaiting acknowledgement.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_message_ready_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          },
+          {
+            "name": "aws_amazonmq_message_unacknowledged_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Consumer Count",
+        "description": "Total number of consumers connected to the broker.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_consumer_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Network In vs Out",
+        "description": "Incoming and outgoing network traffic for the broker.",
+        "line_label": "%name% %Broker%",
+        "metrics": [
+          {
+            "name": "aws_amazonmq_network_in",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          },
+          {
+            "name": "aws_amazonmq_network_out",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "Broker", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

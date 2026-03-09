@@ -1,0 +1,162 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_redshift_cpu_utilization"
+  ],
+  "dashboard": {
+    "title": "AWS/Redshift",
+    "description": "Monitor Redshift cluster health, CPU, disk usage, query performance, and I/O throughput.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Health Status",
+        "description": "Cluster health (1=healthy) and maintenance mode (0=normal).",
+        "line_label": "%name% %ClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_redshift_health_status",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterIdentifier", "value": "*" }]
+          },
+          {
+            "name": "aws_redshift_maintenance_mode",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "CPU Utilization",
+        "description": "Percentage of CPU utilization across cluster nodes.",
+        "line_label": "%name% %ClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_redshift_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Disk Space Used",
+        "description": "Percentage of disk space used across the cluster.",
+        "line_label": "%name% %ClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_redshift_percentage_disk_space_used",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Database Connections",
+        "description": "Number of active database connections to the cluster.",
+        "line_label": "%name% %ClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_redshift_database_connections",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Query Throughput",
+        "description": "Average number of queries completed per second.",
+        "line_label": "%name% %ClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_redshift_queries_completed_per_second",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "format_input": "second",
+        "draw_null_as_zero": false,
+        "title": "Read vs Write Latency",
+        "description": "Average time for read and write disk I/O operations.",
+        "line_label": "%name% %ClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_redshift_read_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterIdentifier", "value": "*" }]
+          },
+          {
+            "name": "aws_redshift_write_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Read vs Write IOPS",
+        "description": "Average number of disk read and write operations per second.",
+        "line_label": "%name% %ClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_redshift_read_iops",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterIdentifier", "value": "*" }]
+          },
+          {
+            "name": "aws_redshift_write_iops",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "throughput",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Network Throughput",
+        "description": "Rate of data received and transmitted by the cluster.",
+        "line_label": "%name% %ClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_redshift_network_receive_throughput",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterIdentifier", "value": "*" }]
+          },
+          {
+            "name": "aws_redshift_network_transmit_throughput",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ClusterIdentifier", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_containerinsights_pod_cpu_utilization"
+  ],
+  "dashboard": {
+    "title": "AWS/EKS Pods",
+    "description": "Monitor EKS pod-level CPU, memory, network, and container restart metrics.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "title": "Pod CPU Utilization",
+        "description": "The percentage of CPU units used by the pod.",
+        "line_label": "%name% %PodName%",
+        "metrics": [
+          {
+            "name": "aws_containerinsights_pod_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "PodName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "title": "Pod Memory Utilization",
+        "description": "The percentage of memory currently in use by the pod.",
+        "line_label": "%name% %PodName%",
+        "metrics": [
+          {
+            "name": "aws_containerinsights_pod_memory_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "PodName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Pod Network Rx vs Tx",
+        "description": "The number of bytes received/transmitted over the network by the pod.",
+        "line_label": "%name% %PodName%",
+        "metrics": [
+          {
+            "name": "aws_containerinsights_pod_network_rx_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "PodName", "value": "*" }]
+          },
+          {
+            "name": "aws_containerinsights_pod_network_tx_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "PodName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Container Restarts",
+        "description": "The total number of container restarts in the pod.",
+        "line_label": "%name% %PodName%",
+        "metrics": [
+          {
+            "name": "aws_containerinsights_pod_number_of_container_restarts",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "PodName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

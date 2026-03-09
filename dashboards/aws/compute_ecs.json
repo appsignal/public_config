@@ -1,0 +1,81 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_ecs_cpu_utilization"
+  ],
+  "dashboard": {
+    "title": "AWS/ECS",
+    "description": "Monitor Amazon ECS service-level CPU, memory utilization and task counts.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "title": "CPU Utilization",
+        "description": "The percentage of CPU units used by tasks in the service relative to the total CPU units reserved.",
+        "line_label": "%name% %ServiceName%",
+        "metrics": [
+          {
+            "name": "aws_ecs_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "title": "Memory Utilization",
+        "description": "The percentage of memory used by tasks in the service relative to the total memory reserved.",
+        "line_label": "%name% %ServiceName%",
+        "metrics": [
+          {
+            "name": "aws_ecs_memory_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Running vs Desired Task Count",
+        "description": "The number of tasks in the RUNNING state vs the desired count. A gap indicates scaling issues or failed deployments.",
+        "line_label": "%name% %ServiceName%",
+        "metrics": [
+          {
+            "name": "aws_ecs_running_task_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          },
+          {
+            "name": "aws_ecs_desired_task_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Pending Task Count",
+        "description": "The number of tasks in the PENDING state. High values indicate scheduling or capacity problems.",
+        "line_label": "%name% %ServiceName%",
+        "metrics": [
+          {
+            "name": "aws_ecs_pending_task_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}
