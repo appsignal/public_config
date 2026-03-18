@@ -196,7 +196,6 @@
         "type": "timeseries",
         "display": "line",
         "format": "duration",
-        "format_input": "second",
         "draw_null_as_zero": false,
         "title": "Replica Lag",
         "description": "The amount of time a read replica DB instance lags behind the source DB instance.",
