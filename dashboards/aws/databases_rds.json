@@ -98,7 +98,6 @@
         "type": "timeseries",
         "display": "line",
         "format": "duration",
-        "format_input": "second",
         "draw_null_as_zero": false,
         "title": "Read Latency vs Write Latency",
         "description": "The average amount of time taken per disk read/write I/O operation.",
