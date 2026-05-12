@@ -1,0 +1,102 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_apigateway_count"
+  ],
+  "dashboard": {
+    "title": "AWS/ApiGateway",
+    "description": "Monitor Amazon API Gateway request counts, latency, and error rates.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Request Count",
+        "description": "The total number of API requests in a given period.",
+        "line_label": "%name% %ApiName%",
+        "metrics": [
+          {
+            "name": "aws_apigateway_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ApiName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Latency vs Integration Latency",
+        "description": "The time between when API Gateway receives a request and when it returns a response (Latency) vs. the time between when API Gateway relays a request to the backend and when it receives a response (Integration Latency).",
+        "line_label": "%name% %ApiName%",
+        "metrics": [
+          {
+            "name": "aws_apigateway_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ApiName", "value": "*" }]
+          },
+          {
+            "name": "aws_apigateway_integration_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ApiName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "4XX Errors",
+        "description": "The number of client-side errors captured in a given period.",
+        "line_label": "%name% %ApiName%",
+        "metrics": [
+          {
+            "name": "aws_apigateway_4xx_error",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ApiName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "5XX Errors",
+        "description": "The number of server-side errors captured in a given period.",
+        "line_label": "%name% %ApiName%",
+        "metrics": [
+          {
+            "name": "aws_apigateway_5xx_error",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ApiName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Cache Hit vs Miss",
+        "description": "The number of requests served from the API cache vs. requests served from the backend when API caching is enabled.",
+        "line_label": "%name% %ApiName%",
+        "metrics": [
+          {
+            "name": "aws_apigateway_cache_hit_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ApiName", "value": "*" }]
+          },
+          {
+            "name": "aws_apigateway_cache_miss_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ApiName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

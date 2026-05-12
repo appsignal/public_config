@@ -1,0 +1,148 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_nat_gateway_active_connection_count"
+  ],
+  "dashboard": {
+    "title": "AWS/NATGateway",
+    "description": "Monitor NAT Gateway throughput, connections, port allocation errors, and packet drops.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Byte Throughput",
+        "description": "Internet-bound and response traffic through NAT gateway.",
+        "line_label": "%name% %NatGatewayId%",
+        "metrics": [
+          {
+            "name": "aws_nat_gateway_bytes_in_from_source",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          },
+          {
+            "name": "aws_nat_gateway_bytes_out_to_destination",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          },
+          {
+            "name": "aws_nat_gateway_bytes_in_from_destination",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          },
+          {
+            "name": "aws_nat_gateway_bytes_out_to_source",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Packet Throughput",
+        "description": "Packet counts through NAT gateway in both directions.",
+        "line_label": "%name% %NatGatewayId%",
+        "metrics": [
+          {
+            "name": "aws_nat_gateway_packets_in_from_source",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          },
+          {
+            "name": "aws_nat_gateway_packets_out_to_destination",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          },
+          {
+            "name": "aws_nat_gateway_packets_in_from_destination",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          },
+          {
+            "name": "aws_nat_gateway_packets_out_to_source",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Connections",
+        "description": "Concurrent active connections, new connection attempts, and successfully established connections.",
+        "line_label": "%name% %NatGatewayId%",
+        "metrics": [
+          {
+            "name": "aws_nat_gateway_active_connection_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          },
+          {
+            "name": "aws_nat_gateway_connection_attempt_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          },
+          {
+            "name": "aws_nat_gateway_connection_established_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Errors and Drops",
+        "description": "Port allocation failures, dropped packets, and idle connection timeouts.",
+        "line_label": "%name% %NatGatewayId%",
+        "metrics": [
+          {
+            "name": "aws_nat_gateway_error_port_allocation",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          },
+          {
+            "name": "aws_nat_gateway_packets_drop_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          },
+          {
+            "name": "aws_nat_gateway_idle_timeout_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Peak Utilization",
+        "description": "Peak throughput rates within each monitoring period.",
+        "line_label": "%name% %NatGatewayId%",
+        "metrics": [
+          {
+            "name": "aws_nat_gateway_peak_bytes_per_second",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          },
+          {
+            "name": "aws_nat_gateway_peak_packets_per_second",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "NatGatewayId", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

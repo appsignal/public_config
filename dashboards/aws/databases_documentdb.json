@@ -1,0 +1,152 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_docdb_database_connections"
+  ],
+  "dashboard": {
+    "title": "AWS/DocDB",
+    "description": "Monitor Amazon DocumentDB cluster performance including CPU, connections, IOPS, latency, memory, and storage.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "CPU Utilization",
+        "description": "Percentage of CPU used by each instance.",
+        "line_label": "%name% %DBInstanceIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_docdb_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Database Connections",
+        "description": "Number of connections open on each instance.",
+        "line_label": "%name% %DBInstanceIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_docdb_database_connections",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Read vs Write IOPS",
+        "description": "Average disk read and write I/O operations per second.",
+        "line_label": "%name% %DBInstanceIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_docdb_read_iops",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          },
+          {
+            "name": "aws_docdb_write_iops",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Read vs Write Latency",
+        "description": "Average time per disk read and write I/O operation.",
+        "line_label": "%name% %DBInstanceIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_docdb_read_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          },
+          {
+            "name": "aws_docdb_write_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Freeable Memory",
+        "description": "Amount of available RAM on each instance.",
+        "line_label": "%name% %DBInstanceIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_docdb_freeable_memory",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Volume Bytes Used",
+        "description": "Total storage used by the cluster.",
+        "line_label": "%name% %DBClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_docdb_volume_bytes_used",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBClusterIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Buffer Cache Hit Ratio",
+        "description": "Percentage of requests served by the buffer cache.",
+        "line_label": "%name% %DBInstanceIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_docdb_buffer_cache_hit_ratio",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBInstanceIdentifier", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Replica Lag",
+        "description": "Maximum lag between primary and replica instances in the cluster.",
+        "line_label": "%name% %DBClusterIdentifier%",
+        "metrics": [
+          {
+            "name": "aws_docdb_db_cluster_replica_lag_maximum",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DBClusterIdentifier", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

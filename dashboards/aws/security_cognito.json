@@ -1,0 +1,75 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_cognito_sign_in_successes"
+  ],
+  "dashboard": {
+    "title": "AWS/Cognito",
+    "description": "Monitor Cognito user pool authentication activity, token operations, and API throttling.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Authentication",
+        "description": "Successful sign-in and sign-up operations.",
+        "line_label": "%name% %UserPool%",
+        "metrics": [
+          {
+            "name": "aws_cognito_sign_in_successes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "UserPool", "value": "*" }]
+          },
+          {
+            "name": "aws_cognito_sign_up_successes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "UserPool", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Token & Federation",
+        "description": "Successful token refresh and federated authentication operations.",
+        "line_label": "%name% %UserPool%",
+        "metrics": [
+          {
+            "name": "aws_cognito_token_refresh_successes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "UserPool", "value": "*" }]
+          },
+          {
+            "name": "aws_cognito_federation_successes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "UserPool", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "API Calls vs Throttles",
+        "description": "Total API calls and throttled requests to the user pool.",
+        "line_label": "%name% %UserPool%",
+        "metrics": [
+          {
+            "name": "aws_cognito_call_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "UserPool", "value": "*" }]
+          },
+          {
+            "name": "aws_cognito_throttle_count",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "UserPool", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

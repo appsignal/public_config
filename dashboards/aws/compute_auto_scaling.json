@@ -1,0 +1,85 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_auto_scaling_group_in_service_instances"
+  ],
+  "dashboard": {
+    "title": "AWS/AutoScaling",
+    "description": "Monitor Auto Scaling group capacity, instance lifecycle states, and scaling activity.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Scaling Overview",
+        "description": "Desired capacity, in-service instances, and configured min/max boundaries.",
+        "line_label": "%name% %AutoScalingGroupName%",
+        "metrics": [
+          {
+            "name": "aws_auto_scaling_group_desired_capacity",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
+          },
+          {
+            "name": "aws_auto_scaling_group_in_service_instances",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
+          },
+          {
+            "name": "aws_auto_scaling_group_min_size",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
+          },
+          {
+            "name": "aws_auto_scaling_group_max_size",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Instance Lifecycle",
+        "description": "Instances in transient states: launching, terminating, or on standby.",
+        "line_label": "%name% %AutoScalingGroupName%",
+        "metrics": [
+          {
+            "name": "aws_auto_scaling_group_pending_instances",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
+          },
+          {
+            "name": "aws_auto_scaling_group_terminating_instances",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
+          },
+          {
+            "name": "aws_auto_scaling_group_standby_instances",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Total Instances",
+        "description": "Total number of instances in the Auto Scaling group across all states.",
+        "line_label": "%name% %AutoScalingGroupName%",
+        "metrics": [
+          {
+            "name": "aws_auto_scaling_group_total_instances",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}
