@@ -17,6 +17,7 @@ Automated Dashboards can be found in the `dashboards/` sub directory. Each direc
 - [Oban](/dashboards/oban/)
 - [Puma](/dashboards/puma/)
 - [PostgreSQL](/dashboards/postgresql/) (via Vector)
+- [Render](/dashboards/render/)
 - [Ruby VM](/dashboards/ruby_vm/)
 - [Sidekiq](/dashboards/sidekiq/)
 - [Karafka](/dashboards/karafka/)

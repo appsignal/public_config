@@ -1,0 +1,324 @@
+{
+  "metric_keys": ["render.postgres.connections"],
+  "dashboard": {
+    "title": "Render/Postgres",
+    "description": "PostgreSQL metrics from Render's OpenTelemetry metrics stream",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "LINE",
+        "title": "Connections",
+        "description": "Active connections to the Postgres instance, broken down by database, alongside the instance's connection limit.",
+        "line_label": "%database_name% %name% %service.name%",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "render.postgres.connections",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              },
+              {
+                "key": "database_name",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "render.postgres.connection.limit",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "LINE",
+        "title": "Storage size",
+        "description": "On-disk size of each database (database.size) and combined size of all indexes within each database (indexes.size).",
+        "line_label": "%database_name% %name% %service.name%",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "render.postgres.database.size",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              },
+              {
+                "key": "database_name",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "render.postgres.indexes.size",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              },
+              {
+                "key": "database_name",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "LINE",
+        "title": "Transaction volume",
+        "description": "Number of committed or rolled-back transactions on the Postgres instance.",
+        "line_label": "%service.name%",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "render.postgres.transaction.volume",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "LINE",
+        "title": "Sequential table scans",
+        "description": "Number of sequential scans performed against tables in each database.",
+        "line_label": "%database_name% %service.name%",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "render.postgres.table.scans",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              },
+              {
+                "key": "database_name",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "LINE",
+        "title": "Transaction exhaustion",
+        "description": "Percentage of available transactions used by each database. A persistently high value indicates pending wraparound risk and that VACUUM may need to be tuned.",
+        "line_label": "%database_name% %service.name%",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "render.postgres.transaction.exhaustion",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              },
+              {
+                "key": "database_name",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "LINE",
+        "title": "Slow locks",
+        "description": "Number of slow locks observed on the Postgres instance.",
+        "line_label": "%service.name%",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "render.postgres.slow.lock.count",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "LINE",
+        "title": "Slow lock wait time",
+        "description": "Cumulative wait time for slow locks on the Postgres instance, in seconds.",
+        "line_label": "%service.name%",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "render.postgres.slow.lock.time",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "LINE",
+        "title": "Replication lag",
+        "description": "Delay between change on the primary and full replication (replication.lag) or transaction application (replication.apply.lag) on each read replica.",
+        "line_label": "%replication_host% %name% %service.name%",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "render.postgres.replication.lag",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              },
+              {
+                "key": "replication_host",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "render.postgres.replication.apply.lag",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              },
+              {
+                "key": "replication_host",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
