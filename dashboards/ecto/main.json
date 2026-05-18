@@ -153,7 +153,7 @@
       },
       {
         "title": "Idle time",
-        "description": "Mean time connections sat idle in the pool before being checked out, per host. Lower values indicate the pool is heavily used; high values suggest an over-sized pool for the traffic on that node.",
+        "description": "Mean time connections sat idle in the pool before being checked out, per host",
         "line_label": "%repo% - %hostname%",
         "display": "LINE",
         "format": "duration",
