@@ -1,0 +1,56 @@
+{
+  "metric_keys": ["render.keyvalue.connections"],
+  "dashboard": {
+    "title": "Render/Key Value",
+    "description": "Key Value (Valkey/Redis) metrics from Render's OpenTelemetry metrics stream",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "LINE",
+        "title": "Connections",
+        "description": "Number of active connections to the Key Value instance, alongside the instance's connection limit.",
+        "line_label": "%name% %service.name%",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "render.keyvalue.connections",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "render.keyvalue.connection.limit",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

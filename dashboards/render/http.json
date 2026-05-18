@@ -1,0 +1,87 @@
+{
+  "metric_keys": ["render.service.http.requests.total"],
+  "dashboard": {
+    "title": "Render/HTTP",
+    "description": "HTTP request volume and latency for Render web services",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "LINE",
+        "title": "HTTP requests",
+        "description": "Number of HTTP requests received, broken down by host and status code.",
+        "line_label": "%status_code% %host% %service.name%",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "render.service.http.requests.total",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "status_code",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "LINE",
+        "title": "HTTP latency",
+        "description": "Response latency at the p50, p95 and p99 percentiles, broken down by host and status code.",
+        "line_label": "p%quantile% %status_code% %host% %service.name%",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "render.service.http.requests.latency",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "service.instance.id",
+                "value": "*"
+              },
+              {
+                "key": "service.name",
+                "value": "*"
+              },
+              {
+                "key": "host",
+                "value": "*"
+              },
+              {
+                "key": "status_code",
+                "value": "*"
+              },
+              {
+                "key": "quantile",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
