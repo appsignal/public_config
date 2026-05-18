@@ -1,0 +1,214 @@
+{
+  "metric_keys": [
+    "ecto_query_time"
+  ],
+  "dashboard": {
+    "title": "Ecto",
+    "description": "The Ecto dashboard shows latency and throughput for your Ecto repos. Each `[:repo, :query]` telemetry event is reported as `ecto_query_time`, `ecto_queue_time`, `ecto_decode_time`, `ecto_idle_time` and `ecto_total_time` distribution values, tagged by repo + hostname and (for query-shape dependent measurements) repo + source.\n",
+    "visuals": [
+      {
+        "title": "Query time",
+        "description": "95th percentile of time the database spent executing each query, per table.",
+        "line_label": "%repo% - %source%",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "ecto_query_time",
+            "fields": [
+              {
+                "field": "P95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "repo",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Throughput",
+        "description": "Number of queries per table.",
+        "line_label": "%repo% - %source%",
+        "display": "LINE",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "ecto_query_time",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "repo",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Total time",
+        "description": "95th percentile of total Ecto time (queue + query + decode), per table.",
+        "line_label": "%repo% - %source%",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "ecto_total_time",
+            "fields": [
+              {
+                "field": "P95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "repo",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Decode time",
+        "description": "Mean time spent decoding query results into Elixir terms, per table.",
+        "line_label": "%repo% - %source%",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "ecto_decode_time",
+            "fields": [
+              {
+                "field": "MEAN"
+              }
+            ],
+            "tags": [
+              {
+                "key": "repo",
+                "value": "*"
+              },
+              {
+                "key": "source",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Queue time",
+        "description": "95th percentile of time spent waiting for a database connection from the pool, per host.",
+        "line_label": "%repo% - %hostname%",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": true,
+        "metrics": [
+          {
+            "name": "ecto_queue_time",
+            "fields": [
+              {
+                "field": "P95"
+              }
+            ],
+            "tags": [
+              {
+                "key": "repo",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Idle time",
+        "description": "Mean time connections sat idle in the pool before being checked out, per host. Lower values indicate the pool is heavily used; high values suggest an over-sized pool for the traffic on that node.",
+        "line_label": "%repo% - %hostname%",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "ecto_idle_time",
+            "fields": [
+              {
+                "field": "MEAN"
+              }
+            ],
+            "tags": [
+              {
+                "key": "repo",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "title": "Total time per host",
+        "description": "Mean total Ecto time (queue + query + decode), per host.",
+        "line_label": "%repo% - %hostname%",
+        "display": "LINE",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "metrics": [
+          {
+            "name": "ecto_total_time",
+            "fields": [
+              {
+                "field": "MEAN"
+              }
+            ],
+            "tags": [
+              {
+                "key": "repo",
+                "value": "*"
+              },
+              {
+                "key": "hostname",
+                "value": "*"
+              }
+            ]
+          }
+        ],
+        "type": "timeseries"
+      }
+    ]
+  }
+}
