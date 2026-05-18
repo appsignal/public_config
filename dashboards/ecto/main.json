@@ -4,7 +4,7 @@
   ],
   "dashboard": {
     "title": "Ecto",
-    "description": "The Ecto dashboard shows latency and throughput for your Ecto repos. Each `[:repo, :query]` telemetry event is reported as `ecto_query_time`, `ecto_queue_time`, `ecto_decode_time`, `ecto_idle_time` and `ecto_total_time` distribution values, tagged by repo + hostname and (for query-shape dependent measurements) repo + source.\n",
+    "description": "The Ecto dashboard shows latency and throughput for your Ecto repos",
     "visuals": [
       {
         "title": "Query time",
