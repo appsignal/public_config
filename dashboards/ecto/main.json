@@ -4,7 +4,7 @@
   ],
   "dashboard": {
     "title": "Ecto",
-    "description": "The Ecto dashboard shows latency and throughput for your Ecto repos",
+    "description": "The Ecto dashboard shows latency and throughput for your Ecto repos.",
     "visuals": [
       {
         "title": "Query time",
@@ -47,7 +47,7 @@
             "name": "ecto_query_time",
             "fields": [
               {
-                "field": "COUNTER"
+                "field": "COUNT"
               }
             ],
             "tags": [
