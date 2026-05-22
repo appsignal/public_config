@@ -5,7 +5,7 @@
   ],
   "dashboard": {
     "title": "AWS/Cognito",
-    "description": "Monitor Cognito user pool authentication activity, token operations, and API throttling.",
+    "description": "Monitor Cognito user pool authentication activity and token operations.",
     "visuals": [
       {
         "type": "timeseries",
@@ -44,27 +44,6 @@
           },
           {
             "name": "aws_cognito_federation_successes",
-            "fields": [{ "field": "GAUGE" }],
-            "tags": [{ "key": "UserPool", "value": "*" }]
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
-        "format": "number",
-        "draw_null_as_zero": true,
-        "title": "API Calls vs Throttles",
-        "description": "Total API calls and throttled requests to the user pool.",
-        "line_label": "%name% %UserPool%",
-        "metrics": [
-          {
-            "name": "aws_cognito_call_count",
-            "fields": [{ "field": "GAUGE" }],
-            "tags": [{ "key": "UserPool", "value": "*" }]
-          },
-          {
-            "name": "aws_cognito_throttle_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "UserPool", "value": "*" }]
           }

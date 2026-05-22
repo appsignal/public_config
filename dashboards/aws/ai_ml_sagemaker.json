@@ -5,7 +5,7 @@
   ],
   "dashboard": {
     "title": "AWS/SageMaker",
-    "description": "Monitor SageMaker endpoint invocations, errors, latency, and resource utilization.",
+    "description": "Monitor SageMaker endpoint invocations, errors, and latency.",
     "visuals": [
       {
         "type": "timeseries",
@@ -60,54 +60,6 @@
           },
           {
             "name": "aws_sagemaker_overhead_latency",
-            "fields": [{ "field": "GAUGE" }],
-            "tags": [{ "key": "EndpointName", "value": "*" }]
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
-        "format": "percent",
-        "draw_null_as_zero": false,
-        "title": "CPU Utilization",
-        "description": "Percentage of CPU units used by endpoint instances.",
-        "line_label": "%name% %EndpointName%",
-        "metrics": [
-          {
-            "name": "aws_sagemaker_cpu_utilization",
-            "fields": [{ "field": "GAUGE" }],
-            "tags": [{ "key": "EndpointName", "value": "*" }]
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
-        "format": "percent",
-        "draw_null_as_zero": false,
-        "title": "Memory Utilization",
-        "description": "Percentage of memory used by endpoint instances.",
-        "line_label": "%name% %EndpointName%",
-        "metrics": [
-          {
-            "name": "aws_sagemaker_memory_utilization",
-            "fields": [{ "field": "GAUGE" }],
-            "tags": [{ "key": "EndpointName", "value": "*" }]
-          }
-        ]
-      },
-      {
-        "type": "timeseries",
-        "display": "line",
-        "format": "percent",
-        "draw_null_as_zero": false,
-        "title": "Disk Utilization",
-        "description": "Percentage of disk space used by endpoint instances.",
-        "line_label": "%name% %EndpointName%",
-        "metrics": [
-          {
-            "name": "aws_sagemaker_disk_utilization",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "EndpointName", "value": "*" }]
           }

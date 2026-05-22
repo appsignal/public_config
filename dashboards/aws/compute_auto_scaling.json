@@ -1,7 +1,7 @@
 {
   "label": "beta",
   "metric_keys": [
-    "aws_auto_scaling_group_in_service_instances"
+    "aws_autoscaling_group_in_service_instances"
   ],
   "dashboard": {
     "title": "AWS/AutoScaling",
@@ -17,22 +17,22 @@
         "line_label": "%name% %AutoScalingGroupName%",
         "metrics": [
           {
-            "name": "aws_auto_scaling_group_desired_capacity",
+            "name": "aws_autoscaling_group_desired_capacity",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
           },
           {
-            "name": "aws_auto_scaling_group_in_service_instances",
+            "name": "aws_autoscaling_group_in_service_instances",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
           },
           {
-            "name": "aws_auto_scaling_group_min_size",
+            "name": "aws_autoscaling_group_min_size",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
           },
           {
-            "name": "aws_auto_scaling_group_max_size",
+            "name": "aws_autoscaling_group_max_size",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
           }
@@ -48,17 +48,17 @@
         "line_label": "%name% %AutoScalingGroupName%",
         "metrics": [
           {
-            "name": "aws_auto_scaling_group_pending_instances",
+            "name": "aws_autoscaling_group_pending_instances",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
           },
           {
-            "name": "aws_auto_scaling_group_terminating_instances",
+            "name": "aws_autoscaling_group_terminating_instances",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
           },
           {
-            "name": "aws_auto_scaling_group_standby_instances",
+            "name": "aws_autoscaling_group_standby_instances",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
           }
@@ -74,7 +74,7 @@
         "line_label": "%name% %AutoScalingGroupName%",
         "metrics": [
           {
-            "name": "aws_auto_scaling_group_total_instances",
+            "name": "aws_autoscaling_group_total_instances",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "AutoScalingGroupName", "value": "*" }]
           }

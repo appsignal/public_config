@@ -1,7 +1,7 @@
 {
   "label": "beta",
   "metric_keys": [
-    "aws_nat_gateway_active_connection_count"
+    "aws_natgateway_active_connection_count"
   ],
   "dashboard": {
     "title": "AWS/NATGateway",
@@ -18,22 +18,22 @@
         "line_label": "%name% %NatGatewayId%",
         "metrics": [
           {
-            "name": "aws_nat_gateway_bytes_in_from_source",
+            "name": "aws_natgateway_bytes_in_from_source",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           },
           {
-            "name": "aws_nat_gateway_bytes_out_to_destination",
+            "name": "aws_natgateway_bytes_out_to_destination",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           },
           {
-            "name": "aws_nat_gateway_bytes_in_from_destination",
+            "name": "aws_natgateway_bytes_in_from_destination",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           },
           {
-            "name": "aws_nat_gateway_bytes_out_to_source",
+            "name": "aws_natgateway_bytes_out_to_source",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           }
@@ -49,22 +49,22 @@
         "line_label": "%name% %NatGatewayId%",
         "metrics": [
           {
-            "name": "aws_nat_gateway_packets_in_from_source",
+            "name": "aws_natgateway_packets_in_from_source",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           },
           {
-            "name": "aws_nat_gateway_packets_out_to_destination",
+            "name": "aws_natgateway_packets_out_to_destination",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           },
           {
-            "name": "aws_nat_gateway_packets_in_from_destination",
+            "name": "aws_natgateway_packets_in_from_destination",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           },
           {
-            "name": "aws_nat_gateway_packets_out_to_source",
+            "name": "aws_natgateway_packets_out_to_source",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           }
@@ -80,17 +80,17 @@
         "line_label": "%name% %NatGatewayId%",
         "metrics": [
           {
-            "name": "aws_nat_gateway_active_connection_count",
+            "name": "aws_natgateway_active_connection_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           },
           {
-            "name": "aws_nat_gateway_connection_attempt_count",
+            "name": "aws_natgateway_connection_attempt_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           },
           {
-            "name": "aws_nat_gateway_connection_established_count",
+            "name": "aws_natgateway_connection_established_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           }
@@ -106,17 +106,17 @@
         "line_label": "%name% %NatGatewayId%",
         "metrics": [
           {
-            "name": "aws_nat_gateway_error_port_allocation",
+            "name": "aws_natgateway_error_port_allocation",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           },
           {
-            "name": "aws_nat_gateway_packets_drop_count",
+            "name": "aws_natgateway_packets_drop_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           },
           {
-            "name": "aws_nat_gateway_idle_timeout_count",
+            "name": "aws_natgateway_idle_timeout_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           }
@@ -132,12 +132,12 @@
         "line_label": "%name% %NatGatewayId%",
         "metrics": [
           {
-            "name": "aws_nat_gateway_peak_bytes_per_second",
+            "name": "aws_natgateway_peak_bytes_per_second",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           },
           {
-            "name": "aws_nat_gateway_peak_packets_per_second",
+            "name": "aws_natgateway_peak_packets_per_second",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "NatGatewayId", "value": "*" }]
           }

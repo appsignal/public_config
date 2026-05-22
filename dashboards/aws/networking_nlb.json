@@ -1,7 +1,7 @@
 {
   "label": "beta",
   "metric_keys": [
-    "aws_network_elb_processed_bytes"
+    "aws_networkelb_processed_bytes"
   ],
   "dashboard": {
     "title": "AWS/NetworkELB",
@@ -17,12 +17,12 @@
         "line_label": "%name% %TargetGroup%",
         "metrics": [
           {
-            "name": "aws_network_elb_healthy_host_count",
+            "name": "aws_networkelb_healthy_host_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "TargetGroup", "value": "*" }]
           },
           {
-            "name": "aws_network_elb_un_healthy_host_count",
+            "name": "aws_networkelb_un_healthy_host_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "TargetGroup", "value": "*" }]
           }
@@ -38,7 +38,7 @@
         "line_label": "%name% %LoadBalancer%",
         "metrics": [
           {
-            "name": "aws_network_elb_active_flow_count",
+            "name": "aws_networkelb_active_flow_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "LoadBalancer", "value": "*" }]
           }
@@ -54,7 +54,7 @@
         "line_label": "%name% %LoadBalancer%",
         "metrics": [
           {
-            "name": "aws_network_elb_new_flow_count",
+            "name": "aws_networkelb_new_flow_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "LoadBalancer", "value": "*" }]
           }
@@ -71,7 +71,7 @@
         "line_label": "%name% %LoadBalancer%",
         "metrics": [
           {
-            "name": "aws_network_elb_processed_bytes",
+            "name": "aws_networkelb_processed_bytes",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "LoadBalancer", "value": "*" }]
           }
@@ -87,17 +87,17 @@
         "line_label": "%name% %LoadBalancer%",
         "metrics": [
           {
-            "name": "aws_network_elb_tcp_client_reset_count",
+            "name": "aws_networkelb_tcp_client_reset_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "LoadBalancer", "value": "*" }]
           },
           {
-            "name": "aws_network_elb_tcp_elb_reset_count",
+            "name": "aws_networkelb_tcp_elb_reset_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "LoadBalancer", "value": "*" }]
           },
           {
-            "name": "aws_network_elb_tcp_target_reset_count",
+            "name": "aws_networkelb_tcp_target_reset_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "LoadBalancer", "value": "*" }]
           }
@@ -113,12 +113,12 @@
         "line_label": "%name% %LoadBalancer%",
         "metrics": [
           {
-            "name": "aws_network_elb_client_tls_negotiation_error_count",
+            "name": "aws_networkelb_client_tls_negotiation_error_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "LoadBalancer", "value": "*" }]
           },
           {
-            "name": "aws_network_elb_target_tls_negotiation_error_count",
+            "name": "aws_networkelb_target_tls_negotiation_error_count",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "LoadBalancer", "value": "*" }]
           }
@@ -134,7 +134,7 @@
         "line_label": "%name% %LoadBalancer%",
         "metrics": [
           {
-            "name": "aws_network_elb_consumed_lcus",
+            "name": "aws_networkelb_consumed_lcus",
             "fields": [{ "field": "GAUGE" }],
             "tags": [{ "key": "LoadBalancer", "value": "*" }]
           }
