@@ -8,6 +8,7 @@ Automated Dashboards can be found in the `dashboards/` sub directory. Each direc
 
 - [Action Mailer](/dashboards/action_mailer/)
 - [Active Job](/dashboards/active_job/)
+- [Ecto](/dashboards/ecto/)
 - [Erlang](/dashboards/erlang/)
 - [Heroku](/dashboards/heroku/)
 - [MongoDB](/dashboards/mongodb/) (via AppSignal for Ruby)
