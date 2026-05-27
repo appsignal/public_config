@@ -1,0 +1,54 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_wafv2_allowed_requests"
+  ],
+  "dashboard": {
+    "title": "AWS/WAFV2",
+    "description": "Monitor WAF request filtering decisions including allowed, blocked, and counted requests.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Request Decisions",
+        "description": "Requests allowed, blocked, and counted by WAF rules.",
+        "line_label": "%name% %WebACL%",
+        "metrics": [
+          {
+            "name": "aws_wafv2_allowed_requests",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "WebACL", "value": "*" }]
+          },
+          {
+            "name": "aws_wafv2_blocked_requests",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "WebACL", "value": "*" }]
+          },
+          {
+            "name": "aws_wafv2_counted_requests",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "WebACL", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Passed Requests",
+        "description": "Requests that passed through the web ACL without matching any rule.",
+        "line_label": "%name% %WebACL%",
+        "metrics": [
+          {
+            "name": "aws_wafv2_passed_requests",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "WebACL", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

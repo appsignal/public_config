@@ -1,0 +1,82 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_sns_number_of_messages_published"
+  ],
+  "dashboard": {
+    "title": "AWS/SNS",
+    "description": "Monitor Amazon SNS topic message publishing, delivery, filtering, and message size.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Messages Published",
+        "description": "The number of messages published to the topic.",
+        "line_label": "%name% %TopicName%",
+        "metrics": [
+          {
+            "name": "aws_sns_number_of_messages_published",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TopicName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Notifications Delivered vs Failed",
+        "description": "The number of messages successfully delivered to/that failed delivery to subscribed endpoints.",
+        "line_label": "%name% %TopicName%",
+        "metrics": [
+          {
+            "name": "aws_sns_number_of_notifications_delivered",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TopicName", "value": "*" }]
+          },
+          {
+            "name": "aws_sns_number_of_notifications_failed",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TopicName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Notifications Filtered Out",
+        "description": "The number of messages that were rejected by subscription filter policies.",
+        "line_label": "%name% %TopicName%",
+        "metrics": [
+          {
+            "name": "aws_sns_number_of_notifications_filtered_out",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TopicName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Publish Size",
+        "description": "The size of messages published to the topic.",
+        "line_label": "%name% %TopicName%",
+        "metrics": [
+          {
+            "name": "aws_sns_publish_size",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "TopicName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_ec2_cpu_utilization"
+  ],
+  "dashboard": {
+    "title": "AWS/EC2",
+    "description": "Monitor Amazon EC2 instance performance including CPU, network, disk, and EBS metrics.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "title": "CPU Utilization",
+        "description": "The percentage of allocated EC2 compute units that are currently in use on the instance.",
+        "line_label": "%name% %InstanceId%",
+        "metrics": [
+          {
+            "name": "aws_ec2_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Network In vs Out",
+        "description": "The number of bytes received/sent out on all network interfaces by the instance.",
+        "line_label": "%name% %InstanceId%",
+        "metrics": [
+          {
+            "name": "aws_ec2_network_in",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          },
+          {
+            "name": "aws_ec2_network_out",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Network Packets In vs Out",
+        "description": "The number of packets received/sent out on all network interfaces by the instance.",
+        "line_label": "%name% %InstanceId%",
+        "metrics": [
+          {
+            "name": "aws_ec2_network_packets_in",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          },
+          {
+            "name": "aws_ec2_network_packets_out",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Disk Read vs Write Ops",
+        "description": "Completed read/write operations from all instance store volumes.",
+        "line_label": "%name% %InstanceId%",
+        "metrics": [
+          {
+            "name": "aws_ec2_disk_read_ops",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          },
+          {
+            "name": "aws_ec2_disk_write_ops",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Disk Read vs Write Bytes",
+        "description": "Bytes read from/written to all instance store volumes.",
+        "line_label": "%name% %InstanceId%",
+        "metrics": [
+          {
+            "name": "aws_ec2_disk_read_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          },
+          {
+            "name": "aws_ec2_disk_write_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "EBS Read vs Write Ops",
+        "description": "Completed read/write operations to all EBS volumes attached to the instance.",
+        "line_label": "%name% %InstanceId%",
+        "metrics": [
+          {
+            "name": "aws_ec2_ebs_read_ops",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          },
+          {
+            "name": "aws_ec2_ebs_write_ops",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "EBS Read vs Write Bytes",
+        "description": "Bytes read from/written to all EBS volumes attached to the instance.",
+        "line_label": "%name% %InstanceId%",
+        "metrics": [
+          {
+            "name": "aws_ec2_ebs_read_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          },
+          {
+            "name": "aws_ec2_ebs_write_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Status Checks",
+        "description": "Reports whether the instance has passed both the instance status check and the system status check. 0 = passed, 1 = failed.",
+        "line_label": "%name% %InstanceId%",
+        "metrics": [
+          {
+            "name": "aws_ec2_status_check_failed",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          },
+          {
+            "name": "aws_ec2_status_check_failed_instance",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          },
+          {
+            "name": "aws_ec2_status_check_failed_system",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "CPU Credit Balance vs Usage",
+        "description": "The number of earned/spent CPU credits by a burstable performance instance (T2/T3).",
+        "line_label": "%name% %InstanceId%",
+        "metrics": [
+          {
+            "name": "aws_ec2_cpu_credit_balance",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          },
+          {
+            "name": "aws_ec2_cpu_credit_usage",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "InstanceId", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

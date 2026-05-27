@@ -1,0 +1,271 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_es_cluster_status_green"
+  ],
+  "dashboard": {
+    "title": "AWS/ES",
+    "description": "Monitor OpenSearch cluster health, resource utilization, search and indexing performance, and HTTP response codes.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Cluster Status",
+        "description": "Cluster health status. Green=all shards assigned, Yellow=replicas unassigned, Red=primary shards unassigned.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_cluster_status_green",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          },
+          {
+            "name": "aws_es_cluster_status_yellow",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          },
+          {
+            "name": "aws_es_cluster_status_red",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Nodes",
+        "description": "Number of nodes in the cluster.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_nodes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "CPU Utilization",
+        "description": "Percentage of CPU resources used across data nodes.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": false,
+        "title": "Free Storage Space",
+        "description": "Free space across all data nodes in the cluster.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_free_storage_space",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "JVM Memory Pressure",
+        "description": "Percentage of the Java heap used across all data nodes.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_jvm_memory_pressure",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Search vs Indexing Latency",
+        "description": "Average time for search and indexing operations to complete.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_search_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          },
+          {
+            "name": "aws_es_indexing_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Search vs Indexing Rate",
+        "description": "Number of search and indexing requests per second.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_search_rate",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          },
+          {
+            "name": "aws_es_indexing_rate",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "HTTP Response Codes",
+        "description": "HTTP response code counts from the domain.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_2xx",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          },
+          {
+            "name": "aws_es_3xx",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          },
+          {
+            "name": "aws_es_4xx",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          },
+          {
+            "name": "aws_es_5xx",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Threadpool Search",
+        "description": "Queued and rejected search threadpool tasks.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_threadpool_search_queue",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          },
+          {
+            "name": "aws_es_threadpool_search_rejected",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Threadpool Write",
+        "description": "Queued and rejected write threadpool tasks.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_threadpool_write_queue",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          },
+          {
+            "name": "aws_es_threadpool_write_rejected",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Cluster Index Writes Blocked",
+        "description": "Non-zero indicates the cluster is blocking write operations, usually due to insufficient disk space.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_cluster_index_writes_blocked",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Automated Snapshot Failure",
+        "description": "Non-zero indicates the most recent automated snapshot failed.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_automated_snapshot_failure",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Master CPU vs JVM Memory Pressure",
+        "description": "CPU utilization and JVM memory pressure on dedicated master nodes.",
+        "line_label": "%name% %DomainName%",
+        "metrics": [
+          {
+            "name": "aws_es_master_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          },
+          {
+            "name": "aws_es_master_jvm_memory_pressure",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "DomainName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

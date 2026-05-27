@@ -1,0 +1,134 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_apprunner_requests"
+  ],
+  "dashboard": {
+    "title": "AWS/AppRunner",
+    "description": "Monitor AWS App Runner service performance including requests, latency, HTTP status codes, and resource utilization.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Requests",
+        "description": "Total number of HTTP requests received by the service.",
+        "line_label": "%name% %ServiceName%",
+        "metrics": [
+          {
+            "name": "aws_apprunner_requests",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Request Latency",
+        "description": "Time taken to process HTTP requests.",
+        "line_label": "%name% %ServiceName%",
+        "metrics": [
+          {
+            "name": "aws_apprunner_request_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "HTTP 2xx vs 4xx vs 5xx",
+        "description": "HTTP responses by status code class.",
+        "line_label": "%name% %ServiceName%",
+        "metrics": [
+          {
+            "name": "aws_apprunner_2xx_status_responses",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          },
+          {
+            "name": "aws_apprunner_4xx_status_responses",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          },
+          {
+            "name": "aws_apprunner_5xx_status_responses",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "CPU Utilization",
+        "description": "Aggregated CPU utilization across all instances.",
+        "line_label": "%name% %ServiceName%",
+        "metrics": [
+          {
+            "name": "aws_apprunner_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "Memory Utilization",
+        "description": "Aggregated memory utilization across all instances.",
+        "line_label": "%name% %ServiceName%",
+        "metrics": [
+          {
+            "name": "aws_apprunner_memory_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Active Instances",
+        "description": "Number of instances actively processing HTTP requests.",
+        "line_label": "%name% %ServiceName%",
+        "metrics": [
+          {
+            "name": "aws_apprunner_active_instances",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Concurrency",
+        "description": "Approximate number of concurrent requests being handled.",
+        "line_label": "%name% %ServiceName%",
+        "metrics": [
+          {
+            "name": "aws_apprunner_concurrency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "ServiceName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

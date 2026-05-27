@@ -1,0 +1,162 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_elasticache_cmd_get"
+  ],
+  "dashboard": {
+    "title": "AWS/ElastiCache Memcached",
+    "description": "Monitor Amazon ElastiCache Memcached cluster performance including get/set commands, hit rates, CPU, memory, and connections.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Get Hits vs Misses",
+        "description": "The number of get requests that result in a cache hit vs. a cache miss.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_get_hits",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          },
+          {
+            "name": "aws_elasticache_get_misses",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Commands: Get vs Set",
+        "description": "The total number of get/set commands received by the cache node.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_cmd_get",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          },
+          {
+            "name": "aws_elasticache_cmd_set",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": true,
+        "title": "CPU Utilization",
+        "description": "The percentage of CPU utilization for the entire host. Memcached is multi-threaded, so this is the overall host CPU.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_cpu_utilization",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Current Connections",
+        "description": "The number of client connections to the cache node, excluding connections from read replicas.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_curr_connections",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Evictions",
+        "description": "The number of non-expired items the cache evicted to allow space for new items.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_evictions",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Bytes Used for Cache Items vs Freeable Memory",
+        "description": "The number of bytes used to store cache items vs. the amount of free memory available on the host.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_bytes_used_for_cache_items",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          },
+          {
+            "name": "aws_elasticache_freeable_memory",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Network In vs Out",
+        "description": "The number of bytes that have been read from/written to the network by the cache node.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_bytes_read_into_memcached",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          },
+          {
+            "name": "aws_elasticache_bytes_written_out_from_memcached",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Current Items",
+        "description": "The number of items currently stored in the cache.",
+        "line_label": "%name% %CacheClusterId%",
+        "metrics": [
+          {
+            "name": "aws_elasticache_curr_items",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "CacheClusterId", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

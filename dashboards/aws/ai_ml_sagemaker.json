@@ -1,0 +1,70 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_sagemaker_invocations"
+  ],
+  "dashboard": {
+    "title": "AWS/SageMaker",
+    "description": "Monitor SageMaker endpoint invocations, errors, and latency.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Invocations",
+        "description": "Total invocations and per-instance invocation rate.",
+        "line_label": "%name% %EndpointName%",
+        "metrics": [
+          {
+            "name": "aws_sagemaker_invocations",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "EndpointName", "value": "*" }]
+          },
+          {
+            "name": "aws_sagemaker_invocations_per_instance",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "EndpointName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Invocation Errors",
+        "description": "Number of invocations that resulted in model errors (4xx/5xx).",
+        "line_label": "%name% %EndpointName%",
+        "metrics": [
+          {
+            "name": "aws_sagemaker_invocation_model_errors",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "EndpointName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Latency",
+        "description": "Time taken by the model to respond and SageMaker overhead latency.",
+        "line_label": "%name% %EndpointName%",
+        "metrics": [
+          {
+            "name": "aws_sagemaker_model_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "EndpointName", "value": "*" }]
+          },
+          {
+            "name": "aws_sagemaker_overhead_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "EndpointName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}
