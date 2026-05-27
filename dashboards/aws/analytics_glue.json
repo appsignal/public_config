@@ -1,0 +1,99 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "glue_glue_driver_aggregate_elapsed_time"
+  ],
+  "dashboard": {
+    "title": "AWS/Glue",
+    "description": "Monitor Glue ETL job duration, task completion, data throughput, and JVM heap usage.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Job Duration",
+        "description": "Elapsed time of the Glue ETL job.",
+        "line_label": "%name% %JobName%",
+        "metrics": [
+          {
+            "name": "glue_glue_driver_aggregate_elapsed_time",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "JobName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Tasks",
+        "description": "Completed and failed tasks in the Glue job.",
+        "line_label": "%name% %JobName%",
+        "metrics": [
+          {
+            "name": "glue_glue_driver_aggregate_num_completed_tasks",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "JobName", "value": "*" }]
+          },
+          {
+            "name": "glue_glue_driver_aggregate_num_failed_tasks",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "JobName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Bytes Read",
+        "description": "Total bytes read by the Glue job.",
+        "line_label": "%name% %JobName%",
+        "metrics": [
+          {
+            "name": "glue_glue_driver_aggregate_bytes_read",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "JobName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": false,
+        "title": "JVM Heap",
+        "description": "JVM heap memory used by the Glue driver.",
+        "line_label": "%name% %JobName%",
+        "metrics": [
+          {
+            "name": "glue_glue_driver_jvm_heap_used",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "JobName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "percent",
+        "draw_null_as_zero": false,
+        "title": "JVM Heap Usage",
+        "description": "Fraction of JVM heap memory used as a percentage.",
+        "line_label": "%name% %JobName%",
+        "metrics": [
+          {
+            "name": "glue_glue_driver_jvm_heap_usage",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "JobName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

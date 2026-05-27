@@ -1,0 +1,99 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_logs_incoming_bytes"
+  ],
+  "dashboard": {
+    "title": "AWS/Logs",
+    "description": "Monitor CloudWatch Logs ingestion volume, log event counts, subscription forwarding, and delivery errors.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Incoming Data",
+        "description": "Volume of log data ingested into the log group.",
+        "line_label": "%name% %LogGroupName%",
+        "metrics": [
+          {
+            "name": "aws_logs_incoming_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LogGroupName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Incoming Log Events",
+        "description": "Number of log events ingested into the log group.",
+        "line_label": "%name% %LogGroupName%",
+        "metrics": [
+          {
+            "name": "aws_logs_incoming_log_events",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LogGroupName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Forwarded Bytes",
+        "description": "Volume of log data forwarded to a subscription destination.",
+        "line_label": "%name% %LogGroupName%",
+        "metrics": [
+          {
+            "name": "aws_logs_forwarded_bytes",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LogGroupName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Forwarded Log Events",
+        "description": "Number of log events forwarded to a subscription destination.",
+        "line_label": "%name% %LogGroupName%",
+        "metrics": [
+          {
+            "name": "aws_logs_forwarded_log_events",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LogGroupName", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Delivery Errors vs Throttling",
+        "description": "Failed and throttled log delivery attempts to subscription destinations.",
+        "line_label": "%name% %LogGroupName%",
+        "metrics": [
+          {
+            "name": "aws_logs_delivery_errors",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LogGroupName", "value": "*" }]
+          },
+          {
+            "name": "aws_logs_delivery_throttling",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "LogGroupName", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}

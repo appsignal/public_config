@@ -1,0 +1,144 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "aws_appsync_requests"
+  ],
+  "dashboard": {
+    "title": "AWS/AppSync",
+    "description": "Monitor AWS AppSync GraphQL API performance including requests, latency, errors, and real-time subscriptions.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Requests",
+        "description": "Total number of GraphQL requests processed.",
+        "line_label": "%name% %GraphQLAPIId%",
+        "metrics": [
+          {
+            "name": "aws_appsync_requests",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "GraphQLAPIId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Latency",
+        "description": "Time between request receipt and response return.",
+        "line_label": "%name% %GraphQLAPIId%",
+        "metrics": [
+          {
+            "name": "aws_appsync_latency",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "GraphQLAPIId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Client Errors vs Server Errors",
+        "description": "HTTP 4xx client errors and 5xx server errors.",
+        "line_label": "%name% %GraphQLAPIId%",
+        "metrics": [
+          {
+            "name": "aws_appsync_4_xx_error",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "GraphQLAPIId", "value": "*" }]
+          },
+          {
+            "name": "aws_appsync_5_xx_error",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "GraphQLAPIId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Tokens Consumed",
+        "description": "Tokens allocated to requests based on resource consumption.",
+        "line_label": "%name% %GraphQLAPIId%",
+        "metrics": [
+          {
+            "name": "aws_appsync_tokens_consumed",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "GraphQLAPIId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "WebSocket Connections",
+        "description": "Successful and failed WebSocket connection attempts.",
+        "line_label": "%name% %GraphQLAPIId%",
+        "metrics": [
+          {
+            "name": "aws_appsync_connect_success",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "GraphQLAPIId", "value": "*" }]
+          },
+          {
+            "name": "aws_appsync_connect_client_error",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "GraphQLAPIId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Active Connections vs Subscriptions",
+        "description": "Concurrent WebSocket connections and active subscriptions.",
+        "line_label": "%name% %GraphQLAPIId%",
+        "metrics": [
+          {
+            "name": "aws_appsync_active_connections",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "GraphQLAPIId", "value": "*" }]
+          },
+          {
+            "name": "aws_appsync_active_subscriptions",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "GraphQLAPIId", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Subscription Messages",
+        "description": "Subscriptions registered and messages successfully delivered.",
+        "line_label": "%name% %GraphQLAPIId%",
+        "metrics": [
+          {
+            "name": "aws_appsync_subscribe_success",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "GraphQLAPIId", "value": "*" }]
+          },
+          {
+            "name": "aws_appsync_publish_data_message_success",
+            "fields": [{ "field": "GAUGE" }],
+            "tags": [{ "key": "GraphQLAPIId", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}
