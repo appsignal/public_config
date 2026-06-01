@@ -11,8 +11,6 @@ Automated Dashboards can be found in the `dashboards/` sub directory. Each direc
 - [AWS](/dashboards/aws/) (via AWS CloudWatch)
 - [AWS CloudWatch Metric Streams](/dashboards/cloudwatch/)
 - [AWS Firehose](/dashboards/firehose/)
-- [AWS Lambda](/dashboards/lambda/)
-- [AWS Route53](/dashboards/route53/)
 - [Ecto](/dashboards/ecto/)
 - [Erlang](/dashboards/erlang/)
 - [Heroku](/dashboards/heroku/)
