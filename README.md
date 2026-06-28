@@ -21,6 +21,7 @@ Automated Dashboards can be found in the `dashboards/` sub directory. Each direc
 - [NGINX](/dashboards/nginx/)
 - [Node.js](/dashboards/nodejs/)
 - [Oban](/dashboards/oban/)
+- [Pgbus](/dashboards/pgbus/) (via AppSignal for Ruby)
 - [PostgreSQL](/dashboards/postgres/) (via Vector)
 - [Process Memory](/dashboards/process_memory/)
 - [Puma](/dashboards/puma/)
