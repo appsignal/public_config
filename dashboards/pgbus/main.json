@@ -11,7 +11,7 @@
         "display": "LINE",
         "title": "Job status per queue",
         "description": "Processed, failed, and dead-lettered jobs per queue.",
-        "line_label": "%queue% - %status%",
+        "line_label": "%job_class% - %queue% - %status%",
         "format": "number",
         "draw_null_as_zero": true,
         "metrics": [
