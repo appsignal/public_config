@@ -236,7 +236,7 @@
         "display": "LINE",
         "title": "Event handler status",
         "description": "Processed and failed event handler invocations.",
-        "line_label": "%handler% - %status%",
+        "line_label": "%handler% - %status% - %routing_key%",
         "format": "number",
         "draw_null_as_zero": true,
         "metrics": [
