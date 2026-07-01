@@ -255,6 +255,10 @@
               {
                 "key": "status",
                 "value": "*"
+              },
+              {
+                "key": "routing_key",
+                "value": "*"
               }
             ]
           }
