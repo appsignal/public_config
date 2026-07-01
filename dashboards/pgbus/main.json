@@ -24,6 +24,10 @@
             ],
             "tags": [
               {
+                "key": "job_class",
+                "value": "*"
+              },
+              {
                 "key": "queue",
                 "value": "*"
               },
