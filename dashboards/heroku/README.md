@@ -4,7 +4,7 @@
 
 This README uses the existing [Heroku dashboards documentation](https://docs.appsignal.com/heroku/dashboards.html) as reference.
 
-When using [the AppSignal Heroku log drain](https://docs.appsignal.com/heroku/setup-logdrain.html) to send data about your Heroku application to AppSignal, the following automated dashboards may appear:
+When using [the AppSignal Heroku log drain](https://docs.appsignal.com/heroku/setup.html) to send data about your Heroku application to AppSignal, the following automated dashboards may appear:
 
 - [Status automated dashboard](#status-automated-dashboard)
 - [Redis automated dashboard](#redis-automated-dashboard)
