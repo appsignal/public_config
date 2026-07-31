@@ -2,14 +2,16 @@
 
 [ActiveJob](https://guides.rubyonrails.org/active_job_basics.html) is the background job system built for Ruby on Rails.
 
-When using [the AppSignal for Ruby gem](https://docs.appsignal.com/ruby/integrations/mongodb.html) in an application that uses ActiveJob, the ActiveJob automated dashboard will appear.
+When using [the AppSignal for Ruby gem](https://docs.appsignal.com/ruby/integrations/active-job) in an application that uses ActiveJob, the ActiveJob automated dashboard will appear.
 
 The following graphs are displayed in this automated dashboard:
 
-- [Job status per queue](#job-status-per-queue)
-- [Job status per queue with priority](#job-status-per-queue-with-priority)
-- [Throughput per job class](#throughput-per-job-class)
-- [Duration per job class](#duration-per-job-class)
+- [ActiveJob automated dashboard](#activejob-automated-dashboard)
+  - [Job status per queue](#job-status-per-queue)
+  - [Job status per queue with priority](#job-status-per-queue-with-priority)
+  - [Throughput per job class](#throughput-per-job-class)
+  - [Duration per job class](#duration-per-job-class)
+  - [Queue time per queue](#queue-time-per-queue)
 
 ## Job status per queue
 
