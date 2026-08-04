@@ -1,10 +1,10 @@
-# AppSignal Automated Dashboards
+# AppSignal Intelligence Dashboards
 
-The `public_config` repository is a place for AppSignal's public configuration. This is currently used for the Automated Dashboards.
+The `public_config` repository is a place for AppSignal's public configuration. This is currently used for the Intelligence Dashboards.
 
-## Automated Dashboards
+## Intelligence Dashboards
 
-Automated Dashboards can be found in the `dashboards/` sub directory. Each directory is a different integration, like a language or package. Each dashboard is its own file in these sub-directories in the JSON format.
+Intelligence Dashboards can be found in the `dashboards/` sub directory. Each directory is a different integration, like a language or package. Each dashboard is its own file in these sub-directories in the JSON format.
 
 Some integrations ship more than one dashboard, so there are more dashboards than directories.
 
@@ -31,7 +31,7 @@ Some integrations ship more than one dashboard, so there are more dashboards tha
 - [Sidekiq](/dashboards/sidekiq/)
 - [Web Vitals](/dashboards/web-vitals/)
 
-### Generated dashboards
+### Dashboards
 
 The dashboards in [`dashboards/aws/`](/dashboards/aws/) are not maintained in this repository. They are generated and published here by AppSignal's internal `cloudwatch-dashboards` repository, and any edit made to them here will be overwritten on the next publish.
 
