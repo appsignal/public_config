@@ -63,7 +63,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "format": "throughput",
+        "format": "size",
         "format_input": "byte",
         "draw_null_as_zero": true,
         "title": "Throughput",

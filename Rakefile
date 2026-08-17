@@ -27,6 +27,7 @@ class Dashboard
       REQUIRED_VISUAL_FIELDS.each do |field|
         required_field(*visual_base, field)
       end
+      format_input_only_for_size(visual, visual_base)
 
       visual.fetch("metrics", []).each_with_index do |metric, metric_index|
         # Validate base metric fields
@@ -87,6 +88,18 @@ class Dashboard
     return if field_present?(*field)
 
     issues << "No '#{Array(field).join(".")}' field present"
+  end
+
+  # The 'format_input' field declares the unit of an incoming size value. It is
+  # only used when the visual's 'format' is 'size'; the server unsets it for
+  # any other format on import.
+  def format_input_only_for_size(visual, visual_base)
+    return unless visual.key?("format_input")
+    return if visual["format"] == "size"
+
+    field = [*visual_base, "format_input"].join(".")
+    issues << "The '#{field}' field is only allowed when 'format' is 'size', " \
+      "but 'format' is #{visual["format"].inspect}"
   end
 
   def dashboard

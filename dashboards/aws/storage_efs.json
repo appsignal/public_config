@@ -37,7 +37,7 @@
       {
         "type": "timeseries",
         "display": "line",
-        "format": "throughput",
+        "format": "size",
         "format_input": "byte",
         "draw_null_as_zero": false,
         "title": "Permitted Throughput",
