@@ -71,7 +71,7 @@
         "draw_null_as_zero": true,
         "metrics": [
           {
-            "name": "transaction_duration",
+            "name": "trace_duration",
             "fields": [
               {
                 "field": "count"
@@ -99,7 +99,7 @@
         "draw_null_as_zero": true,
         "metrics": [
           {
-            "name": "transaction_duration",
+            "name": "trace_duration",
             "fields": [
               {
                 "field": "mean"

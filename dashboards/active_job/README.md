@@ -42,7 +42,7 @@ This graph displays values from the `active_job_queue_priority_job_count` metric
 
 The "Throughput per job class" graph shows the amount of jobs that were executed, grouped by the class that defines the job.
 
-This graph displays values from the `transaction_duration` metric. This graph will show a line for each combination of values of the following metric tags:
+This graph displays values from the `trace_duration` metric. This graph will show a line for each combination of values of the following metric tags:
 
 - The **action** that defines the job, which includes the class in which the action is defined.
 
@@ -50,7 +50,7 @@ This graph displays values from the `transaction_duration` metric. This graph wi
 
 The "Duration per job class" graph shows the amount of time that it took for jobs to execute, grouped by the class that defines the job.
 
-This graph displays values from the `transaction_duration` metric. This graph will show a line for each combination of values of the following metric tags:
+This graph displays values from the `trace_duration` metric. This graph will show a line for each combination of values of the following metric tags:
 
 - The **action** that defines the job, which includes the class in which the action is defined.
 
