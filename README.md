@@ -23,6 +23,7 @@ Some integrations ship more than one dashboard, so there are more dashboards tha
 - [NGINX](/dashboards/nginx/)
 - [Node.js](/dashboards/nodejs/) (the Postgres dashboard is deprecated)
 - [Oban](/dashboards/oban/)
+- [Pgbus](/dashboards/pgbus/) (via AppSignal for Ruby)
 - [PostgreSQL](/dashboards/postgres/) (via Vector)
 - [Process Memory](/dashboards/process_memory/)
 - [Puma](/dashboards/puma/)
