@@ -1,0 +1,486 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "mysql.uptime"
+  ],
+  "dashboard": {
+    "title": "MySQL",
+    "description": "Monitor a MySQL or MariaDB server: lock contention, temporary tables, thread saturation, InnoDB buffer pool health, and row throughput.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Connection errors",
+        "description": "Connection attempts the server refused or aborted, by cause. The max_connections cause means clients are being turned away outright; a rising aborted_clients count means connections are dropping mid-session rather than closing cleanly.",
+        "line_label": "%error%",
+        "metrics": [
+          {
+            "name": "mysql.connection.errors",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "error",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Row lock waits",
+        "description": "Times InnoDB had to wait for a row lock. Sustained waits mean transactions are contending for the same rows, usually from long-running transactions or a hot counter row that every request updates.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "mysql.row_locks",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "kind",
+                "value": "waits"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "duration",
+        "draw_null_as_zero": false,
+        "title": "Row lock wait time",
+        "description": "Total time spent waiting for row locks. Read together with row lock waits: a small number of waits with a large wait time points at one slow transaction holding locks rather than broad contention.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "mysql.row_locks",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "kind",
+                "value": "time"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Slow queries",
+        "description": "Queries that ran longer than long_query_time. This is the most direct signal that query performance is degrading, and the first thing to correlate against lock waits and buffer pool reads.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "mysql.query.slow.count",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Table locks",
+        "description": "Table locks acquired immediately versus those that had to wait. A rising share of waited locks means queries are queueing behind each other for table access.",
+        "line_label": "%kind%",
+        "metrics": [
+          {
+            "name": "mysql.locks",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "kind",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Temporary resources created",
+        "description": "Temporary tables and files created while running queries. Temporary tables spilling to disk (disk_tables) are far slower than in-memory ones and usually indicate queries that sort or group without a usable index.",
+        "line_label": "%resource%",
+        "metrics": [
+          {
+            "name": "mysql.tmp_resources",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "resource",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Threads",
+        "description": "MySQL thread states. Connected threads approaching max_connections is what produces connection errors in the application; running threads staying high means queries are piling up rather than completing.",
+        "line_label": "%kind%",
+        "metrics": [
+          {
+            "name": "mysql.threads",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "kind",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": false,
+        "title": "Buffer pool usage",
+        "description": "Bytes held in the InnoDB buffer pool, split into clean and dirty pages, against the configured pool size. A pool that is permanently full while reads keep hitting disk means innodb_buffer_pool_size is too small for the working set.",
+        "line_label": "%name% %status%",
+        "metrics": [
+          {
+            "name": "mysql.buffer_pool.usage",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "status",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "mysql.buffer_pool.limit",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Buffer pool operations",
+        "description": "Operations against the InnoDB buffer pool. Compare reads (served from disk) against read_requests (served from memory): a growing ratio of reads to read_requests is a falling cache hit rate.",
+        "line_label": "%operation%",
+        "metrics": [
+          {
+            "name": "mysql.buffer_pool.operations",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "operation",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Buffer pool pages",
+        "description": "Pages in the InnoDB buffer pool by kind. Free pages trending to zero means the pool is fully committed and InnoDB must evict a page for every new read.",
+        "line_label": "%kind%",
+        "metrics": [
+          {
+            "name": "mysql.buffer_pool.pages",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "kind",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Query throughput",
+        "description": "Statements executed by the server, and the subset sent by clients. Judge these by sudden change rather than absolute level: a step change with no deploy behind it usually means retry behaviour or a runaway job.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "mysql.query.count",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          },
+          {
+            "name": "mysql.query.client.count",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Commands",
+        "description": "Statements executed by type, giving the read and write mix. A shift in the ratio of selects to writes often explains a change in lock contention or buffer pool behaviour.",
+        "line_label": "%command%",
+        "metrics": [
+          {
+            "name": "mysql.commands",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "command",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Row operations",
+        "description": "InnoDB rows read, inserted, updated and deleted. A read count far larger than the others is the signature of queries scanning many rows to return few.",
+        "line_label": "%operation%",
+        "metrics": [
+          {
+            "name": "mysql.row_operations",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "operation",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Handler requests",
+        "description": "Requests to MySQL's storage engine handlers. A high read_rnd_next count means full table scans; a high read_key count means queries are using indexes as intended.",
+        "line_label": "%kind%",
+        "metrics": [
+          {
+            "name": "mysql.handlers",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "kind",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "InnoDB I/O operations",
+        "description": "Reads, writes and fsyncs performed by InnoDB. A climbing fsync rate alongside flat throughput usually means the redo log or the flush settings are the bottleneck rather than the queries.",
+        "line_label": "%operation%",
+        "metrics": [
+          {
+            "name": "mysql.operations",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "operation",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Log operations",
+        "description": "InnoDB redo log activity. Log waits above zero mean the log buffer is too small and transactions are stalling while it is flushed.",
+        "line_label": "%operation%",
+        "metrics": [
+          {
+            "name": "mysql.log_operations",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "operation",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Sorts",
+        "description": "Sort operations performed. A high merge_passes count means sorts are spilling out of sort_buffer_size and completing on disk.",
+        "line_label": "%kind%",
+        "metrics": [
+          {
+            "name": "mysql.sorts",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "kind",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Opened resources",
+        "description": "Files, tables and table definitions opened. A high rate of opened tables against a stable schema means table_open_cache is too small and MySQL is reopening the same tables repeatedly.",
+        "line_label": "%kind%",
+        "metrics": [
+          {
+            "name": "mysql.opened_resources",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "kind",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Uptime",
+        "description": "Seconds since the server started. A reset to zero marks a restart, which also explains any counter on this dashboard dropping back to its starting value.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "mysql.uptime",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
