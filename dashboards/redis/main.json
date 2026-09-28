@@ -187,6 +187,25 @@
       {
         "type": "timeseries",
         "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Commands per second",
+        "description": "Commands processed per second, as Redis reports it. This is the throughput figure to compare against latency and memory when judging whether the instance is saturated.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.commands",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
         "format": "size",
         "format_input": "byte",
         "draw_null_as_zero": true,

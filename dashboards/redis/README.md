@@ -22,6 +22,7 @@ The following graphs are displayed in this automated dashboard:
 - Memory used (used, RSS and peak)
 - Memory fragmentation ratio
 - Commands processed
+- Commands per second
 - Network throughput (in and out)
 - Connected clients
 - Connections received
@@ -36,5 +37,12 @@ These graphs display values from the `redis.*` metrics.
 AppSignal builds metric tags from OpenTelemetry data point attributes. The Redis receiver reports the instance it scraped as *resource* attributes (`redis.version`, and optionally `server.address` and `server.port`), and the collector lifts resource attributes onto data points only for Render and Heroku. Metrics from several Redis instances therefore merge into a single line per chart.
 
 Do not work around this by copying resource attributes onto data points with a `transform` processor. This dashboard matches each metric on its exact tag set, so adding a tag stops the charts matching anything at all. To separate instances today, send each one to its own AppSignal app.
+
+### Metrics this dashboard cannot show {#metrics-this-dashboard-cannot-show}
+
+Two signals commonly recommended for Redis are not available through this receiver, and are noted here so their absence is not mistaken for an oversight:
+
+- **Command latency.** The receiver emits no latency metric. Redis' own `latencystats` are not exposed by the `INFO` fields it reads.
+- **Replication link downtime.** `master_link_down_since_seconds` is not emitted, so a broken replication link shows up here as connected replicas dropping rather than as a duration.
 
 This dashboard is currently marked Beta.
