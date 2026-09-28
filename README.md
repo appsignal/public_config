@@ -26,6 +26,7 @@ Some integrations ship more than one dashboard, so there are more dashboards tha
 - [PostgreSQL](/dashboards/postgres/) (via Vector)
 - [Process Memory](/dashboards/process_memory/)
 - [Puma](/dashboards/puma/)
+- [Redis](/dashboards/redis/) (via OpenTelemetry)
 - [Render](/dashboards/render/)
 - [Ruby VM](/dashboards/ruby_vm/)
 - [Sidekiq](/dashboards/sidekiq/)

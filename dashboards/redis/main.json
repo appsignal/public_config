@@ -1,0 +1,332 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "redis.commands.processed"
+  ],
+  "dashboard": {
+    "title": "Redis",
+    "description": "Monitor a self-hosted Redis instance: rejected connections, evictions, cache hit rate, memory use, throughput, and replication.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Rejected connections",
+        "description": "Connections refused because the maxclients limit was reached. Any sustained value here means clients are being turned away: raise maxclients or reduce the size of your connection pools.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.connections.rejected",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Evicted keys",
+        "description": "Keys removed because Redis reached its maxmemory limit. Evictions mean silent data loss: dropped cache entries, and dropped jobs when Redis backs a queue. Investigate memory growth or raise maxmemory.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.keys.evicted",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Blocked clients",
+        "description": "Clients waiting on a blocking call such as BLPOP. A steady count is normal for queue workers, but a rising count means consumers are not keeping up with producers.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.clients.blocked",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Keyspace hits vs misses",
+        "description": "Successful and failed key lookups in the main dictionary. A rising share of misses means cached data is expiring or being evicted before it gets read, which pushes load onto your database.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.keyspace.hits",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          },
+          {
+            "name": "redis.keyspace.misses",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Expired keys",
+        "description": "Keys removed because their TTL elapsed. Unlike evictions this is healthy, expected behaviour, but a sudden change in shape often explains a drop in cache hit rate.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.keys.expired",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": false,
+        "title": "Memory used",
+        "description": "Memory allocated by Redis as seen by its own allocator (used), by the operating system (RSS), and the highest value reached since startup (peak). Used memory approaching your maxmemory limit is what precedes evictions.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.memory.used",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ]
+          },
+          {
+            "name": "redis.memory.rss",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ]
+          },
+          {
+            "name": "redis.memory.peak",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Memory fragmentation ratio",
+        "description": "Ratio between memory the operating system reserved (RSS) and memory Redis allocated. Around 1.0 is healthy. Above 1.5 means fragmentation is wasting memory; below 1.0 means Redis has been swapped to disk and latency will suffer.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.memory.fragmentation_ratio",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Commands processed",
+        "description": "Total commands handled by the server. Read this alongside memory and network throughput to judge whether the instance is saturated.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.commands.processed",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "size",
+        "format_input": "byte",
+        "draw_null_as_zero": true,
+        "title": "Network throughput",
+        "description": "Bytes read from and written to the network. Large output volumes usually point at oversized values or commands such as KEYS and HGETALL returning more data than callers need.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.net.input",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          },
+          {
+            "name": "redis.net.output",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Connected clients",
+        "description": "Client connections currently open, excluding replicas. Compare against your maxclients limit: a count climbing towards it is what produces rejected connections.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.clients.connected",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Connections received",
+        "description": "Connections accepted since startup. A high rate against a flat connected-client count means clients are reconnecting for every operation instead of pooling, which wastes round trips.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.connections.received",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Keyspace size per database",
+        "description": "Keys held per database, and how many of them carry an expiration. Keys without a TTL accumulate indefinitely and are a common cause of gradual memory growth.",
+        "line_label": "%name% db%db%",
+        "metrics": [
+          {
+            "name": "redis.db.keys",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              }
+            ]
+          },
+          {
+            "name": "redis.db.expires",
+            "fields": [
+              {
+                "field": "GAUGE"
+              }
+            ],
+            "tags": [
+              {
+                "key": "db",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Connected replicas",
+        "description": "Replicas currently connected to this instance. A drop to zero on a primary means replication has broken and you have no standby to fail over to.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.slaves.connected",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Changes since last save",
+        "description": "Writes accumulated since the last successful RDB snapshot. A number that keeps climbing without resetting means persistence is failing, and a restart would lose everything since the last save.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "redis.rdb.changes_since_last_save",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
