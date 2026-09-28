@@ -12,14 +12,18 @@ The "MySQL" dashboard is ordered by urgency of signal: lock contention and tempo
 
 The following graphs are displayed in this automated dashboard:
 
+- Connection errors
 - Row lock waits
 - Row lock wait time
+- Slow queries
 - Table locks (immediate and waited)
 - Temporary resources created (disk tables, files and tables)
 - Threads (cached, connected, created and running)
 - Buffer pool usage (clean and dirty pages, against the configured limit)
 - Buffer pool operations
 - Buffer pool pages
+- Query throughput
+- Commands
 - Row operations (read, inserted, updated and deleted)
 - Handler requests
 - InnoDB I/O operations
@@ -29,6 +33,20 @@ The following graphs are displayed in this automated dashboard:
 - Uptime
 
 These graphs display values from the `mysql.*` metrics.
+
+### Metrics you must enable on the receiver {#metrics-you-must-enable-on-the-receiver}
+
+Five of the charts above read metrics the receiver does not emit by default. They cover query throughput, slow queries and connection errors, which MySQL monitoring guidance treats as first-order signals, so the [setup documentation](https://docs.appsignal.com/collector/infrastructure/mysql) enables them:
+
+| Metric | Chart |
+|---|---|
+| `mysql.connection.errors` | Connection errors |
+| `mysql.query.slow.count` | Slow queries |
+| `mysql.query.count` | Query throughput |
+| `mysql.query.client.count` | Query throughput |
+| `mysql.commands` | Commands |
+
+They need no grants beyond the ones the setup documentation already asks for. If you leave them disabled the rest of the dashboard still works and these charts stay empty.
 
 ### Metrics not shown on this dashboard
 

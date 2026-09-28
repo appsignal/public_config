@@ -12,6 +12,31 @@
         "display": "line",
         "format": "number",
         "draw_null_as_zero": true,
+        "title": "Connection errors",
+        "description": "Connection attempts the server refused or aborted, by cause. The max_connections cause means clients are being turned away outright; a rising aborted_clients count means connections are dropping mid-session rather than closing cleanly.",
+        "line_label": "%error%",
+        "metrics": [
+          {
+            "name": "mysql.connection.errors",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "error",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
         "title": "Row lock waits",
         "description": "Times InnoDB had to wait for a row lock. Sustained waits mean transactions are contending for the same rows, usually from long-running transactions or a hot counter row that every request updates.",
         "line_label": "%name%",
@@ -52,6 +77,25 @@
               {
                 "key": "kind",
                 "value": "time"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Slow queries",
+        "description": "Queries that ran longer than long_query_time. This is the most direct signal that query performance is degrading, and the first thing to correlate against lock waits and buffer pool reads.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "mysql.query.slow.count",
+            "fields": [
+              {
+                "field": "COUNTER"
               }
             ]
           }
@@ -210,6 +254,58 @@
             "tags": [
               {
                 "key": "kind",
+                "value": "*"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Query throughput",
+        "description": "Statements executed by the server, and the subset sent by clients. Judge these by sudden change rather than absolute level: a step change with no deploy behind it usually means retry behaviour or a runaway job.",
+        "line_label": "%name%",
+        "metrics": [
+          {
+            "name": "mysql.query.count",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          },
+          {
+            "name": "mysql.query.client.count",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Commands",
+        "description": "Statements executed by type, giving the read and write mix. A shift in the ratio of selects to writes often explains a change in lock contention or buffer pool behaviour.",
+        "line_label": "%command%",
+        "metrics": [
+          {
+            "name": "mysql.commands",
+            "fields": [
+              {
+                "field": "COUNTER"
+              }
+            ],
+            "tags": [
+              {
+                "key": "command",
                 "value": "*"
               }
             ]
