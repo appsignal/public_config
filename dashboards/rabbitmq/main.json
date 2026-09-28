@@ -1,0 +1,108 @@
+{
+  "label": "beta",
+  "metric_keys": [
+    "rabbitmq.message.published"
+  ],
+  "dashboard": {
+    "title": "RabbitMQ",
+    "description": "Monitor RabbitMQ queues: unroutable messages, queue backlog, unacknowledged messages, consumer counts, and message throughput.",
+    "visuals": [
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Messages dropped",
+        "description": "Messages discarded as unroutable, because no queue was bound to match their routing key. Any value here is lost work: check that the publisher's routing key matches an existing binding.",
+        "line_label": "%rabbitmq.queue.name%",
+        "metrics": [
+          {
+            "name": "rabbitmq.message.dropped",
+            "fields": [{ "field": "COUNTER" }],
+            "tags": [{ "key": "rabbitmq.queue.name", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Messages ready",
+        "description": "Messages sitting in the queue waiting for a consumer. A backlog that grows without returning to zero means producers are outpacing consumers and you need more workers or faster ones.",
+        "line_label": "%rabbitmq.queue.name%",
+        "metrics": [
+          {
+            "name": "rabbitmq.message.current",
+            "fields": [{ "field": "COUNTER" }],
+            "tags": [
+              { "key": "rabbitmq.queue.name", "value": "*" },
+              { "key": "state", "value": "ready" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Messages unacknowledged",
+        "description": "Messages delivered to a consumer that have not been acknowledged yet. A count that climbs and stays high means consumers are accepting work they never finish, usually a slow handler or a worker that died holding messages.",
+        "line_label": "%rabbitmq.queue.name%",
+        "metrics": [
+          {
+            "name": "rabbitmq.message.current",
+            "fields": [{ "field": "COUNTER" }],
+            "tags": [
+              { "key": "rabbitmq.queue.name", "value": "*" },
+              { "key": "state", "value": "unacknowledged" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": false,
+        "title": "Consumers",
+        "description": "Consumers currently reading from each queue. A queue holding messages with zero consumers is stalled, and is the first thing to check when work stops being processed.",
+        "line_label": "%rabbitmq.queue.name%",
+        "metrics": [
+          {
+            "name": "rabbitmq.consumer.count",
+            "fields": [{ "field": "COUNTER" }],
+            "tags": [{ "key": "rabbitmq.queue.name", "value": "*" }]
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "display": "line",
+        "format": "number",
+        "draw_null_as_zero": true,
+        "title": "Message throughput",
+        "description": "Messages published into each queue, delivered to consumers, and acknowledged by them. Publishing consistently above delivery is what produces a growing backlog; delivery above acknowledgement means consumers are falling behind on work they already accepted.",
+        "line_label": "%name% %rabbitmq.queue.name%",
+        "metrics": [
+          {
+            "name": "rabbitmq.message.published",
+            "fields": [{ "field": "COUNTER" }],
+            "tags": [{ "key": "rabbitmq.queue.name", "value": "*" }]
+          },
+          {
+            "name": "rabbitmq.message.delivered",
+            "fields": [{ "field": "COUNTER" }],
+            "tags": [{ "key": "rabbitmq.queue.name", "value": "*" }]
+          },
+          {
+            "name": "rabbitmq.message.acknowledged",
+            "fields": [{ "field": "COUNTER" }],
+            "tags": [{ "key": "rabbitmq.queue.name", "value": "*" }]
+          }
+        ]
+      }
+    ]
+  }
+}
