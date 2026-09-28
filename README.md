@@ -19,6 +19,7 @@ Some integrations ship more than one dashboard, so there are more dashboards tha
 - [Kubernetes](/dashboards/kubernetes/)
 - [MongoDB](/dashboards/mongodb/) (via AppSignal for Ruby)
 - [MongoDB](/dashboards/mongodb_vector/) (via Vector)
+- [MySQL](/dashboards/mysql/) (via OpenTelemetry)
 - [Next.js](/dashboards/nextjs/) (deprecated)
 - [NGINX](/dashboards/nginx/)
 - [Node.js](/dashboards/nodejs/) (the Postgres dashboard is deprecated)
